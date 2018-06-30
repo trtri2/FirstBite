@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  FirstViewController.swift
 //  firstbite
 //
 //  Created by Han Yang on 6/29/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class HealthGuide: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
