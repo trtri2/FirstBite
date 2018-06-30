@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Health Guide-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="firstbite" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,44 +41,59 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Health Guide" image="first" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="694" y="-835"/>
         </scene>
-        <!--Second-->
-        <scene sceneID="wg7-f3-ORb">
+        <!--Track Logs-->
+        <scene sceneID="19d-pA-mbC">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="firstbite" customModuleProvider="target" sceneMemberID="viewController">
-                    <button key="view" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OQK-Kc-1pK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Formula View"/>
-                        <connections>
-                            <segue destination="3jw-fS-fOh" kind="modal" id="KTH-no-CF6"/>
-                        </connections>
-                    </button>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="750" y="360"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Xkk-oK-aZl">
-            <objects>
-                <viewController id="3jw-fS-fOh" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4UB-t8-UHE">
+                <viewController id="e4i-G1-Hyf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6wr-be-BjD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="kDs-Lh-lhJ"/>
+                        <viewLayoutGuide key="safeArea" id="RT0-hy-Xry"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Track Logs" image="first" id="fu1-Ix-9u7"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UX6-FA-pMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cnS-rG-Rz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1411" y="360"/>
+            <point key="canvasLocation" x="694" y="-119"/>
+        </scene>
+        <!--New Log-->
+        <scene sceneID="rHA-Fm-YhM">
+            <objects>
+                <viewController id="Fgr-Jv-54v" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hua-LB-sKi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="Nxn-vc-hWl"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="New Log" image="second" id="O9V-Uj-dAG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7a7-4b-uxW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="694" y="1343"/>
+        </scene>
+        <!--Trends-->
+        <scene sceneID="zt4-P7-eQL">
+            <objects>
+                <viewController id="sEx-Xb-roo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oQK-qp-1Ny">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="zYf-yp-4ZR"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Trends" image="second" id="JR0-0L-FjC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pAO-ay-snd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="714" y="626"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -91,12 +106,14 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="e4i-G1-Hyf" kind="relationship" relationship="viewControllers" id="U2j-9Y-qvw"/>
+                        <segue destination="sEx-Xb-roo" kind="relationship" relationship="viewControllers" id="w2f-Z2-EUh"/>
+                        <segue destination="Fgr-Jv-54v" kind="relationship" relationship="viewControllers" id="Mrh-LW-OKp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-402" y="35"/>
         </scene>
     </scenes>
     <resources>
