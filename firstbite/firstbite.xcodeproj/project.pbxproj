@@ -64,8 +64,7 @@
 				D8EEC61220E727F200C1E623 /* LaunchScreen.storyboard */,
 				D8EEC61520E727F200C1E623 /* Info.plist */,
 			);
-			name = firstbite;
-			path = "firstbite project";
+			path = firstbite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
