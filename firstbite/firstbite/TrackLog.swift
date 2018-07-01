@@ -1,14 +1,14 @@
 //
-//  SecondViewController.swift
+//  TrackLog.swift
 //  firstbite
 //
-//  Created by Han Yang on 6/29/18.
+//  Created by Winston Ye on 6/29/18.
 //  Copyright © 2018 Healthy7. All rights reserved.
 //
 
 import UIKit
 
-class TrackLog: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource {
+class TrackLog: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     // labels
     @IBOutlet weak var formulaValue: UILabel!
@@ -20,13 +20,20 @@ class TrackLog: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource 
     // amount slider
     @IBOutlet weak var amountSlider: UISlider!
     
+    // amount text field
+    @IBOutlet weak var amountField: UITextField!
+
+    
     let units = ["mL","oz"]
     
+    // setup start
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         pickerView.delegate = self
         pickerView.dataSource = self
+        
+        amountField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +53,16 @@ class TrackLog: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource 
         return units[row]
     }
     
+    // max length of text field
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let maxLength = 6
+        let currentString: NSString = textField.text! as NSString
+        let newString: NSString =
+            currentString.replacingCharacters(in: range, with: string) as NSString
+        return newString.length <= maxLength
+    }
+    
+    //setup end
     
     // if a unit of measurement is selected, change the label as well
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -59,9 +76,39 @@ class TrackLog: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource 
     }
 
 
+    // if slider moved
     @IBAction func sliderMoved(_ sender: UISlider) {
+        amountSlider.value = roundf(amountSlider.value / 5.0) * 5.0
         let valueString = NSString(format: "%.2f", amountSlider.value) as String
         formulaValue.text = valueString
+        amountField.text = valueString
+    }
+
+    // if text field changed
+    @IBAction func textFieldChanged(_ sender: UITextField) {
+        
+        let floatAmount = Float(amountField.text!)
+        
+        // if the textfield is a valid float
+        if(floatAmount != nil){
+            if(floatAmount! > 500){
+                formulaValue.text = "500"
+            }
+            else if(floatAmount! <= 0){
+                formulaValue.text = "0"
+            }
+            else{
+                // bug: leading zeroes, else good
+                formulaValue.text = amountField.text
+            }
+             amountSlider.value = floatAmount!
+        }
+        
+        // if the textfield is empty
+        if(amountField.text! == ""){
+            formulaValue.text = "0"
+            amountSlider.value = 0
+        }
     }
 }
 
