@@ -26,6 +26,8 @@ class TrackLog: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource,
     
     let units = ["mL","oz"]
     
+    var isMetric = true
+    
     // setup start
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,17 +70,27 @@ class TrackLog: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource,
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if(units[row] == "mL"){
             formulaUnit.text = "mL"
+            amountSlider.maximumValue = 500
+            isMetric = true
         }
         else if(units[row] == "oz"){
             formulaUnit.text = "oz"
+            isMetric = false
+            if(amountSlider.value >= 16.91){
+                amountSlider.value = 10
+                amountField.text = "16.91"
+                formulaValue.text = "16.91"
+            }
+            amountSlider.maximumValue = 16.91
         }
-        print(units[row])
     }
 
 
     // if slider moved
     @IBAction func sliderMoved(_ sender: UISlider) {
-        amountSlider.value = roundf(amountSlider.value / 5.0) * 5.0
+        if(isMetric == true){
+            amountSlider.value = roundf(amountSlider.value / 5.0) * 5.0
+        }
         let valueString = NSString(format: "%.2f", amountSlider.value) as String
         formulaValue.text = valueString
         amountField.text = valueString
@@ -91,8 +103,11 @@ class TrackLog: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource,
         
         // if the textfield is a valid float
         if(floatAmount != nil){
-            if(floatAmount! > 500){
+            if((floatAmount! >= 500)&&(isMetric)){
                 formulaValue.text = "500"
+            }
+            else if((floatAmount! >= 16.91)&&(!isMetric)){
+                formulaValue.text = "16.91"
             }
             else if(floatAmount! <= 0){
                 formulaValue.text = "0"
