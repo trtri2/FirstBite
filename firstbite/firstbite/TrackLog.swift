@@ -77,7 +77,7 @@ class TrackLog: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource,
             formulaUnit.text = "oz"
             isMetric = false
             if(amountSlider.value >= 16.91){
-                amountSlider.value = 10
+                amountSlider.value = 16.91
                 amountField.text = "16.91"
                 formulaValue.text = "16.91"
             }
