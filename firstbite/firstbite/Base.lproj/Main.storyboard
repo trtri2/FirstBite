@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -47,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="694" y="-835"/>
         </scene>
-        <!--Track Logs-->
+        <!--Food Diary-->
         <scene sceneID="19d-pA-mbC">
             <objects>
-                <viewController id="e4i-G1-Hyf" customClass="TrackLog" customModule="firstbite" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="e4i-G1-Hyf" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6wr-be-BjD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -247,7 +248,7 @@
                         <outlet property="amountSlider" destination="guJ-T4-YyY" id="vH7-61-50a"/>
                         <outlet property="formulaUnit" destination="AFW-Lj-1eF" id="HHu-9u-PfP"/>
                         <outlet property="formulaValue" destination="ed7-G2-Opk" id="q9Z-ke-6oK"/>
-                        <outlet property="pickerView" destination="rmG-cA-58X" id="Qzj-xQ-GdW"/>
+                        <outlet property="pickerView" destination="rmG-cA-58X" id="z77-qQ-iLq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dF7-KS-Mov" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -340,7 +341,7 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hln-Qe-XCc"/>
+        <segue reference="rg1-5V-ixu"/>
         <segue reference="fO0-YK-HrK"/>
         <segue reference="Bid-jm-ggN"/>
     </inferredMetricsTieBreakers>

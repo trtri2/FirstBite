@@ -8,15 +8,15 @@
 
 import UIKit
 
-class TrackLog: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class TrackLog: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     // labels
     @IBOutlet weak var formulaValue: UILabel!
     @IBOutlet weak var formulaUnit: UILabel!
     
     // unit of measurement picker
-    @IBOutlet weak var pickerView: UIPickerView!
-
+    @IBOutlet var pickerView: UIPickerView!
+    
     // amount slider
     @IBOutlet weak var amountSlider: UISlider!
     
