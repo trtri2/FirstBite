@@ -52,16 +52,207 @@
             <objects>
                 <viewController id="e4i-G1-Hyf" customClass="TrackLog" customModule="firstbite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6wr-be-BjD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OF-Tc-Chw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="ijn-aN-WSa"/>
+                                </constraints>
+                                <state key="normal" title="Logging with Baby Formula">
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="gvR-wt-U2G" kind="show" id="hln-Qe-XCc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91U-2F-6GE">
+                                <rect key="frame" x="0.0" y="60" width="375" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="b0X-A0-WPk"/>
+                                </constraints>
+                                <state key="normal" title="Logging with Breastfeeding">
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="3Hx-X1-D0A" kind="show" id="Bid-jm-ggN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1V-Lv-1xx">
+                                <rect key="frame" x="0.0" y="120" width="375" height="52"/>
+                                <state key="normal" title="Logging with Solid Foods">
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="A5H-oY-N3n" kind="show" id="fO0-YK-HrK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RT0-hy-Xry" firstAttribute="bottom" secondItem="R1V-Lv-1xx" secondAttribute="bottom" constant="382" id="0AB-y8-YOA"/>
+                            <constraint firstAttribute="trailing" secondItem="9OF-Tc-Chw" secondAttribute="trailing" id="1xF-6k-dVy"/>
+                            <constraint firstItem="R1V-Lv-1xx" firstAttribute="leading" secondItem="91U-2F-6GE" secondAttribute="leading" id="3vE-hO-QEz"/>
+                            <constraint firstItem="9OF-Tc-Chw" firstAttribute="trailing" secondItem="91U-2F-6GE" secondAttribute="trailing" id="6mM-Cj-YHY"/>
+                            <constraint firstItem="9OF-Tc-Chw" firstAttribute="leading" secondItem="6wr-be-BjD" secondAttribute="leading" id="92h-HD-d1j"/>
+                            <constraint firstItem="R1V-Lv-1xx" firstAttribute="top" secondItem="91U-2F-6GE" secondAttribute="bottom" constant="8" id="Dax-Jr-cU0"/>
+                            <constraint firstItem="9OF-Tc-Chw" firstAttribute="leading" secondItem="91U-2F-6GE" secondAttribute="leading" id="T0z-FA-pg8"/>
+                            <constraint firstItem="91U-2F-6GE" firstAttribute="top" secondItem="9OF-Tc-Chw" secondAttribute="bottom" constant="8" symbolic="YES" id="WBr-Fc-Eqb"/>
+                            <constraint firstItem="R1V-Lv-1xx" firstAttribute="trailing" secondItem="91U-2F-6GE" secondAttribute="trailing" id="fMM-mK-Qdc"/>
+                            <constraint firstItem="9OF-Tc-Chw" firstAttribute="top" secondItem="RT0-hy-Xry" secondAttribute="top" id="ozA-ao-Ep4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RT0-hy-Xry"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Track Logs" image="first" id="fu1-Ix-9u7"/>
+                    <navigationItem key="navigationItem" title="Food Diary" id="aKf-hl-H9o"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <segue destination="gvR-wt-U2G" kind="show" id="rg1-5V-ixu"/>
+                        <segue destination="3Hx-X1-D0A" kind="show" id="Hp7-uL-MrT"/>
+                        <segue destination="A5H-oY-N3n" kind="show" id="zCU-mg-o9W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnS-rG-Rz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="694" y="-119"/>
+            <point key="canvasLocation" x="1632.8" y="-119.1904047976012"/>
+        </scene>
+        <!--Breastfeeding-->
+        <scene sceneID="DYT-uF-DYO">
+            <objects>
+                <viewController title="Breastfeeding" id="3Hx-X1-D0A" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DvO-8X-89G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="3Sg-ox-G8C"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r3p-4n-lVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2513" y="254"/>
+        </scene>
+        <!--Solid Foods-->
+        <scene sceneID="f8s-v5-2cH">
+            <objects>
+                <viewController title="Solid Foods" id="A5H-oY-N3n" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d1y-uB-jNF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Den-f0-9XB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="87Y-NB-svt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2521" y="944"/>
+        </scene>
+        <!--Baby Formula-->
+        <scene sceneID="f0y-IY-bBv">
+            <objects>
+                <viewController title="Baby Formula" id="gvR-wt-U2G" customClass="TrackLog" customModule="firstbite" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5MQ-h4-FQC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unit of Measurement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8d6-Dk-R67">
+                                <rect key="frame" x="16" y="138" width="161" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGY-pm-rWt">
+                                <rect key="frame" x="18" y="359" width="60" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFW-Lj-1eF">
+                                <rect key="frame" x="227" y="51" width="65" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="q9Z-H3-Kq4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ed7-G2-Opk">
+                                <rect key="frame" x="83" y="51" width="136" height="58"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="500" translatesAutoresizingMaskIntoConstraints="NO" id="guJ-T4-YyY">
+                                <rect key="frame" x="16" y="396" width="242" height="31"/>
+                                <connections>
+                                    <action selector="sliderMoved:" destination="gvR-wt-U2G" eventType="valueChanged" id="SiR-UN-wIc"/>
+                                </connections>
+                            </slider>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T1R-f3-lTD">
+                                <rect key="frame" x="264" y="395" width="95" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="RsE-2T-u88"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="textFieldChanged:" destination="gvR-wt-U2G" eventType="editingChanged" id="0XS-ny-Rdu"/>
+                                </connections>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rmG-cA-58X">
+                                <rect key="frame" x="9" y="159" width="366" height="137"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="137" id="ovB-er-ig4"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLf-rJ-3bw">
+                                <rect key="frame" x="0.0" y="487" width="375" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="ur4-Ht-1jJ"/>
+                                </constraints>
+                                <state key="normal" title="Add">
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="guJ-T4-YyY" firstAttribute="centerY" secondItem="T1R-f3-lTD" secondAttribute="centerY" id="08o-o8-FPV"/>
+                            <constraint firstItem="hGY-pm-rWt" firstAttribute="leading" secondItem="bG1-Uq-TrX" secondAttribute="leading" constant="18" id="6KH-JD-ygw"/>
+                            <constraint firstItem="T1R-f3-lTD" firstAttribute="trailing" secondItem="5MQ-h4-FQC" secondAttribute="trailingMargin" id="BDM-K9-06M"/>
+                            <constraint firstItem="hGY-pm-rWt" firstAttribute="leading" secondItem="guJ-T4-YyY" secondAttribute="leading" id="INk-HS-VDP"/>
+                            <constraint firstItem="guJ-T4-YyY" firstAttribute="bottom" secondItem="T1R-f3-lTD" secondAttribute="bottom" id="IuS-6c-qIl"/>
+                            <constraint firstItem="bG1-Uq-TrX" firstAttribute="trailing" secondItem="AFW-Lj-1eF" secondAttribute="trailing" constant="83" id="Jc6-89-8ml"/>
+                            <constraint firstItem="ed7-G2-Opk" firstAttribute="top" secondItem="bG1-Uq-TrX" secondAttribute="top" constant="51" id="M8b-ji-dco"/>
+                            <constraint firstItem="oLf-rJ-3bw" firstAttribute="leading" secondItem="5MQ-h4-FQC" secondAttribute="leading" id="Qzm-37-3S3"/>
+                            <constraint firstItem="AFW-Lj-1eF" firstAttribute="leading" secondItem="ed7-G2-Opk" secondAttribute="trailing" constant="8" symbolic="YES" id="T3s-lK-cMa"/>
+                            <constraint firstItem="ed7-G2-Opk" firstAttribute="baseline" secondItem="AFW-Lj-1eF" secondAttribute="baseline" id="TQT-u4-kKa"/>
+                            <constraint firstItem="guJ-T4-YyY" firstAttribute="top" secondItem="hGY-pm-rWt" secondAttribute="bottom" constant="16" id="VvJ-ei-Tid"/>
+                            <constraint firstAttribute="trailing" secondItem="rmG-cA-58X" secondAttribute="trailing" id="XFf-96-WNe"/>
+                            <constraint firstItem="T1R-f3-lTD" firstAttribute="leading" secondItem="guJ-T4-YyY" secondAttribute="trailing" constant="8" symbolic="YES" id="XUz-8D-oSL"/>
+                            <constraint firstItem="hGY-pm-rWt" firstAttribute="top" secondItem="rmG-cA-58X" secondAttribute="bottom" constant="63" id="Xjt-RG-XON"/>
+                            <constraint firstItem="8d6-Dk-R67" firstAttribute="top" secondItem="ed7-G2-Opk" secondAttribute="bottom" constant="29" id="aGI-ae-GT9"/>
+                            <constraint firstItem="8d6-Dk-R67" firstAttribute="leading" secondItem="5MQ-h4-FQC" secondAttribute="leadingMargin" id="aMY-AA-k2f"/>
+                            <constraint firstItem="rmG-cA-58X" firstAttribute="leading" secondItem="bG1-Uq-TrX" secondAttribute="leading" constant="9" id="cde-HL-1MC"/>
+                            <constraint firstItem="rmG-cA-58X" firstAttribute="top" secondItem="8d6-Dk-R67" secondAttribute="bottom" id="fSO-s5-ZuH"/>
+                            <constraint firstItem="oLf-rJ-3bw" firstAttribute="trailing" secondItem="rmG-cA-58X" secondAttribute="trailing" id="fuh-04-CU7"/>
+                            <constraint firstItem="ed7-G2-Opk" firstAttribute="leading" secondItem="bG1-Uq-TrX" secondAttribute="leading" constant="83" id="pIk-EO-Epp"/>
+                            <constraint firstAttribute="bottom" secondItem="oLf-rJ-3bw" secondAttribute="bottom" constant="64" id="xoc-Pi-aXR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bG1-Uq-TrX"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="amountField" destination="T1R-f3-lTD" id="wwM-QB-inG"/>
+                        <outlet property="amountSlider" destination="guJ-T4-YyY" id="vH7-61-50a"/>
+                        <outlet property="formulaUnit" destination="AFW-Lj-1eF" id="HHu-9u-PfP"/>
+                        <outlet property="formulaValue" destination="ed7-G2-Opk" id="q9Z-ke-6oK"/>
+                        <outlet property="pickerView" destination="rmG-cA-58X" id="Qzj-xQ-GdW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dF7-KS-Mov" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2522" y="-417"/>
         </scene>
         <!--New Log-->
         <scene sceneID="rHA-Fm-YhM">
@@ -115,7 +306,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="e4i-G1-Hyf" kind="relationship" relationship="viewControllers" id="U2j-9Y-qvw"/>
+                        <segue destination="Sbd-3m-Lue" kind="relationship" relationship="viewControllers" id="U2j-9Y-qvw"/>
                         <segue destination="sEx-Xb-roo" kind="relationship" relationship="viewControllers" id="w2f-Z2-EUh"/>
                         <segue destination="Fgr-Jv-54v" kind="relationship" relationship="viewControllers" id="Mrh-LW-OKp"/>
                     </connections>
@@ -124,9 +315,33 @@
             </objects>
             <point key="canvasLocation" x="-402" y="35"/>
         </scene>
+        <!--Food Diary-->
+        <scene sceneID="zlc-08-vJX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sbd-3m-Lue" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Food Diary" image="first" id="fu1-Ix-9u7"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SzU-RC-bGU">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="e4i-G1-Hyf" kind="relationship" relationship="rootViewController" id="qUL-5r-OUV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SpW-Mu-rqz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="693.60000000000002" y="-119.1904047976012"/>
+        </scene>
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="hln-Qe-XCc"/>
+        <segue reference="fO0-YK-HrK"/>
+        <segue reference="Bid-jm-ggN"/>
+    </inferredMetricsTieBreakers>
 </document>
