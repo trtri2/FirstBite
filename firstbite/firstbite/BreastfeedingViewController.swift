@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Functionality: used to allow the user to input breastfeeding to the history log
 class BreastfeedingViewController: UIViewController {
     
     var dateTimeTemp = ""
@@ -78,6 +79,7 @@ class BreastfeedingViewController: UIViewController {
         rightTimer.text = timeString(time: TimeInterval(counterR))
     }
     
+    // Functionality: used to allow the user to start the timer on the left breast
     @IBAction func LButton(_ sender: UIButton) {
         if (sender.titleLabel?.text == "L GO"){
             timer.invalidate()
@@ -91,6 +93,7 @@ class BreastfeedingViewController: UIViewController {
         
     }
     
+     // Functionality: used to allow the user to start the timer on the right breast
     @IBAction func RButton(_ sender: UIButton) {
         if (sender.titleLabel?.text == "R GO"){
             timer.invalidate()
@@ -103,12 +106,14 @@ class BreastfeedingViewController: UIViewController {
         }
     }
     
+     // Functionality: save breastfeeding button
     @IBAction func SButton(_ sender: UIButton) {
         timer.invalidate()
         leftBtnOutlet.setTitle("L GO", for: .normal)
         rightBtnOutlet.setTitle("R GO", for: .normal)
     }
     
+    // Functionality: saves data
     @objc func saveData() {
 //        let date:Date = datePicker.date
 //        let formatter:DateFormatter = DateFormatter()
