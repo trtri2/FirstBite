@@ -2,7 +2,7 @@
 //  BookmarksViewController.swift
 //  firstbite
 //
-//  Created by winstony on 7/3/18.
+//  Created by Winston Ye, Leon Trieu on 7/3/18.
 //  Copyright © 2018 Healthy7. All rights reserved.
 //
 
