@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Functionality: used to add solid/liquid foods to the history log
 class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     // pickers
@@ -42,6 +43,7 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
         categoryPickerOutlet.dataSource = self
     }
     
+    // Functionality: allows user to pick a date for the date picker upon pressing the text field
     func changeTextFieldToDate(_ sender: UITextField) {
         let datePickerView:UIDatePicker = UIDatePicker()
         
