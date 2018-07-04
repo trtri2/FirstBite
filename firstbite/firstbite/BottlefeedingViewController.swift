@@ -2,7 +2,7 @@
 //  BottlefeedingViewController.swift
 //  homework3
 //
-//  Created by Healthy 7 Group on 2018-07-02.
+//  Created by Han Yang, Winston Ye, Jeff Wang, Leon Trieu on 2018-07-02.
 //  Copyright © 2018 Healthy 7 Group. All rights reserved.
 //
 
