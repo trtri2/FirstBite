@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  firstbite
+//  homework3
 //
-//  Created by Han Yang on 6/29/18.
-//  Copyright © 2018 Healthy7. All rights reserved.
+//  Created by Healthy 7 Group on 2018-06-30.
+//  Copyright © 2018 Healthy 7 Group. All rights reserved.
 //
 
 import UIKit
