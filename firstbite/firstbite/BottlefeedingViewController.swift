@@ -8,7 +8,7 @@
 
 import UIKit
 
-// Functionality: used to log breastfeeding into the Food Diary logs
+// Functionality: used to log bottlefeeding into the Food Diary logs
 class BottlefeedingViewController: UIViewController {
     
     @IBOutlet weak var dataTextField: UITextField!
