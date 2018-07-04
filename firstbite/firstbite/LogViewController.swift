@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Functionality: the history log interface that will be used for all new logs
 class LogViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var logTable: UITableView!
