@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Functionality: used to add and manage bookmarks from the Guidebook
 class BookmarksViewController: UITableViewController {
  let myarray = ["Bookmark 1", "Bookmark 2", "Bookmark 3"]
  
