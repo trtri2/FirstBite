@@ -10,18 +10,53 @@ import UIKit
 
 class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
-    @IBOutlet weak var datePickerOutlet: UIDatePicker!
+    // pickers
+    @IBOutlet weak var quantityPickerOutlet: UIPickerView!
+    @IBOutlet weak var categoryPickerOutlet: UIPickerView!
+    
+    // text fields
+    
+    @IBOutlet weak var dataTextField: UITextField! // date
     @IBOutlet weak var foodTextFieldOutlet: UITextField!
     @IBOutlet weak var quantityTextFieldOutlet: UITextField!
-    @IBOutlet weak var segmentOutlet: UISegmentedControl!
     
-    let pickerArrey:[String] = ["", "Cereal", "Finger Foods", "Fruit", "Juice", "Meat", "Veggies", "Vitamins"]
+    let categoryArray:[String] = ["Vegetables and Fruits", "Grain Products", "Milk and Alternatives", "Meat and Alternatives"]
+    let unitsArray:[String] = ["g", "mL", "oz"]
+    
+    var foodNameString: String = ""
+    var categoryTypeString: String = ""
+    var quantityString: String = ""
+    var quantityUnitString: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveData))
         self.navigationItem.rightBarButtonItem = saveButton
+        changeTextFieldToDate(dataTextField)
+        
+        quantityPickerOutlet.delegate = self
+        categoryPickerOutlet.delegate = self
+        
+        quantityPickerOutlet.dataSource = self
+        categoryPickerOutlet.dataSource = self
+    }
+    
+    func changeTextFieldToDate(_ sender: UITextField) {
+        let datePickerView:UIDatePicker = UIDatePicker()
+        
+        datePickerView.datePickerMode = UIDatePickerMode.dateAndTime
+        
+        sender.inputView = datePickerView
+        
+        datePickerView.addTarget(self, action: #selector(BottlefeedingViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
+    }
+    
+    @objc func datePickerValueChanged(sender:UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.timeStyle = DateFormatter.Style.short
+        dataTextField.text = dateFormatter.string(from: sender.date)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -33,23 +68,39 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerArrey.count
+        if(pickerView.tag == 1){
+            return categoryArray.count
+        }
+        else{
+            return unitsArray.count
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerArrey[row]
+        if(pickerView.tag == 1){
+            return categoryArray[row]
+        }
+        else{
+            return unitsArray[row]
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        foodTextFieldOutlet.text = pickerArrey[row]
+        if(pickerView.tag == 1){
+            categoryTypeString = categoryArray[row]
+        }
+        else{
+            quantityUnitString = unitsArray[row]
+        }
     }
     
     @objc func saveData() {
-        let date:Date = datePickerOutlet.date
-        let formatter:DateFormatter = DateFormatter()
-        formatter.dateFormat = "MMM dd, h:mm a"
-        let dateTimeTemp = formatter.string(from: date)
-        let tempResult = "Other: " + dateTimeTemp + " " + foodTextFieldOutlet.text! + " " + quantityTextFieldOutlet.text! + " " + segmentOutlet.titleForSegment(at: segmentOutlet.selectedSegmentIndex)!
+//        let date:Date = datePickerOutlet.date
+//        let formatter:DateFormatter = DateFormatter()
+//        formatter.dateFormat = "MMM dd, h:mm a"
+//        let dateTimeTemp = formatter.string(from: date)
+        //
+        let tempResult = categoryTypeString + ":" + dataTextField.text! + " " + foodTextFieldOutlet.text! + " " + quantityTextFieldOutlet.text! + quantityUnitString
         if var data:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
             data.insert(tempResult, at: 0)
             UserDefaults.standard.set(data, forKey: "breastfeed")

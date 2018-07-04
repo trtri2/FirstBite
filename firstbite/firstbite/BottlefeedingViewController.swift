@@ -10,6 +10,8 @@ import UIKit
 
 class BottlefeedingViewController: UIViewController {
     
+    @IBOutlet weak var dataTextField: UITextField!
+    
     @IBOutlet weak var datePickerOutlet: UIDatePicker!
     
     @IBOutlet weak var formulaTextFieldOutlet: UITextField!
@@ -21,6 +23,26 @@ class BottlefeedingViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveData))
         self.navigationItem.rightBarButtonItem = saveButton
+        
+        //adding datepicker at bottom
+        changeTextFieldToDate(dataTextField)
+    }
+    
+    func changeTextFieldToDate(_ sender: UITextField) {
+        let datePickerView:UIDatePicker = UIDatePicker()
+        
+        datePickerView.datePickerMode = UIDatePickerMode.dateAndTime
+        
+        sender.inputView = datePickerView
+        
+        datePickerView.addTarget(self, action: #selector(BottlefeedingViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
+    }
+    
+    @objc func datePickerValueChanged(sender:UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.timeStyle = DateFormatter.Style.short
+        dataTextField.text = dateFormatter.string(from: sender.date)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -32,11 +54,11 @@ class BottlefeedingViewController: UIViewController {
     }
     
     @objc func saveData() {
-        let date:Date = datePickerOutlet.date
-        let formatter:DateFormatter = DateFormatter()
-        formatter.dateFormat = "MMM dd, h:mm a"
-        let dateTimeTemp = formatter.string(from: date)
-        let tempResult = "Bottlefeed: " + dateTimeTemp + " " + formulaTextFieldOutlet.text! + " " + amountTextFieldOutlet.text! + " ml"
+//        let date:Date = datePickerOutlet.date
+//        let formatter:DateFormatter = DateFormatter()
+//        formatter.dateFormat = "MMM dd, h:mm a"
+//        let dateTimeTemp = formatter.string(from: date)
+        let tempResult = "Bottlefeed: " + dataTextField.text! + " " + formulaTextFieldOutlet.text! + " " + amountTextFieldOutlet.text! + " ml"
         if var data:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
             data.insert(tempResult, at: 0)
             UserDefaults.standard.set(data, forKey: "breastfeed")
