@@ -20,7 +20,7 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var foodTextFieldOutlet: UITextField!
     @IBOutlet weak var quantityTextFieldOutlet: UITextField!
     
-    let categoryArray:[String] = ["Vege/Fruit", "Grain", "Milk/Alt", "Meat and Alternatives"]
+    let categoryArray:[String] = ["Vege/Fruit", "Grain", "Milk/Alt", "Meat/Alt"]
     let unitsArray:[String] = ["g", "mL", "oz"]
     
     var foodNameString: String = ""
