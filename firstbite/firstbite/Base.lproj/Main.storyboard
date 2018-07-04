@@ -603,7 +603,7 @@
         <!--Bookmarks-->
         <scene sceneID="ZED-li-bBv">
             <objects>
-                <tableViewController title="Bookmarks" id="PLB-5A-jDZ" sceneMemberID="viewController">
+                <tableViewController title="Bookmarks" id="PLB-5A-jDZ" customClass="BookmarksViewController" customModule="firstbite" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Ft-dv-CIO" customClass="Bookmarks">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -613,9 +613,12 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wgb-Nq-v25" id="POp-A9-apC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="2fL-ro-cnF" kind="show" id="BMh-Qr-c1D"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -627,6 +630,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5W-4c-W6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1325.5999999999999" y="1355.1724137931035"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="q3h-6u-Ua8">
+            <objects>
+                <viewController id="2fL-ro-cnF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IOq-dL-9d8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="CbS-U1-Bod"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wfD-KH-oiB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2009" y="1361"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="asL-AZ-sho">

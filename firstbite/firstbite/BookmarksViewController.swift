@@ -27,8 +27,9 @@ class BookmarksViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "bookmarkCell", for: indexPath)
-        cell.textLabel?.text = myarray[indexPath.item]
+        let cell:UITableViewCell = UITableViewCell(style:UITableViewCellStyle.default, reuseIdentifier:"bookmarksCell")
+        cell.textLabel?.text = myarray[indexPath.row]
+        
         return cell
     }
 }
