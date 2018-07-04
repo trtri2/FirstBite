@@ -18,7 +18,7 @@ class LogViewController: UIViewController, UITableViewDataSource {
         // Do any additional setup after loading the view, typically from a nib.
         logTable.dataSource = self
         self.title = "History Log"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+   self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.rightBarButtonItem = editButtonItem
     }
     
@@ -33,6 +33,7 @@ class LogViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         cell.textLabel?.text = data[indexPath.row]
+        
         return cell
     }
     

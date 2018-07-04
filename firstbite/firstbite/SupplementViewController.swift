@@ -20,7 +20,7 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var foodTextFieldOutlet: UITextField!
     @IBOutlet weak var quantityTextFieldOutlet: UITextField!
     
-    let categoryArray:[String] = ["Vegetables and Fruits", "Grain Products", "Milk and Alternatives", "Meat and Alternatives"]
+    let categoryArray:[String] = ["Vege/Fruit", "Grain", "Milk/Alt", "Meat and Alternatives"]
     let unitsArray:[String] = ["g", "mL", "oz"]
     
     var foodNameString: String = ""
@@ -100,7 +100,7 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
 //        formatter.dateFormat = "MMM dd, h:mm a"
 //        let dateTimeTemp = formatter.string(from: date)
         //
-        let tempResult = categoryTypeString + ":" + dataTextField.text! + " " + foodTextFieldOutlet.text! + " " + quantityTextFieldOutlet.text! + quantityUnitString
+        let tempResult = categoryTypeString + " : " + dataTextField.text! + " " + foodTextFieldOutlet.text! + " " + quantityTextFieldOutlet.text! + quantityUnitString
         if var data:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
             data.insert(tempResult, at: 0)
             UserDefaults.standard.set(data, forKey: "breastfeed")

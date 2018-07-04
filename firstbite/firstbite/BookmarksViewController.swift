@@ -9,7 +9,7 @@
 import UIKit
 
 class BookmarksViewController: UITableViewController {
- let myarray = ["apple", "banana", "cantaloupe"]
+ let myarray = ["Bookmark 1", "Bookmark 2", "Bookmark 3"]
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,12 @@ class BookmarksViewController: UITableViewController {
         cell.textLabel?.text = myarray[indexPath.row]
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "solidfood") as UIViewController
+        
+        self.present(viewController, animated: false, completion: nil)
     }
 }
 
