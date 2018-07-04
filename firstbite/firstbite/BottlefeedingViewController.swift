@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Functionality: used to log breastfeeding into the Food Diary logs
 class BottlefeedingViewController: UIViewController {
     
     @IBOutlet weak var dataTextField: UITextField!
@@ -28,6 +29,7 @@ class BottlefeedingViewController: UIViewController {
         changeTextFieldToDate(dataTextField)
     }
     
+    // Functionality: used to allow the user to pick a date upon pressing the text field 
     func changeTextFieldToDate(_ sender: UITextField) {
         let datePickerView:UIDatePicker = UIDatePicker()
         
@@ -53,6 +55,7 @@ class BottlefeedingViewController: UIViewController {
         amountTextFieldOutlet.text = "\(Int(sender.value))"
     }
     
+    // Functionality: saves the data to the history log upon press
     @objc func saveData() {
 //        let date:Date = datePickerOutlet.date
 //        let formatter:DateFormatter = DateFormatter()
@@ -69,6 +72,7 @@ class BottlefeedingViewController: UIViewController {
         }
         showAlert()
     }
+    
     
     func showAlert() {
         let alert:UIAlertController = UIAlertController(title: "Saved Successfully", message: "You can continue adding data here. \nPlease go to Log tab to view saved data", preferredStyle: .alert)
