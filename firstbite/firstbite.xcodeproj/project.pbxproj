@@ -11,7 +11,6 @@
 		D8C3A7E220EC687C005BABCC /* NewEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C3A7DB20EC687B005BABCC /* NewEntryViewController.swift */; };
 		D8C3A7E320EC687C005BABCC /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C3A7DC20EC687C005BABCC /* OtherViewController.swift */; };
 		D8C3A7E420EC687C005BABCC /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = D8C3A7DD20EC687C005BABCC /* Base.lproj */; };
-		D8C3A7E520EC687C005BABCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C3A7DE20EC687C005BABCC /* Assets.xcassets */; };
 		D8C3A7E620EC687C005BABCC /* BottlefeedingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C3A7DF20EC687C005BABCC /* BottlefeedingViewController.swift */; };
 		D8C3A7E720EC687C005BABCC /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C3A7E020EC687C005BABCC /* LogViewController.swift */; };
 		D8EEC60820E727F200C1E623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EEC60720E727F200C1E623 /* AppDelegate.swift */; };
@@ -29,7 +28,6 @@
 		D8C3A7DB20EC687B005BABCC /* NewEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEntryViewController.swift; sourceTree = "<group>"; };
 		D8C3A7DC20EC687C005BABCC /* OtherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
 		D8C3A7DD20EC687C005BABCC /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
-		D8C3A7DE20EC687C005BABCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8C3A7DF20EC687C005BABCC /* BottlefeedingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottlefeedingViewController.swift; sourceTree = "<group>"; };
 		D8C3A7E020EC687C005BABCC /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		D8EEC60420E727F200C1E623 /* firstbite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firstbite.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,7 +72,6 @@
 		D8EEC60620E727F200C1E623 /* firstbite */ = {
 			isa = PBXGroup;
 			children = (
-				D8C3A7DE20EC687C005BABCC /* Assets.xcassets */,
 				D8C3A7DD20EC687C005BABCC /* Base.lproj */,
 				D8C3A7DF20EC687C005BABCC /* BottlefeedingViewController.swift */,
 				D8C3A7DA20EC687B005BABCC /* BreastfeedingViewController.swift */,
@@ -157,7 +154,6 @@
 				D8EEC61120E727F200C1E623 /* Assets.xcassets in Resources */,
 				D8C3A7E420EC687C005BABCC /* Base.lproj in Resources */,
 				D8EEC60F20E727F200C1E623 /* Main.storyboard in Resources */,
-				D8C3A7E520EC687C005BABCC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
