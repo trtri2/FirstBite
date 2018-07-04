@@ -17,6 +17,7 @@ class BreastfeedingViewController: UIViewController {
     var timer = Timer()
     //var data:[String] = []
     
+    @IBOutlet weak var dataTextField: UITextField!
     @IBOutlet weak var verifystr: UILabel!
     @IBOutlet weak var leftTimer: UILabel!
     @IBOutlet weak var rightTimer: UILabel!
@@ -29,6 +30,26 @@ class BreastfeedingViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveData))
         self.navigationItem.rightBarButtonItem = saveButton
+        
+        //adding datepicker at bottom
+        changeTextFieldToDate(dataTextField)
+    }
+    
+    func changeTextFieldToDate(_ sender: UITextField) {
+        let datePickerView:UIDatePicker = UIDatePicker()
+        
+        datePickerView.datePickerMode = UIDatePickerMode.date
+        
+        sender.inputView = datePickerView
+        
+        datePickerView.addTarget(self, action: #selector(BottlefeedingViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
+    }
+    
+    @objc func datePickerValueChanged(sender:UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        dateFormatter.timeStyle = DateFormatter.Style.none
+        dataTextField.text = dateFormatter.string(from: sender.date)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -13,6 +13,7 @@
 		D8C3A7E420EC687C005BABCC /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = D8C3A7DD20EC687C005BABCC /* Base.lproj */; };
 		D8C3A7E620EC687C005BABCC /* BottlefeedingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C3A7DF20EC687C005BABCC /* BottlefeedingViewController.swift */; };
 		D8C3A7E720EC687C005BABCC /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C3A7E020EC687C005BABCC /* LogViewController.swift */; };
+		D8C3A7E920EC85AF005BABCC /* SupplementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C3A7E820EC85AF005BABCC /* SupplementViewController.swift */; };
 		D8EEC60820E727F200C1E623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EEC60720E727F200C1E623 /* AppDelegate.swift */; };
 		D8EEC60A20E727F200C1E623 /* HealthGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EEC60920E727F200C1E623 /* HealthGuide.swift */; };
 		D8EEC60C20E727F200C1E623 /* TrackLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EEC60B20E727F200C1E623 /* TrackLog.swift */; };
@@ -30,6 +31,7 @@
 		D8C3A7DD20EC687C005BABCC /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
 		D8C3A7DF20EC687C005BABCC /* BottlefeedingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottlefeedingViewController.swift; sourceTree = "<group>"; };
 		D8C3A7E020EC687C005BABCC /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		D8C3A7E820EC85AF005BABCC /* SupplementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupplementViewController.swift; sourceTree = "<group>"; };
 		D8EEC60420E727F200C1E623 /* firstbite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firstbite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8EEC60720E727F200C1E623 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8EEC60920E727F200C1E623 /* HealthGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthGuide.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				D8C3A7DF20EC687C005BABCC /* BottlefeedingViewController.swift */,
 				D8C3A7DA20EC687B005BABCC /* BreastfeedingViewController.swift */,
 				D8C3A7E020EC687C005BABCC /* LogViewController.swift */,
+				D8C3A7E820EC85AF005BABCC /* SupplementViewController.swift */,
 				D8C3A7DB20EC687B005BABCC /* NewEntryViewController.swift */,
 				D8C3A7DC20EC687C005BABCC /* OtherViewController.swift */,
 				D8EEC60720E727F200C1E623 /* AppDelegate.swift */,
@@ -169,6 +172,7 @@
 				D8EEC64020E7395800C1E623 /* NewLog.swift in Sources */,
 				D8EEC60C20E727F200C1E623 /* TrackLog.swift in Sources */,
 				D8EEC60820E727F200C1E623 /* AppDelegate.swift in Sources */,
+				D8C3A7E920EC85AF005BABCC /* SupplementViewController.swift in Sources */,
 				D8C3A7E620EC687C005BABCC /* BottlefeedingViewController.swift in Sources */,
 				D8EEC60A20E727F200C1E623 /* HealthGuide.swift in Sources */,
 				D8C3A7E320EC687C005BABCC /* OtherViewController.swift in Sources */,
