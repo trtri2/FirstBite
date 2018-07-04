@@ -55,21 +55,6 @@
             </objects>
             <point key="canvasLocation" x="712.79999999999995" y="-1061.0194902548726"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="FgD-gB-884">
-            <objects>
-                <viewController id="hf1-yU-nKf" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="w37-lX-n9e">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="UZ2-hH-ZNP"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Iha-4C-ApA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1799" y="-309"/>
-        </scene>
         <!--Solid Foods and Liquids-->
         <scene sceneID="bwR-iJ-xE5">
             <objects>
@@ -78,13 +63,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="CAu-cc-pMb">
-                                <rect key="frame" x="0.0" y="105" width="375" height="122"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="552262284.02521598">
-                                    <!--2018-07-02 22:11:24 +0000-->
-                                </date>
-                            </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quantity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEE-C4-e3l">
                                 <rect key="frame" x="11" y="442" width="106" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -103,8 +81,8 @@
                                 <rect key="frame" x="16" y="271" width="343" height="163"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="yRS-e9-GIe" id="C7N-rC-EeD"/>
-                                    <outlet property="delegate" destination="yRS-e9-GIe" id="Uxa-g6-Dx7"/>
+                                    <outlet property="dataSource" destination="yRS-e9-GIe" id="Ddg-Wf-x9k"/>
+                                    <outlet property="delegate" destination="yRS-e9-GIe" id="zoE-Ok-MWJ"/>
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date and Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7a-so-Ye0">
@@ -124,6 +102,10 @@
                             <pickerView tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="axg-eV-3el">
                                 <rect key="frame" x="295" y="445" width="69" height="37"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="yRS-e9-GIe" id="h0p-ru-ohc"/>
+                                    <outlet property="delegate" destination="yRS-e9-GIe" id="ree-YP-lKp"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Food Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLA-uz-n0p">
                                 <rect key="frame" x="11" y="221" width="106" height="42"/>
@@ -132,12 +114,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cZ1-dp-dvh">
+                                <rect key="frame" x="11" y="124" width="339" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ECi-bo-EQ8"/>
                     </view>
                     <connections>
-                        <outlet property="datePickerOutlet" destination="CAu-cc-pMb" id="MG6-Kh-YUl"/>
+                        <outlet property="categoryPickerOutlet" destination="ZpN-g9-Qku" id="DLP-VB-Z2t"/>
+                        <outlet property="dataTextField" destination="cZ1-dp-dvh" id="TtP-il-fAq"/>
                         <outlet property="foodTextFieldOutlet" destination="JF0-1U-dFd" id="6yX-xn-ysf"/>
                         <outlet property="quantityPickerOutlet" destination="axg-eV-3el" id="Xe6-3P-c6C"/>
                         <outlet property="quantityTextFieldOutlet" destination="86X-Jv-oLh" id="9Op-kn-lOS"/>
@@ -302,13 +292,6 @@
                                     <action selector="RButton:" destination="bry-B2-AxR" eventType="touchUpInside" id="KkJ-zo-6gr"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="verifystr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SE9-SF-rj3">
-                                <rect key="frame" x="18" y="564" width="341" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Es-Bp-dWf">
                                 <rect key="frame" x="16" y="130" width="338" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -333,7 +316,6 @@
                         <outlet property="leftTimer" destination="Yk7-oy-a2d" id="D7b-e6-q7o"/>
                         <outlet property="rightBtnOutlet" destination="Zev-dM-XUB" id="LWc-bK-njN"/>
                         <outlet property="rightTimer" destination="Hd3-q6-byA" id="zkl-0k-G0R"/>
-                        <outlet property="verifystr" destination="SE9-SF-rj3" id="fH4-hv-pgf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pjE-UX-Aff" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -352,11 +334,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="d0H-sx-OML">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="90" id="d0H-sx-OML">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d0H-sx-OML" id="hgE-cm-zqV">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>

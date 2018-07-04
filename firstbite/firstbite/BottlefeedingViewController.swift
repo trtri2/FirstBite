@@ -31,7 +31,7 @@ class BottlefeedingViewController: UIViewController {
     func changeTextFieldToDate(_ sender: UITextField) {
         let datePickerView:UIDatePicker = UIDatePicker()
         
-        datePickerView.datePickerMode = UIDatePickerMode.date
+        datePickerView.datePickerMode = UIDatePickerMode.dateAndTime
         
         sender.inputView = datePickerView
         
@@ -40,8 +40,8 @@ class BottlefeedingViewController: UIViewController {
     
     @objc func datePickerValueChanged(sender:UIDatePicker) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.medium
-        dateFormatter.timeStyle = DateFormatter.Style.none
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.timeStyle = DateFormatter.Style.short
         dataTextField.text = dateFormatter.string(from: sender.date)
     }
     

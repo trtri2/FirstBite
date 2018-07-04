@@ -18,12 +18,10 @@ class BreastfeedingViewController: UIViewController {
     //var data:[String] = []
     
     @IBOutlet weak var dataTextField: UITextField!
-    @IBOutlet weak var verifystr: UILabel!
     @IBOutlet weak var leftTimer: UILabel!
     @IBOutlet weak var rightTimer: UILabel!
     @IBOutlet weak var leftBtnOutlet: UIButton!
     @IBOutlet weak var rightBtnOutlet: UIButton!
-    @IBOutlet weak var datePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +36,7 @@ class BreastfeedingViewController: UIViewController {
     func changeTextFieldToDate(_ sender: UITextField) {
         let datePickerView:UIDatePicker = UIDatePicker()
         
-        datePickerView.datePickerMode = UIDatePickerMode.date
+        datePickerView.datePickerMode = UIDatePickerMode.dateAndTime
         
         sender.inputView = datePickerView
         
@@ -47,8 +45,8 @@ class BreastfeedingViewController: UIViewController {
     
     @objc func datePickerValueChanged(sender:UIDatePicker) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.medium
-        dateFormatter.timeStyle = DateFormatter.Style.none
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.timeStyle = DateFormatter.Style.short
         dataTextField.text = dateFormatter.string(from: sender.date)
     }
     
@@ -112,18 +110,17 @@ class BreastfeedingViewController: UIViewController {
     }
     
     @objc func saveData() {
-        let date:Date = datePicker.date
-        let formatter:DateFormatter = DateFormatter()
-            formatter.dateFormat = "MMM dd, h:mm a"
-            dateTimeTemp = formatter.string(from: date)
-        verifystr.text = "Breastfeed: " + dateTimeTemp + " L " + (leftTimer.text)! + " R " + (rightTimer.text)!
-        let name:String = verifystr.text!
+//        let date:Date = datePicker.date
+//        let formatter:DateFormatter = DateFormatter()
+//            formatter.dateFormat = "MMM dd, h:mm a"
+//            dateTimeTemp = formatter.string(from: date)
+        let tempResult = "Breastfeed: " + dataTextField.text! + " L " + (leftTimer.text)! + " R " + (rightTimer.text)!
         if var data:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
-            data.insert(name, at: 0)
+            data.insert(tempResult, at: 0)
             UserDefaults.standard.set(data, forKey: "breastfeed")
         } else {
             var data:[String] = []
-            data.insert(name, at: 0)
+            data.insert(tempResult, at: 0)
             UserDefaults.standard.set(data, forKey: "breastfeed")
         }
         showAlert()
