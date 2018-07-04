@@ -2,9 +2,10 @@
 //  BreastfeedingViewController.swift
 //  homework3
 //
-//  Created by Healthy 7 Group on 2018-06-30.
+//  Created by Han Yang, Winston Ye, Jeff Wang, Kelvin Lee on 2018-06-30.
 //  Copyright © 2018 Healthy 7 Group. All rights reserved.
 //
+// bug fix on 2018-07-04, date now shows up after second press
 
 import UIKit
 
