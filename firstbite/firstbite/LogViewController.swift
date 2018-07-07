@@ -2,12 +2,14 @@
 //  LogViewController.swift
 //  homework3
 //
-//  Created by Healthy 7 Group on 2018-06-30.
+//  Created by Han Yang on 2018-06-30.
 //  Copyright © 2018 Healthy 7 Group. All rights reserved.
 //
+//  bug fixed on 2018-07-03: now allows us to delete without trouble, previously couldn't
 
 import UIKit
 
+// Functionality: the history log interface that will be used for all new logs
 class LogViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var logTable: UITableView!
@@ -18,7 +20,7 @@ class LogViewController: UIViewController, UITableViewDataSource {
         // Do any additional setup after loading the view, typically from a nib.
         logTable.dataSource = self
         self.title = "History Log"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+   self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.rightBarButtonItem = editButtonItem
     }
     
@@ -33,6 +35,7 @@ class LogViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         cell.textLabel?.text = data[indexPath.row]
+        
         return cell
     }
     

@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Functionality: used to add solid/liquid foods to the history log
 class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     // pickers
@@ -20,7 +21,7 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var foodTextFieldOutlet: UITextField!
     @IBOutlet weak var quantityTextFieldOutlet: UITextField!
     
-    let categoryArray:[String] = ["Vegetables and Fruits", "Grain Products", "Milk and Alternatives", "Meat and Alternatives"]
+    let categoryArray:[String] = ["Vege/Fruit", "Grain", "Milk/Alt", "Meat/Alt"]
     let unitsArray:[String] = ["g", "mL", "oz"]
     
     var foodNameString: String = ""
@@ -42,6 +43,7 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
         categoryPickerOutlet.dataSource = self
     }
     
+    // Functionality: allows user to pick a date for the date picker upon pressing the text field
     func changeTextFieldToDate(_ sender: UITextField) {
         let datePickerView:UIDatePicker = UIDatePicker()
         
@@ -100,7 +102,7 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
 //        formatter.dateFormat = "MMM dd, h:mm a"
 //        let dateTimeTemp = formatter.string(from: date)
         //
-        let tempResult = categoryTypeString + ":" + dataTextField.text! + " " + foodTextFieldOutlet.text! + " " + quantityTextFieldOutlet.text! + quantityUnitString
+        let tempResult = categoryTypeString + " : " + dataTextField.text! + " " + foodTextFieldOutlet.text! + " " + quantityTextFieldOutlet.text! + quantityUnitString
         if var data:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
             data.insert(tempResult, at: 0)
             UserDefaults.standard.set(data, forKey: "breastfeed")
