@@ -56,9 +56,11 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     @objc func datePickerValueChanged(sender:UIDatePicker) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.short
-        dateFormatter.timeStyle = DateFormatter.Style.short
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         dataTextField.text = dateFormatter.string(from: sender.date)
+//        dateFormatter.dateStyle = DateFormatter.Style.short
+//        dateFormatter.timeStyle = DateFormatter.Style.short
+//        dataTextField.text = dateFormatter.string(from: sender.date)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -102,7 +104,7 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
 //        formatter.dateFormat = "MMM dd, h:mm a"
 //        let dateTimeTemp = formatter.string(from: date)
         //
-        let tempResult = categoryTypeString + " : " + dataTextField.text! + " " + foodTextFieldOutlet.text! + " " + quantityTextFieldOutlet.text! + quantityUnitString
+        let tempResult = dataTextField.text! + " " + categoryTypeString + " : " + foodTextFieldOutlet.text! + " " + quantityTextFieldOutlet.text! + quantityUnitString
         if var data:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
             data.insert(tempResult, at: 0)
             UserDefaults.standard.set(data, forKey: "breastfeed")

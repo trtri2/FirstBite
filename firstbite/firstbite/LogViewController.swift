@@ -52,7 +52,7 @@ class LogViewController: UIViewController, UITableViewDataSource {
     
     func load() {
         if let loadedData:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
-            data = loadedData
+            data = loadedData.sorted()
             logTable.reloadData()
         }
     }

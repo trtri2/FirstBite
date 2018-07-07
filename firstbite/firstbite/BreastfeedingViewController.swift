@@ -47,8 +47,7 @@ class BreastfeedingViewController: UIViewController {
     
     @objc func datePickerValueChanged(sender:UIDatePicker) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.short
-        dateFormatter.timeStyle = DateFormatter.Style.short
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         dataTextField.text = dateFormatter.string(from: sender.date)
     }
     
@@ -120,7 +119,7 @@ class BreastfeedingViewController: UIViewController {
 //        let formatter:DateFormatter = DateFormatter()
 //            formatter.dateFormat = "MMM dd, h:mm a"
 //            dateTimeTemp = formatter.string(from: date)
-        let tempResult = "Breastfeed: " + dataTextField.text! + " L " + (leftTimer.text)! + " R " + (rightTimer.text)!
+        let tempResult = dataTextField.text! + " Breastfeed: " + "L " + (leftTimer.text)! + " R " + (rightTimer.text)!
         if var data:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
             data.insert(tempResult, at: 0)
             UserDefaults.standard.set(data, forKey: "breastfeed")
