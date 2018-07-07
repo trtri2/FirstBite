@@ -49,6 +49,9 @@ class BreastfeedingViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         dataTextField.text = dateFormatter.string(from: sender.date)
+        //        dateFormatter.dateStyle = DateFormatter.Style.short
+        //        dateFormatter.timeStyle = DateFormatter.Style.short
+        //        dataTextField.text = dateFormatter.string(from: sender.date)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
