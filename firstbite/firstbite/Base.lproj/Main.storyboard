@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -655,7 +655,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oda-SC-DLz">
                                                 <rect key="frame" x="8" y="121" width="359" height="796"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <mutableString key="text">The World Health Organization, Health Canada, Dietitians of Canada, the Canadian Paediatric
+                                                <string key="text">The World Health Organization, Health Canada, Dietitians of Canada, the Canadian Paediatric
 Society and the Breastfeeding Committee of Canada recommend that when your toddler is six months old, you keep breastfeeding but also offer solid foods.
 
 You will know she is ready for solid food when she:
@@ -670,7 +670,7 @@ Place a spoonful of meat or iron-fortified infant cereal close to his lips. Give
 You can expect that most of the rst solid food you offer will end up on his bib, face and high-chair tray.
 
 This is normal – you are getting him used to eating solid foods.
-</mutableString>
+</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -877,7 +877,7 @@ This is normal – you are getting him used to eating solid foods.
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEr-eL-hGJ">
                                                 <rect key="frame" x="8" y="74" width="359" height="713"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <mutableString key="text">The best “first foods” are meat or an infant cereal that is iron-forti ed. Rice cereal is an example of an iron-forti ed cereal. (For more information on how to prepare meat, see “Getting Started With Meat” on p. 55.) To make sure your toddler is getting enough iron, offer iron-rich foods at least twice a day.
+                                                <string key="text">The best “first foods” are meat or an infant cereal that is iron-forti ed. Rice cereal is an example of an iron-forti ed cereal. (For more information on how to prepare meat, see “Getting Started With Meat” on p. 55.) To make sure your toddler is getting enough iron, offer iron-rich foods at least twice a day.
 
 Iron-rich Foods
 Iron-rich foods include:
@@ -891,7 +891,7 @@ For more information about iron, see HealthLinkBC Files p. 163 in the Resources 
 
 Gagging
 When toddlers try foods with more texture, they sometimes gag. This is a normal part of learning to eat. A toddler’s gag re ex is very sensitive – and very effective in preventing choking. Gagging is normal and healthy; your toddler is learning how to eat without choking. If he gags, don’t panic because it could startle him and make him afraid to try new foods. Stay calm and reassure him.
-</mutableString>
+</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1091,7 +1091,7 @@ When toddlers try foods with more texture, they sometimes gag. This is a normal 
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDO-bs-OVC">
                                                 <rect key="frame" x="8" y="74" width="359" height="509"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <mutableString key="text">Mix water, mashed vegetables or gravy with meat to make sure that it is moist enough for your toddler to chew. Shredding or grinding the meat into very small pieces also helps make it easy to chew.
+                                                <string key="text">Mix water, mashed vegetables or gravy with meat to make sure that it is moist enough for your toddler to chew. Shredding or grinding the meat into very small pieces also helps make it easy to chew.
 Ground meat is easier to chew. You can use it in casseroles, meat loaf or patties. If you are serving chicken, you can mince some of the dark meat, which is moister than the white meat. Fish is another good choice because it is tender and easy to chew.
 To reduce the risk for food poisoning, cook meat well. When you cut into well-cooked meat or poultry, the juices should be clear, with no traces of pink.
 Meat, sh and poultry are well cooked when they reach the following safe temperatures. Use a thermometer to check the temperature.
@@ -1100,7 +1100,7 @@ Ground beef: 71oC (160oF)
 Poultry (chicken, turkey): 74oC (165oF)
 Pork: 71oC (160oF)
 Or, safe and easy to remember: cook all meats to 74oC (165oF).
-</mutableString>
+</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1167,7 +1167,7 @@ Or, safe and easy to remember: cook all meats to 74oC (165oF).
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="763" id="50O-tI-ymc"/>
                                                 </constraints>
-                                                <mutableString key="text">Typical Eating Skills of Toddlers From 6 – 9 Months
+                                                <string key="text">Typical Eating Skills of Toddlers From 6 – 9 Months
 Picks up food with ngers or palms and puts in mouth.
 Bites off food.
 Closes lips around a cup held by an adult.
@@ -1185,7 +1185,7 @@ Foods such as peanuts, tree nuts, egg, milk, wheat, soy, sesame and seafood can 
 Feed solids with a spoon; do not put solid foods in a bottle.
 You can use a fork to mash soft, cooked foods and use that instead of store-bought puréed baby food.
 Give your toddler lots of chances to feed herself – she can use the practice.
-</mutableString>
+</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1260,7 +1260,7 @@ Give your toddler lots of chances to feed herself – she can use the practice.
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="672" id="Cpi-tT-yNa"/>
                                                 </constraints>
-                                                <mutableString key="text">Typical Eating Skills of Toddlers from 9 – 12 Months
+                                                <string key="text">Typical Eating Skills of Toddlers from 9 – 12 Months
 Chews up and down.
 Uses thumb and finger to pick up small pieces of food.
 Holds a cup in two hands.
@@ -1277,7 +1277,7 @@ This is a great age to increase the variety of flavours offered.
 Offer water in a cup to quench thirst and help her learn to drink from a cup.
 To keep her safe, be aware of choking hazards. (See p. 70.)
 Wait until after 12 months to offer honey.
-</mutableString>
+</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1352,7 +1352,7 @@ Wait until after 12 months to offer honey.
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="763" id="C0T-3Y-Ewn"/>
                                                 </constraints>
-                                                <mutableString key="text">Typical Eating Skills of Toddlers from 12 – 24 Months
+                                                <string key="text">Typical Eating Skills of Toddlers from 12 – 24 Months
 Feeds himself with fingers or spoon, but is messy.
 Sometimes eats very little, other times eats a lot.
 Puts food in mouth and takes it out again.
@@ -1366,7 +1366,7 @@ Include your toddler in regular family meals and snacks. This helps support heal
 Be aware of choking hazards. (See p. 70.)
 Water is the healthiest drink to offer between meals and snacks.
 Limit foods high in salt, sugar and ca eine (chips, chocolate, candy, pop).
-</mutableString>
+</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
