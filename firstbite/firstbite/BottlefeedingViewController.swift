@@ -13,8 +13,6 @@ class BottlefeedingViewController: UIViewController {
     
     @IBOutlet weak var dataTextField: UITextField!
     
-    @IBOutlet weak var datePickerOutlet: UIDatePicker!
-    
     @IBOutlet weak var formulaTextFieldOutlet: UITextField!
     
     @IBOutlet weak var amountTextFieldOutlet: UITextField!
@@ -24,13 +22,11 @@ class BottlefeedingViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveData))
         self.navigationItem.rightBarButtonItem = saveButton
-        
-        //adding datepicker at bottom
-        changeTextFieldToDate(dataTextField)
+    
     }
     
     // Functionality: used to allow the user to pick a date upon pressing the text field 
-    func changeTextFieldToDate(_ sender: UITextField) {
+    @IBAction func changeTextFieldToDate(_ sender: UITextField) {
         let datePickerView:UIDatePicker = UIDatePicker()
         
         datePickerView.datePickerMode = UIDatePickerMode.dateAndTime

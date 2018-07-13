@@ -34,7 +34,6 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
         // Do any additional setup after loading the view, typically from a nib.
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveData))
         self.navigationItem.rightBarButtonItem = saveButton
-        changeTextFieldToDate(dataTextField)
         
         quantityPickerOutlet.delegate = self
         categoryPickerOutlet.delegate = self
@@ -44,7 +43,7 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     // Functionality: allows user to pick a date for the date picker upon pressing the text field
-    func changeTextFieldToDate(_ sender: UITextField) {
+    @IBAction func changeTextFieldToDate(_ sender: UITextField) {
         let datePickerView:UIDatePicker = UIDatePicker()
         
         datePickerView.datePickerMode = UIDatePickerMode.dateAndTime

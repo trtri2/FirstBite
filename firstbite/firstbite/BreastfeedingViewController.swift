@@ -8,6 +8,7 @@
 // bug fix on 2018-07-04, date now shows up after second press
 
 import UIKit
+import FirebaseFirestore
 
 // Functionality: used to allow the user to input breastfeeding to the history log
 class BreastfeedingViewController: UIViewController {
@@ -25,23 +26,22 @@ class BreastfeedingViewController: UIViewController {
     @IBOutlet weak var leftBtnOutlet: UIButton!
     @IBOutlet weak var rightBtnOutlet: UIButton!
     
+    var fstore: Firestore!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveData))
         self.navigationItem.rightBarButtonItem = saveButton
         
-        //adding datepicker at bottom
-        changeTextFieldToDate(dataTextField)
+        fstore = Firestore.firestore()
+        
     }
     
-    func changeTextFieldToDate(_ sender: UITextField) {
+    @IBAction func changeTextFieldToDate(_ sender: UITextField) {
         let datePickerView:UIDatePicker = UIDatePicker()
-        
         datePickerView.datePickerMode = UIDatePickerMode.dateAndTime
-        
         sender.inputView = datePickerView
-        
         datePickerView.addTarget(self, action: #selector(BottlefeedingViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
     }
     
