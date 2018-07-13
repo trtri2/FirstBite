@@ -42,9 +42,11 @@ class BottlefeedingViewController: UIViewController {
     
     @objc func datePickerValueChanged(sender:UIDatePicker) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.short
-        dateFormatter.timeStyle = DateFormatter.Style.short
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         dataTextField.text = dateFormatter.string(from: sender.date)
+//        dateFormatter.dateStyle = DateFormatter.Style.short
+//        dateFormatter.timeStyle = DateFormatter.Style.short
+//        dataTextField.text = dateFormatter.string(from: sender.date)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -61,7 +63,7 @@ class BottlefeedingViewController: UIViewController {
 //        let formatter:DateFormatter = DateFormatter()
 //        formatter.dateFormat = "MMM dd, h:mm a"
 //        let dateTimeTemp = formatter.string(from: date)
-        let tempResult = "Bottlefeed: " + dataTextField.text! + " " + formulaTextFieldOutlet.text! + " " + amountTextFieldOutlet.text! + " ml"
+        let tempResult = dataTextField.text! + " Bottlefeed: " + formulaTextFieldOutlet.text! + " " + amountTextFieldOutlet.text! + " ml"
         if var data:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
             data.insert(tempResult, at: 0)
             UserDefaults.standard.set(data, forKey: "breastfeed")
