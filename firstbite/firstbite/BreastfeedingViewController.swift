@@ -27,6 +27,7 @@ class BreastfeedingViewController: UIViewController {
     @IBOutlet weak var rightBtnOutlet: UIButton!
     
     var fstore: Firestore!
+    //var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +35,9 @@ class BreastfeedingViewController: UIViewController {
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveData))
         self.navigationItem.rightBarButtonItem = saveButton
         
+        //Initiate FireStore Object
         fstore = Firestore.firestore()
-        
+        //ref = Database.database().reference()
     }
     
     @IBAction func changeTextFieldToDate(_ sender: UITextField) {
@@ -118,19 +120,19 @@ class BreastfeedingViewController: UIViewController {
     
     // Functionality: saves data
     @objc func saveData() {
-//        let date:Date = datePicker.date
-//        let formatter:DateFormatter = DateFormatter()
-//            formatter.dateFormat = "MMM dd, h:mm a"
-//            dateTimeTemp = formatter.string(from: date)
-        let tempResult = dataTextField.text! + " Breastfeed: " + "L " + (leftTimer.text)! + " R " + (rightTimer.text)!
-        if var data:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
-            data.insert(tempResult, at: 0)
-            UserDefaults.standard.set(data, forKey: "breastfeed")
-        } else {
-            var data:[String] = []
-            data.insert(tempResult, at: 0)
-            UserDefaults.standard.set(data, forKey: "breastfeed")
-        }
+        fstore.collection("Log").addDocument(data: ["datetime":dataTextField.text!,"Activity":"Breastfeed","Left Timer":leftTimer.text!,"Right Timer":rightTimer.text!])
+        
+        //ref.child("Log").childByAutoId().setValue(["datetime":dataTextField.text!,"Activity":"Breastfeed","Left Timer":leftTimer.text!,"Right Timer":rightTimer.text!])
+        
+//        let tempResult = dataTextField.text! + " Breastfeed: " + "L " + (leftTimer.text)! + " R " + (rightTimer.text)!
+//        if var data:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
+//            data.insert(tempResult, at: 0)
+//            UserDefaults.standard.set(data, forKey: "breastfeed")
+//        } else {
+//            var data:[String] = []
+//            data.insert(tempResult, at: 0)
+//            UserDefaults.standard.set(data, forKey: "breastfeed")
+//        }
         showAlert()
     }
     
