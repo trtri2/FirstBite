@@ -20,7 +20,7 @@ class BreastfeedingViewController: UIViewController {
     var timer = Timer()
     //var data:[String] = []
     
-    @IBOutlet weak var dataTextField: UITextField!
+    @IBOutlet weak var dataTextField: UITextField! //date
     @IBOutlet weak var leftTimer: UILabel!
     @IBOutlet weak var rightTimer: UILabel!
     @IBOutlet weak var leftBtnOutlet: UIButton!
@@ -134,6 +134,12 @@ class BreastfeedingViewController: UIViewController {
 //            UserDefaults.standard.set(data, forKey: "breastfeed")
 //        }
         showAlert()
+        
+//        fstore.collection("Log").getDocuments(completion: {(snapshot, error) in
+//            for doc in (snapshot?.documents)!{
+//                print(doc.data()["datetime"] as! String)
+//            }
+//        })
     }
     
     func showAlert() {

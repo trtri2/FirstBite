@@ -8,12 +8,16 @@
 //  bug fixed on 2018-07-03: now allows us to delete without trouble, previously couldn't
 
 import UIKit
+import FirebaseFirestore
 
 // Functionality: the history log interface that will be used for all new logs
 class LogViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var logTable: UITableView!
     var data:[String] = []
+    
+    //Create Firestore variable
+    var fstore: Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +26,14 @@ class LogViewController: UIViewController, UITableViewDataSource {
         self.title = "History Log"
    self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.rightBarButtonItem = editButtonItem
+        
+        //initiate Firestore
+        fstore = Firestore.firestore()
+        load()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         load()
     }
     
@@ -47,14 +56,21 @@ class LogViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         data.remove(at: indexPath.row)
         logTable.deleteRows(at: [indexPath], with: .fade)
-        UserDefaults.standard.set(data, forKey: "breastfeed")
+        //UserDefaults.standard.set(data, forKey: "breastfeed")
     }
     
     func load() {
-        if let loadedData:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
-            data = loadedData.sorted()
-            logTable.reloadData()
-        }
+        //if let loadedData:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
+        var loadedData:[String] = []
+        fstore.collection("Log").getDocuments(completion: {(snapshot, error) in
+            for doc in (snapshot?.documents)! {
+                loadedData.insert(doc.data()["datetime"] as! String, at: 0)
+            }
+            self.data = loadedData.sorted()
+            //self.logTable.reloadData()
+        })
+//        data = loadedData.sorted()
+        logTable.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
