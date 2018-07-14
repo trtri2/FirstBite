@@ -11,7 +11,7 @@ import UIKit
 import FirebaseFirestore
 
 // Functionality: the history log interface that will be used for all new logs
-class LogViewController: UIViewController, UITableViewDataSource {
+class LogViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var logTable: UITableView!
     var data:[String] = []
@@ -23,6 +23,7 @@ class LogViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         logTable.dataSource = self
+        logTable.delegate = self
         self.title = "History Log"
    self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.rightBarButtonItem = editButtonItem
@@ -46,6 +47,10 @@ class LogViewController: UIViewController, UITableViewDataSource {
         cell.textLabel?.text = data[indexPath.row]
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\(data[indexPath.row])")
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {

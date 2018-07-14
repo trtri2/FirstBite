@@ -19,6 +19,7 @@ class BreastfeedingViewController: UIViewController {
     var counterR = 0
     var timer = Timer()
     //var data:[String] = []
+    let dateFormatter = DateFormatter()
     
     @IBOutlet weak var dataTextField: UITextField! //date
     @IBOutlet weak var leftTimer: UILabel!
@@ -35,6 +36,9 @@ class BreastfeedingViewController: UIViewController {
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveData))
         self.navigationItem.rightBarButtonItem = saveButton
         
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        dataTextField.text = dateFormatter.string(from: Date())
+        
         //Initiate FireStore Object
         fstore = Firestore.firestore()
         //ref = Database.database().reference()
@@ -48,8 +52,6 @@ class BreastfeedingViewController: UIViewController {
     }
     
     @objc func datePickerValueChanged(sender:UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         dataTextField.text = dateFormatter.string(from: sender.date)
         //        dateFormatter.dateStyle = DateFormatter.Style.short
         //        dateFormatter.timeStyle = DateFormatter.Style.short

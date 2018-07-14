@@ -29,11 +29,16 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var quantityString: String = ""
     var quantityUnitString: String = ""
     
+    let dateFormatter = DateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveData))
         self.navigationItem.rightBarButtonItem = saveButton
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        dataTextField.text = dateFormatter.string(from: Date())
         
         quantityPickerOutlet.delegate = self
         categoryPickerOutlet.delegate = self
@@ -54,8 +59,6 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     @objc func datePickerValueChanged(sender:UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         dataTextField.text = dateFormatter.string(from: sender.date)
 //        dateFormatter.dateStyle = DateFormatter.Style.short
 //        dateFormatter.timeStyle = DateFormatter.Style.short
