@@ -15,6 +15,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     @IBOutlet weak var logTable: UITableView!
     var data:[String] = []
+    var selectedRow:Int = -1
     
     //Create Firestore variable
     var fstore: Firestore!
@@ -25,7 +26,8 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         logTable.dataSource = self
         logTable.delegate = self
         self.title = "History Log"
-   self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.largeTitleDisplayMode = .always
         self.navigationItem.rightBarButtonItem = editButtonItem
         
         //initiate Firestore
@@ -50,8 +52,30 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(data[indexPath.row])")
+//        self.performSegue(withIdentifier: "logSegue", sender: nil)
+        selectedRow = logTable.indexPathForSelectedRow!.row
+        fstore.collection("Log").whereField("datetime", isEqualTo: data[selectedRow]).getDocuments(completion: {(snapshot, error) in
+                for doc in (snapshot?.documents)! {
+                    print(doc.data())
+                }
+        })
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let detailView:LogDetailViewController = segue.destination as! LogDetailViewController
+//        selectedRow = logTable.indexPathForSelectedRow!.row
+//
+//        var textArray: [String:Any] = [:];
+//        var textString: String = ""
+//
+//        fstore.collection("Log").whereField("datetime", isEqualTo: data[selectedRow]).getDocuments(completion: {(snapshot, error) in
+//            for doc in (snapshot?.documents)! {
+//                textArray = doc.data()
+//            }
+//            textString = textArray
+//        })
+//        detailView.setText(t: data[selectedRow])
+//    }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
