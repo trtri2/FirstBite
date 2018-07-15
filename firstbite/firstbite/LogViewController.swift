@@ -52,30 +52,35 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.performSegue(withIdentifier: "logSegue", sender: nil)
-        selectedRow = logTable.indexPathForSelectedRow!.row
-        fstore.collection("Log").whereField("datetime", isEqualTo: data[selectedRow]).getDocuments(completion: {(snapshot, error) in
-                for doc in (snapshot?.documents)! {
-                    print(doc.data())
-                }
-        })
+        self.performSegue(withIdentifier: "logSegue", sender: nil)
+//        selectedRow = logTable.indexPathForSelectedRow!.row
+//        fstore.collection("Log").whereField("datetime", isEqualTo: data[selectedRow]).getDocuments(completion: {(snapshot, error) in
+//                for doc in (snapshot?.documents)! {
+//                    print(doc.data())
+//                }
+//        })
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let detailView:LogDetailViewController = segue.destination as! LogDetailViewController
-//        selectedRow = logTable.indexPathForSelectedRow!.row
-//
-//        var textArray: [String:Any] = [:];
-//        var textString: String = ""
-//
-//        fstore.collection("Log").whereField("datetime", isEqualTo: data[selectedRow]).getDocuments(completion: {(snapshot, error) in
-//            for doc in (snapshot?.documents)! {
-//                textArray = doc.data()
-//            }
-//            textString = textArray
-//        })
-//        detailView.setText(t: data[selectedRow])
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailView:LogDetailViewController = segue.destination as! LogDetailViewController
+        
+        var DictArray: [String:String] = [:];
+        var textString: String = ""
+        
+        selectedRow = logTable.indexPathForSelectedRow!.row
+
+        fstore.collection("Log").whereField("datetime", isEqualTo: data[selectedRow]).getDocuments(completion: {(snapshot, error) in
+            for doc in (snapshot?.documents)! {
+                DictArray = doc.data() as! [String : String]
+            }
+            //var selectedArray = [String](DictArray.values)
+            //var numberInArry = DictArray.count
+            for (key, value) in DictArray {
+                textString += "\(key) : \(value)\n"
+            }
+            detailView.setText(t: textString)
+        })
+    }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
@@ -83,6 +88,11 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        fstore.collection("Log").whereField("datetime", isEqualTo: data[indexPath.row]).getDocuments(completion: {(snapshot, error) in
+            for doc in (snapshot?.documents)! {
+                doc.reference.delete()
+            }
+        })
         data.remove(at: indexPath.row)
         logTable.deleteRows(at: [indexPath], with: .fade)
         //UserDefaults.standard.set(data, forKey: "breastfeed")
@@ -96,7 +106,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 loadedData.insert(doc.data()["datetime"] as! String, at: 0)
             }
             self.data = loadedData.sorted()
-            //self.logTable.reloadData()
+//            self.logTable.reloadData()
         })
 //        data = loadedData.sorted()
         logTable.reloadData()
