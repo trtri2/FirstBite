@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 // Functionality: used to add solid/liquid foods to the history log
 class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -20,16 +21,19 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var dataTextField: UITextField! // date
     @IBOutlet weak var foodTextFieldOutlet: UITextField!
     @IBOutlet weak var quantityTextFieldOutlet: UITextField!
+    @IBOutlet weak var noteOutlet: UITextView!
     
     let categoryArray:[String] = ["Vege/Fruit", "Grain", "Milk/Alt", "Meat/Alt"]
     let unitsArray:[String] = ["g", "mL", "oz"]
     
     var foodNameString: String = ""
-    var categoryTypeString: String = ""
+    var categoryTypeString: String = "Vege/Fruit"
     var quantityString: String = ""
-    var quantityUnitString: String = ""
+    var quantityUnitString: String = "g"
     
     let dateFormatter = DateFormatter()
+    
+    var fstore: Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +49,8 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
         
         quantityPickerOutlet.dataSource = self
         categoryPickerOutlet.dataSource = self
+        
+        fstore = Firestore.firestore()
     }
     
     // Functionality: allows user to pick a date for the date picker upon pressing the text field
@@ -101,20 +107,22 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     @objc func saveData() {
+        fstore.collection("Log").addDocument(data: ["datetime":dataTextField.text!,"Activity":"Supplement","Food Name":foodTextFieldOutlet.text!,"Food Category":categoryTypeString,"Quantity":quantityTextFieldOutlet.text!,"Quantity Unit":quantityUnitString,"Notes":noteOutlet.text!])
+        
 //        let date:Date = datePickerOutlet.date
 //        let formatter:DateFormatter = DateFormatter()
 //        formatter.dateFormat = "MMM dd, h:mm a"
 //        let dateTimeTemp = formatter.string(from: date)
         //
-        let tempResult = dataTextField.text! + " " + categoryTypeString + " : " + foodTextFieldOutlet.text! + " " + quantityTextFieldOutlet.text! + quantityUnitString
-        if var data:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
-            data.insert(tempResult, at: 0)
-            UserDefaults.standard.set(data, forKey: "breastfeed")
-        } else {
-            var data:[String] = []
-            data.insert(tempResult, at: 0)
-            UserDefaults.standard.set(data, forKey: "breastfeed")
-        }
+//        let tempResult = dataTextField.text! + " " + categoryTypeString + " : " + foodTextFieldOutlet.text! + " " + quantityTextFieldOutlet.text! + quantityUnitString
+//        if var data:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
+//            data.insert(tempResult, at: 0)
+//            UserDefaults.standard.set(data, forKey: "breastfeed")
+//        } else {
+//            var data:[String] = []
+//            data.insert(tempResult, at: 0)
+//            UserDefaults.standard.set(data, forKey: "breastfeed")
+//        }
         showAlert()
     }
     

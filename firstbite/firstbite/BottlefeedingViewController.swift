@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 // Functionality: used to log bottlefeeding into the Food Diary logs
 class BottlefeedingViewController: UIViewController {
@@ -17,7 +18,11 @@ class BottlefeedingViewController: UIViewController {
     
     @IBOutlet weak var amountTextFieldOutlet: UITextField!
     
+    @IBOutlet weak var noteOutlet: UITextView!
+    
     let dateFormatter = DateFormatter()
+    
+    var fstore: Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +32,8 @@ class BottlefeedingViewController: UIViewController {
     
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         dataTextField.text = dateFormatter.string(from: Date())
+        
+        fstore = Firestore.firestore()
     }
     
     // Functionality: used to allow the user to pick a date upon pressing the text field 
@@ -57,19 +64,20 @@ class BottlefeedingViewController: UIViewController {
     
     // Functionality: saves the data to the history log upon press
     @objc func saveData() {
+        fstore.collection("Log").addDocument(data: ["datetime":dataTextField.text!,"Activity":"Bottlefeeding","Formula Name":formulaTextFieldOutlet.text!,"Formula Amount":amountTextFieldOutlet.text!,"Notes":noteOutlet.text!])
 //        let date:Date = datePickerOutlet.date
 //        let formatter:DateFormatter = DateFormatter()
 //        formatter.dateFormat = "MMM dd, h:mm a"
 //        let dateTimeTemp = formatter.string(from: date)
-        let tempResult = dataTextField.text! + " Bottlefeed: " + formulaTextFieldOutlet.text! + " " + amountTextFieldOutlet.text! + " ml"
-        if var data:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
-            data.insert(tempResult, at: 0)
-            UserDefaults.standard.set(data, forKey: "breastfeed")
-        } else {
-            var data:[String] = []
-            data.insert(tempResult, at: 0)
-            UserDefaults.standard.set(data, forKey: "breastfeed")
-        }
+//        let tempResult = dataTextField.text! + " Bottlefeed: " + formulaTextFieldOutlet.text! + " " + amountTextFieldOutlet.text! + " ml"
+//        if var data:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
+//            data.insert(tempResult, at: 0)
+//            UserDefaults.standard.set(data, forKey: "breastfeed")
+//        } else {
+//            var data:[String] = []
+//            data.insert(tempResult, at: 0)
+//            UserDefaults.standard.set(data, forKey: "breastfeed")
+//        }
         showAlert()
     }
     

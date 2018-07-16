@@ -1,6 +1,5 @@
 //
 //  BreastfeedingViewController.swift
-//  homework3
 //
 //  Created by Han Yang, Winston Ye, Jeff Wang, Kelvin Lee on 2018-06-30.
 //  Copyright © 2018 Healthy 7 Group. All rights reserved.
@@ -26,6 +25,7 @@ class BreastfeedingViewController: UIViewController {
     @IBOutlet weak var rightTimer: UILabel!
     @IBOutlet weak var leftBtnOutlet: UIButton!
     @IBOutlet weak var rightBtnOutlet: UIButton!
+    @IBOutlet weak var noteOutlet: UITextView!
     
     var fstore: Firestore!
     //var ref: DatabaseReference!
@@ -122,7 +122,7 @@ class BreastfeedingViewController: UIViewController {
     
     // Functionality: saves data
     @objc func saveData() {
-        fstore.collection("Log").addDocument(data: ["datetime":dataTextField.text!,"Activity":"Breastfeed","Left Timer":leftTimer.text!,"Right Timer":rightTimer.text!])
+        fstore.collection("Log").addDocument(data: ["datetime":dataTextField.text!,"Activity":"Breastfeeding","Left Timer":leftTimer.text!,"Right Timer":rightTimer.text!,"Notes":noteOutlet.text!])
         
         //ref.child("Log").childByAutoId().setValue(["datetime":dataTextField.text!,"Activity":"Breastfeed","Left Timer":leftTimer.text!,"Right Timer":rightTimer.text!])
         
