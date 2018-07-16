@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1061ED4920FC94C800B572D9 /* FormulaTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1061ED4820FC94C800B572D9 /* FormulaTestViewController.swift */; };
 		84B49AEA20EC78E4005F4F05 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49AE920EC78E4005F4F05 /* ArticleTableViewCell.swift */; };
 		84FA1D6920EC8523007A0E9E /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */; };
 		A435BFC120FAA64900695447 /* LogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A435BFC020FAA64900695447 /* LogDetailViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1061ED4820FC94C800B572D9 /* FormulaTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaTestViewController.swift; sourceTree = "<group>"; };
 		5E900B36522A62D7A5CE0240 /* Pods_firstbite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firstbite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		719EA596546FA1B68030F82F /* Pods-firstbite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firstbite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firstbite/Pods-firstbite.debug.xcconfig"; sourceTree = "<group>"; };
 		7C5232A82AACFF063FB9C37C /* Pods-firstbite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firstbite.release.xcconfig"; path = "Pods/Target Support Files/Pods-firstbite/Pods-firstbite.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				D8EEC63F20E7395800C1E623 /* NewLog.swift */,
 				84B49AE920EC78E4005F4F05 /* ArticleTableViewCell.swift */,
 				D8EEC60D20E727F200C1E623 /* Main.storyboard */,
+				1061ED4820FC94C800B572D9 /* FormulaTestViewController.swift */,
 				D8EEC61020E727F200C1E623 /* Assets.xcassets */,
 				D8EEC61220E727F200C1E623 /* LaunchScreen.storyboard */,
 				D8EEC61520E727F200C1E623 /* Info.plist */,
@@ -269,6 +272,7 @@
 				84B49AEA20EC78E4005F4F05 /* ArticleTableViewCell.swift in Sources */,
 				D8C3A7E620EC687C005BABCC /* BottlefeedingViewController.swift in Sources */,
 				D8EEC60A20E727F200C1E623 /* HealthGuide.swift in Sources */,
+				1061ED4920FC94C800B572D9 /* FormulaTestViewController.swift in Sources */,
 				D8C3A7E220EC687C005BABCC /* NewEntryViewController.swift in Sources */,
 				D8EEC63E20E7395400C1E623 /* Trends.swift in Sources */,
 			);

@@ -469,6 +469,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Formula"/>
+                                <connections>
+                                    <segue destination="SOH-rE-0Tg" kind="show" id="6Jq-14-Weq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PnO-ge-e29">
                                 <rect key="frame" x="129" y="241" width="116" height="98"/>
@@ -642,7 +645,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BsD-GG-9qD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1345" y="593"/>
+            <point key="canvasLocation" x="1422" y="657"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ccf-o0-4Tp">
@@ -758,7 +761,7 @@ This is normal – you are getting him used to eating solid foods.
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5W-4c-W6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1325.5999999999999" y="1355.1724137931035"/>
+            <point key="canvasLocation" x="1094" y="1787"/>
         </scene>
         <!--Trends-->
         <scene sceneID="qJL-zE-NXK">
@@ -1435,6 +1438,92 @@ Limit foods high in salt, sugar and ca eine (chips, chocolate, candy, pop).
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0f-sT-WET" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4661.6000000000004" y="-945.4272863568217"/>
+        </scene>
+        <!--Formula-->
+        <scene sceneID="EXy-3H-QJe">
+            <objects>
+                <tableViewController title="Formula" id="SOH-rE-0Tg" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EbJ-1l-b7t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection headerTitle="Section-1" id="Olp-Uf-kXe">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleTableCell" rowHeight="120" id="GmJ-am-UqK" customClass="ArticleTableViewCell" customModule="firstbite" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GmJ-am-UqK" id="slg-I3-6Po">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="UFv-ok-gvJ">
+                                                    <rect key="frame" x="16" y="4" width="102" height="105"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="102" id="G2a-2K-hwp"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formula Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygt-54-Eci">
+                                                    <rect key="frame" x="126" y="0.0" width="233" height="54"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ygt-54-Eci" secondAttribute="bottom" constant="55" id="2y5-5C-Bj9"/>
+                                                <constraint firstItem="UFv-ok-gvJ" firstAttribute="leading" secondItem="slg-I3-6Po" secondAttribute="leadingMargin" id="62z-yU-V9v"/>
+                                                <constraint firstItem="ygt-54-Eci" firstAttribute="top" secondItem="slg-I3-6Po" secondAttribute="top" id="QRD-fy-9tH"/>
+                                                <constraint firstItem="UFv-ok-gvJ" firstAttribute="bottom" secondItem="slg-I3-6Po" secondAttribute="bottomMargin" id="fjc-QR-ebR"/>
+                                                <constraint firstItem="ygt-54-Eci" firstAttribute="trailing" secondItem="slg-I3-6Po" secondAttribute="trailingMargin" id="ojf-ie-b8x"/>
+                                                <constraint firstItem="UFv-ok-gvJ" firstAttribute="top" secondItem="slg-I3-6Po" secondAttribute="topMargin" constant="-7" id="rRx-tB-ilX"/>
+                                                <constraint firstItem="ygt-54-Eci" firstAttribute="leading" secondItem="UFv-ok-gvJ" secondAttribute="trailing" constant="8" symbolic="YES" id="yoM-6b-hLn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="4n4-Kk-OeY" kind="show" id="EYH-jC-Gim"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="SOH-rE-0Tg" id="CUr-Ff-lB4"/>
+                            <outlet property="delegate" destination="SOH-rE-0Tg" id="GtB-ag-WlI"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="koZ-A7-mlq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2071" y="1488"/>
+        </scene>
+        <!--Formula Test View Controller-->
+        <scene sceneID="5oT-4m-DAq">
+            <objects>
+                <viewController id="4n4-Kk-OeY" customClass="FormulaTestViewController" customModule="firstbite" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cds-o9-uhb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hh9-9y-Afv">
+                                <rect key="frame" x="16" y="77" width="343" height="502"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Vk8-un-U9B"/>
+                    </view>
+                    <connections>
+                        <outlet property="textTest" destination="hh9-9y-Afv" id="n2Z-xA-UfU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fFE-lC-WPv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2732" y="1484.7076461769116"/>
         </scene>
     </scenes>
     <resources>
