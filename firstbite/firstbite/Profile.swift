@@ -106,7 +106,11 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     @IBOutlet weak var displayChildPicture: UIImageView!
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            displayChildPicture.image = image
+            //Save Image in Persistence
+            let imageData:NSData = UIImageJPEGRepresentation(image, 1)! as NSData
+            UserDefaults.standard.set(imageData, forKey: "savedImage")
+            let data = UserDefaults.standard.object(forKey: "savedImage") as! NSData
+            displayChildPicture.image = UIImage(data: data as Data)
         }
         else {
             // Error
