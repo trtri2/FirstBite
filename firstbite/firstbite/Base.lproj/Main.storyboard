@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -445,7 +445,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Solid Foods"/>
                                 <connections>
-                                    <segue destination="mJc-1S-SaA" kind="show" id="mGS-DK-BUl"/>
+                                    <segue destination="mJc-1S-SaA" kind="show" id="9nb-8F-cGu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="tFz-BA-y9b">
@@ -511,12 +511,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CTb-WB-0Ew" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="608.79999999999995" y="680.5097451274363"/>
+            <point key="canvasLocation" x="612" y="588"/>
         </scene>
         <!--Solid Foods-->
         <scene sceneID="kag-lE-VWy">
             <objects>
-                <tableViewController title="Solid Foods" id="mJc-1S-SaA" sceneMemberID="viewController">
+                <tableViewController title="Solid Foods" id="mJc-1S-SaA" customClass="SolidFoodsViewController" customModule="firstbite" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="35t-Ty-pes">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -524,7 +524,7 @@
                         <sections>
                             <tableViewSection headerTitle="Section-1" id="ea7-jg-b1Z">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleTableCell" rowHeight="120" id="zn2-wl-c8Y" customClass="ArticleTableViewCell" customModule="firstbite" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleTableCell" rowHeight="120" id="zn2-wl-c8Y">
                                         <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zn2-wl-c8Y" id="Hv5-xZ-uVX">
@@ -555,7 +555,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="uek-Dc-TaS" kind="show" id="9Oh-HD-Yeh"/>
+                                            <segue destination="vDy-WS-cE9" kind="show" identifier="isf" id="joR-Xv-cdR"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -638,14 +638,46 @@
                             </tableViewSection>
                         </sections>
                         <connections>
-                            <outlet property="dataSource" destination="mJc-1S-SaA" id="yiH-iB-2XG"/>
                             <outlet property="delegate" destination="mJc-1S-SaA" id="6XT-Wq-xuo"/>
                         </connections>
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BsD-GG-9qD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1422" y="657"/>
+            <point key="canvasLocation" x="1506" y="571"/>
+        </scene>
+        <!--Solid_Foods_Articles-->
+        <scene sceneID="2Zw-2P-sPQ">
+            <objects>
+                <viewController title="Solid_Foods_Articles" id="vDy-WS-cE9" customClass="SolidFoodArticleViewController" customModule="firstbite" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dVE-Sf-Ama">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Zob-IX-7cV">
+                                <rect key="frame" x="0.0" y="64" width="375" height="509"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjn-yn-8ZU">
+                                <rect key="frame" x="0.0" y="581" width="375" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Bookmark Placeholder"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="PlG-LJ-m5x"/>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="Zob-IX-7cV" id="5xg-D2-JL1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e35-z4-YKB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2375" y="441"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ccf-o0-4Tp">
@@ -656,7 +688,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plr-ha-17s">
-                                <rect key="frame" x="0.0" y="64" width="375" height="987"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="1080"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kyq-BE-Blj">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
@@ -733,7 +765,7 @@ This is normal – you are getting him used to eating solid foods.
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acR-70-XRH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2071.1999999999998" y="591.90404797601207"/>
+            <point key="canvasLocation" x="3025" y="613"/>
         </scene>
         <!--Bookmarks-->
         <scene sceneID="ZED-li-bBv">
@@ -954,7 +986,7 @@ When toddlers try foods with more texture, they sometimes gag. This is a normal 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WXh-ay-Qfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2720.8000000000002" y="591.90404797601207"/>
+            <point key="canvasLocation" x="3671" y="613"/>
         </scene>
         <!--Feeding Habits-->
         <scene sceneID="vWd-0L-L7J">
@@ -1163,7 +1195,7 @@ Or, safe and easy to remember: cook all meats to 74oC (165oF).
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V31-Eq-fK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3384.8000000000002" y="591.90404797601207"/>
+            <point key="canvasLocation" x="4338" y="613"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gzF-mZ-jnO">

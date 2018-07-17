@@ -40,6 +40,11 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         load()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        load()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
@@ -68,11 +73,11 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         var textString: String = ""
         
         selectedRow = logTable.indexPathForSelectedRow!.row
-
+        
         fstore.collection("Log").whereField("datetime", isEqualTo: data[selectedRow]).getDocuments(completion: {(snapshot, error) in
             for doc in (snapshot?.documents)! {
                 DictArray = doc.data() as! [String : String]
-            }
+                }
             //var selectedArray = [String](DictArray.values)
             //var numberInArry = DictArray.count
             for (key, value) in DictArray {
