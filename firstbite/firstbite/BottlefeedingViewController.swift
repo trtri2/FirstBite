@@ -20,6 +20,10 @@ class BottlefeedingViewController: UIViewController {
     
     @IBOutlet weak var noteOutlet: UITextView!
     
+    @IBOutlet var babyFormButton: UIButton!
+    
+    @IBOutlet var amountSlider: UISlider!
+    
     let dateFormatter = DateFormatter()
     
     var fstore: Firestore!
@@ -62,6 +66,54 @@ class BottlefeedingViewController: UIViewController {
         amountTextFieldOutlet.text = "\(Int(sender.value))"
     }
     
+    // Functionality: gives an estimated amount of baby formula based off of baby weight in pounds
+    @IBAction func babyFormulaCalculator(_ sender: Any) {
+        babyFormulaAlert()
+    }
+    
+    func babyFormulaAlert(){
+        let alert: UIAlertController = UIAlertController(title: "Baby Formula Calculator", message: "Input your baby's weight in pounds.", preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Weight in pounds" // default text field
+            textField.keyboardType = .numberPad
+            textField.delegate = self as? UITextFieldDelegate
+        }
+        
+        alert.addAction(UIAlertAction(title: "Calculate", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            let valueGiven = Int((textField?.text)!)
+            
+            var valueCalculated = valueGiven! * 11
+            
+            if(valueCalculated >= 500){
+                valueCalculated = 500
+            }
+            self.amountTextFieldOutlet.text = "\(valueCalculated)"
+            self.amountSlider.value = Float(valueCalculated)
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action : UIAlertAction!) -> Void in }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // Functionality: checks to see if value changed is greater than 500 mL
+    @IBAction func textAmountChanged(_ sender: Any) {
+        if let convertedValue = Int(amountTextFieldOutlet.text!){
+            if(convertedValue >= 500){
+                amountSlider.value = 500
+                amountTextFieldOutlet.text = "500"
+            }
+            else{
+                amountSlider.value = Float(convertedValue)
+            }
+        }
+    }
+    
+    
+    
     // Functionality: saves the data to the history log upon press
     @objc func saveData() {
         fstore.collection("Log").addDocument(data: ["datetime":dataTextField.text!,"Activity":"Bottlefeeding","Formula Name":formulaTextFieldOutlet.text!,"Formula Amount":amountTextFieldOutlet.text!,"Notes":noteOutlet.text!])
@@ -93,6 +145,8 @@ class BottlefeedingViewController: UIViewController {
             print("alert handler")
         }
     }
+    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
