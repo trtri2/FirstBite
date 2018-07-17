@@ -24,6 +24,10 @@ class BottlefeedingViewController: UIViewController {
     
     @IBOutlet var amountSlider: UISlider!
     
+    //reaction stuff
+    @IBOutlet var reactionSlider: UISlider!
+    @IBOutlet var reactionLabel: UILabel!
+    
     let dateFormatter = DateFormatter()
     
     var fstore: Firestore!
@@ -112,7 +116,19 @@ class BottlefeedingViewController: UIViewController {
         }
     }
     
-    
+    //reaction changer
+    @IBAction func reactionChanged(_ sender: Any) {
+        if(reactionSlider.value >= 0.75){
+            reactionLabel.text = "🤤"
+        }
+        else if(reactionSlider.value <= 0.25){
+            reactionLabel.text = "😧"
+        }
+        else{
+            reactionLabel.text = "😐"
+        }
+    }
+
     
     // Functionality: saves the data to the history log upon press
     @objc func saveData() {
