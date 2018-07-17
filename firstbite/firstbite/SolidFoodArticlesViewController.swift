@@ -13,20 +13,21 @@ class SolidFoodArticleViewController: UIViewController{
     
     
     @IBOutlet weak var textView: UITextView!
-    var text:String = ""
+    var text = NSAttributedString()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        textView.text = text
+        textView.attributedText = text
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func setText(t:String) {
+    func setText(t:NSAttributedString) {
         text = t
         if isViewLoaded{
-            textView.text = t
+            textView.attributedText = t
         }
     }
     
