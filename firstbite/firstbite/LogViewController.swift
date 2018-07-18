@@ -35,20 +35,18 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         load()
     }
     
+    //reload data whenever the log view should be displayed
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         load()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        load()
-    }
-    
+    //number of rows in the table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
     
+    //set title in the tableview
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         cell.textLabel?.text = data[indexPath.row]
@@ -56,28 +54,26 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         return cell
     }
     
+    //go to the detailed view
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "logSegue", sender: nil)
-//        selectedRow = logTable.indexPathForSelectedRow!.row
-//        fstore.collection("Log").whereField("datetime", isEqualTo: data[selectedRow]).getDocuments(completion: {(snapshot, error) in
-//                for doc in (snapshot?.documents)! {
-//                    print(doc.data())
-//                }
-//        })
     }
     
+    //prepare data to be displayed in the detailed view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let detailView:LogDetailViewController = segue.destination as! LogDetailViewController
         
         var DictArray: [String:String] = [:];
         var textString: String = ""
         
+        //get the index of the selected row
         selectedRow = logTable.indexPathForSelectedRow!.row
-        
+
+        //use the text in the table row to filter database info
         fstore.collection("Log").whereField("datetime", isEqualTo: data[selectedRow]).getDocuments(completion: {(snapshot, error) in
             for doc in (snapshot?.documents)! {
                 DictArray = doc.data() as! [String : String]
-                }
+            }
             //var selectedArray = [String](DictArray.values)
             //var numberInArry = DictArray.count
             for (key, value) in DictArray {
@@ -87,11 +83,13 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         })
     }
     
+    //enable deleting feature in tableview
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         logTable.setEditing(editing, animated: animated)
     }
     
+    //delete database entry, remove entry from data array, then remove row from table
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         fstore.collection("Log").whereField("datetime", isEqualTo: data[indexPath.row]).getDocuments(completion: {(snapshot, error) in
             for doc in (snapshot?.documents)! {
@@ -103,6 +101,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         //UserDefaults.standard.set(data, forKey: "breastfeed")
     }
     
+    //load data from database and put into local array for tableview
     func load() {
         //if let loadedData:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
         var loadedData:[String] = []
@@ -111,10 +110,8 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 loadedData.insert(doc.data()["datetime"] as! String, at: 0)
             }
             self.data = loadedData.sorted()
-//            self.logTable.reloadData()
+            self.logTable.reloadData()
         })
-//        data = loadedData.sorted()
-        logTable.reloadData()
     }
     
     override func didReceiveMemoryWarning() {

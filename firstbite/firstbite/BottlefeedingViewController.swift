@@ -20,19 +20,30 @@ class BottlefeedingViewController: UIViewController {
     
     @IBOutlet weak var noteOutlet: UITextView!
     
+    @IBOutlet var babyFormButton: UIButton!
+    
+    @IBOutlet var amountSlider: UISlider!
+    
+    //reaction stuff
+    @IBOutlet var reactionSlider: UISlider!
+    @IBOutlet var reactionLabel: UILabel!
+    
     let dateFormatter = DateFormatter()
     
+    //create database object
     var fstore: Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //set navigation buttons
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveData))
         self.navigationItem.rightBarButtonItem = saveButton
     
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         dataTextField.text = dateFormatter.string(from: Date())
         
+        //initiate database object
         fstore = Firestore.firestore()
     }
     
@@ -47,6 +58,7 @@ class BottlefeedingViewController: UIViewController {
         datePickerView.addTarget(self, action: #selector(BottlefeedingViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
     }
     
+    //display date and time in textfield when datePicker value is changed
     @objc func datePickerValueChanged(sender:UIDatePicker) {
         dataTextField.text = dateFormatter.string(from: sender.date)
 //        dateFormatter.dateStyle = DateFormatter.Style.short
@@ -54,6 +66,7 @@ class BottlefeedingViewController: UIViewController {
 //        dataTextField.text = dateFormatter.string(from: sender.date)
     }
     
+    //hide software keyboard when user touches screen
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
@@ -62,22 +75,70 @@ class BottlefeedingViewController: UIViewController {
         amountTextFieldOutlet.text = "\(Int(sender.value))"
     }
     
-    // Functionality: saves the data to the history log upon press
+    // Functionality: gives an estimated amount of baby formula based off of baby weight in pounds
+    @IBAction func babyFormulaCalculator(_ sender: Any) {
+        babyFormulaAlert()
+    }
+    
+    // Functionality: display alert
+    func babyFormulaAlert(){
+        let alert: UIAlertController = UIAlertController(title: "Baby Formula Calculator", message: "Input your baby's weight in pounds.", preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Weight in pounds" // default text field
+            textField.keyboardType = .numberPad
+            textField.delegate = self as? UITextFieldDelegate
+        }
+        
+        alert.addAction(UIAlertAction(title: "Calculate", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            let valueGiven = Int((textField?.text)!)
+            
+            var valueCalculated = valueGiven! * 11
+            
+            if(valueCalculated >= 500){
+                valueCalculated = 500
+            }
+            self.amountTextFieldOutlet.text = "\(valueCalculated)"
+            self.amountSlider.value = Float(valueCalculated)
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action : UIAlertAction!) -> Void in }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // Functionality: checks to see if value changed is greater than 500 mL
+    @IBAction func textAmountChanged(_ sender: Any) {
+        if let convertedValue = Int(amountTextFieldOutlet.text!){
+            if(convertedValue >= 500){
+                amountSlider.value = 500
+                amountTextFieldOutlet.text = "500"
+            }
+            else{
+                amountSlider.value = Float(convertedValue)
+            }
+        }
+    }
+    
+    //reaction changer
+    @IBAction func reactionChanged(_ sender: Any) {
+        if(reactionSlider.value >= 0.75){
+            reactionLabel.text = "🤤"
+        }
+        else if(reactionSlider.value <= 0.25){
+            reactionLabel.text = "😧"
+        }
+        else{
+            reactionLabel.text = "😐"
+        }
+    }
+
+    
+    // Functionality: saves the data to the database upon press
     @objc func saveData() {
         fstore.collection("Log").addDocument(data: ["datetime":dataTextField.text!,"Activity":"Bottlefeeding","Formula Name":formulaTextFieldOutlet.text!,"Formula Amount":amountTextFieldOutlet.text!,"Notes":noteOutlet.text!])
-//        let date:Date = datePickerOutlet.date
-//        let formatter:DateFormatter = DateFormatter()
-//        formatter.dateFormat = "MMM dd, h:mm a"
-//        let dateTimeTemp = formatter.string(from: date)
-//        let tempResult = dataTextField.text! + " Bottlefeed: " + formulaTextFieldOutlet.text! + " " + amountTextFieldOutlet.text! + " ml"
-//        if var data:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
-//            data.insert(tempResult, at: 0)
-//            UserDefaults.standard.set(data, forKey: "breastfeed")
-//        } else {
-//            var data:[String] = []
-//            data.insert(tempResult, at: 0)
-//            UserDefaults.standard.set(data, forKey: "breastfeed")
-//        }
         showAlert()
     }
     
@@ -93,6 +154,8 @@ class BottlefeedingViewController: UIViewController {
             print("alert handler")
         }
     }
+    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

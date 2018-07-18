@@ -33,6 +33,7 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     let dateFormatter = DateFormatter()
     
+    //create database object
     var fstore: Firestore!
     
     override func viewDidLoad() {
@@ -50,6 +51,7 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
         quantityPickerOutlet.dataSource = self
         categoryPickerOutlet.dataSource = self
         
+        //initiate database object
         fstore = Firestore.firestore()
     }
     
@@ -108,21 +110,7 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     @objc func saveData() {
         fstore.collection("Log").addDocument(data: ["datetime":dataTextField.text!,"Activity":"Supplement","Food Name":foodTextFieldOutlet.text!,"Food Category":categoryTypeString,"Quantity":quantityTextFieldOutlet.text!,"Quantity Unit":quantityUnitString,"Notes":noteOutlet.text!])
-        
-//        let date:Date = datePickerOutlet.date
-//        let formatter:DateFormatter = DateFormatter()
-//        formatter.dateFormat = "MMM dd, h:mm a"
-//        let dateTimeTemp = formatter.string(from: date)
-        //
-//        let tempResult = dataTextField.text! + " " + categoryTypeString + " : " + foodTextFieldOutlet.text! + " " + quantityTextFieldOutlet.text! + quantityUnitString
-//        if var data:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
-//            data.insert(tempResult, at: 0)
-//            UserDefaults.standard.set(data, forKey: "breastfeed")
-//        } else {
-//            var data:[String] = []
-//            data.insert(tempResult, at: 0)
-//            UserDefaults.standard.set(data, forKey: "breastfeed")
-//        }
+
         showAlert()
     }
     

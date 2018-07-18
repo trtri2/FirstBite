@@ -27,6 +27,7 @@ class BreastfeedingViewController: UIViewController {
     @IBOutlet weak var rightBtnOutlet: UIButton!
     @IBOutlet weak var noteOutlet: UITextView!
     
+    //create database object
     var fstore: Firestore!
     //var ref: DatabaseReference!
     
@@ -62,13 +63,7 @@ class BreastfeedingViewController: UIViewController {
         view.endEditing(true)
     }
     
-//    @IBAction func didChangeTime(_ sender: UIDatePicker) {
-//        let date:Date = sender.date
-//        let formatter:DateFormatter = DateFormatter()
-//        formatter.dateFormat = "EEEE MMM dd, h:mm a"
-//        dateTimeTemp = formatter.string(from: date)
-//    }
-    
+    //convert seconds into mm:ss format
     func timeString(time:TimeInterval) -> String {
         let minutes = Int(time) / 60 % 60
         let seconds = Int(time) % 60
@@ -76,11 +71,13 @@ class BreastfeedingViewController: UIViewController {
         return String(format:"%02i:%02i", minutes, seconds)
     }
     
+    //display left timer in mm:ss format
     @objc func updateTimerL() {
         counterL += 1
         leftTimer.text = timeString(time: TimeInterval(counterL))
     }
     
+    //display right timer in mm:ss format
     @objc func updateTimerR () {
         counterR += 1
         rightTimer.text = timeString(time: TimeInterval(counterR))
@@ -88,37 +85,48 @@ class BreastfeedingViewController: UIViewController {
     
     // Functionality: used to allow the user to start the timer on the left breast
     @IBAction func LButton(_ sender: UIButton) {
-        if (sender.titleLabel?.text == "L GO"){
+        if (sender.titleLabel?.text == "Left Breast"){
             timer.invalidate()
-            sender.setTitle("L PAUSE", for: .normal)
-            rightBtnOutlet.setTitle("R GO", for: .normal)
+            sender.setTitle("Left Breast Pause", for: .normal)
+            rightBtnOutlet.setTitle("Right Breast", for: .normal)
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimerL), userInfo: nil, repeats: true)
+            leftBtnOutlet.backgroundColor = UIColor(red: 255/255, green: 59/255, blue: 48/255, alpha: 1)
+            rightBtnOutlet.backgroundColor = UIColor(red: 90/255, green: 200/255, blue: 250/255, alpha: 1)
         } else {
             timer.invalidate()
-            sender.setTitle("L GO", for: .normal)
+            sender.setTitle("Left Breast", for: .normal)
+             leftBtnOutlet.backgroundColor = UIColor(red: 90/255, green: 200/255, blue: 250/255, alpha: 1)
         }
         
     }
     
      // Functionality: used to allow the user to start the timer on the right breast
     @IBAction func RButton(_ sender: UIButton) {
-        if (sender.titleLabel?.text == "R GO"){
+        if (sender.titleLabel?.text == "Right Breast"){
             timer.invalidate()
-            sender.setTitle("R PAUSE", for: .normal)
-            leftBtnOutlet.setTitle("L GO", for: .normal)
+            sender.setTitle("Right Breast Pause", for: .normal)
+            leftBtnOutlet.setTitle("Left Breast", for: .normal)
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimerR), userInfo: nil, repeats: true)
+            leftBtnOutlet.backgroundColor = UIColor(red: 90/255, green: 200/255, blue: 250/255, alpha: 1)
+            rightBtnOutlet.backgroundColor = UIColor(red: 255/255, green: 59/255, blue: 48/255, alpha: 1)
+            
         } else {
             timer.invalidate()
-            sender.setTitle("R GO", for: .normal)
+            sender.setTitle("Right Breast", for: .normal)
+            rightBtnOutlet.backgroundColor = UIColor(red: 90/255, green: 200/255, blue: 250/255, alpha: 1)
         }
     }
     
      // Functionality: save breastfeeding button
     @IBAction func SButton(_ sender: UIButton) {
         timer.invalidate()
-        leftBtnOutlet.setTitle("L GO", for: .normal)
-        rightBtnOutlet.setTitle("R GO", for: .normal)
+        leftBtnOutlet.setTitle("Left Breast", for: .normal)
+        rightBtnOutlet.setTitle("Right Breast", for: .normal)
+        
+         leftBtnOutlet.backgroundColor = UIColor(red: 90/255, green: 200/255, blue: 250/255, alpha: 1)
+         rightBtnOutlet.backgroundColor = UIColor(red: 90/255, green: 200/255, blue: 250/255, alpha: 1)
     }
+
     
     // Functionality: saves data
     @objc func saveData() {
@@ -136,12 +144,6 @@ class BreastfeedingViewController: UIViewController {
 //            UserDefaults.standard.set(data, forKey: "breastfeed")
 //        }
         showAlert()
-        
-//        fstore.collection("Log").getDocuments(completion: {(snapshot, error) in
-//            for doc in (snapshot?.documents)!{
-//                print(doc.data()["datetime"] as! String)
-//            }
-//        })
     }
     
     func showAlert() {
