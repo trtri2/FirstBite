@@ -134,11 +134,66 @@ class BottlefeedingViewController: UIViewController {
             reactionLabel.text = "😐"
         }
     }
+    
+    // Functionality: for database storage, emoji's possibly dangerous
+    func getReaction() -> String{
+        var reaction: String
+        if(reactionLabel.text == "🤤"){
+            reaction = "Good"
+            return reaction
+        }
+        else if(reactionLabel.text == "😧"){
+            reaction = "Bad"
+            return reaction
+        }
+        else if(reactionLabel.text == "😐"){
+            reaction = "Neutral"
+            return reaction
+        }
+        return "Neutral"
+    }
+    
+    @IBAction func pressedEditNotes(_ sender: Any) {
 
+        let alert: UIAlertController = UIAlertController(title: "Notes", message: "Edit and change notes.", preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Notes" // default text field
+            textField.text = self.noteOutlet.text
+            textField.delegate = self as? UITextFieldDelegate
+        }
+        
+        alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            
+            // if character count > 140, throw another alert
+            if((textField?.text?.count)! > 140){
+                 let innerAlert: UIAlertController = UIAlertController(title: "Error", message: "Your note exceeds the character count. Please shorten your note to save it.", preferredStyle: .alert)
+                innerAlert.addAction(UIAlertAction(title: "OK", style: .default, handler:nil))
+                self.present(innerAlert, animated: true, completion: nil)
+            }
+            else{
+                self.noteOutlet.text = textField?.text
+                self.noteOutlet.setNeedsDisplay()
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action : UIAlertAction!) -> Void in }))
+    
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     // Functionality: saves the data to the database upon press
     @objc func saveData() {
-        fstore.collection("Log").addDocument(data: ["datetime":dataTextField.text!,"Activity":"Bottlefeeding","Formula Name":formulaTextFieldOutlet.text!,"Formula Amount":amountTextFieldOutlet.text!,"Notes":noteOutlet.text!])
+        let reaction = getReaction()
+        var tempNotes = noteOutlet.text!
+    
+        if(tempNotes == "Add optional notes such as allergies, reactions, etc..."){
+            tempNotes = " "
+        }
+        
+        fstore.collection("Log").addDocument(data: ["datetime":dataTextField.text!,"Activity":"Bottlefeeding","Formula Name":formulaTextFieldOutlet.text!,"Formula Amount":amountTextFieldOutlet.text!,"Notes":tempNotes, "Reaction":reaction])
         showAlert()
     }
     

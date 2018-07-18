@@ -126,11 +126,47 @@ class BreastfeedingViewController: UIViewController {
          leftBtnOutlet.backgroundColor = UIColor(red: 90/255, green: 200/255, blue: 250/255, alpha: 1)
          rightBtnOutlet.backgroundColor = UIColor(red: 90/255, green: 200/255, blue: 250/255, alpha: 1)
     }
+    
+    @IBAction func pressedEditNotes(_ sender: Any) {
+        let alert: UIAlertController = UIAlertController(title: "Notes", message: "Edit and change notes.", preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Notes" // default text field
+            textField.text = self.noteOutlet.text
+            textField.delegate = self as? UITextFieldDelegate
+        }
+        
+        alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            
+            // if character count > 140, throw another alert
+            if((textField?.text?.count)! > 140){
+                let innerAlert: UIAlertController = UIAlertController(title: "Error", message: "Your note exceeds the character count. Please shorten your note to save it.", preferredStyle: .alert)
+                innerAlert.addAction(UIAlertAction(title: "OK", style: .default, handler:nil))
+                self.present(innerAlert, animated: true, completion: nil)
+            }
+            else{
+                self.noteOutlet.text = textField?.text
+                self.noteOutlet.setNeedsDisplay()
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action : UIAlertAction!) -> Void in }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 
     
     // Functionality: saves data
     @objc func saveData() {
-        fstore.collection("Log").addDocument(data: ["datetime":dataTextField.text!,"Activity":"Breastfeeding","Left Timer":leftTimer.text!,"Right Timer":rightTimer.text!,"Notes":noteOutlet.text!])
+        var tempNotes = noteOutlet.text!
+        
+        if(tempNotes == "Add optional notes such as allergies, reactions, etc..."){
+            tempNotes = " "
+        }
+        
+        fstore.collection("Log").addDocument(data: ["datetime":dataTextField.text!,"Activity":"Breastfeeding","Left Timer":leftTimer.text!,"Right Timer":rightTimer.text!,"Notes":tempNotes])
         
         //ref.child("Log").childByAutoId().setValue(["datetime":dataTextField.text!,"Activity":"Breastfeed","Left Timer":leftTimer.text!,"Right Timer":rightTimer.text!])
         
