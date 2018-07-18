@@ -1527,7 +1527,11 @@ Limit foods high in salt, sugar and ca eine (chips, chocolate, candy, pop).
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0f-sT-WET" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
+            <point key="canvasLocation" x="4681" y="-823"/>
+=======
             <point key="canvasLocation" x="4661.6000000000004" y="-945.4272863568217"/>
+>>>>>>> master
         </scene>
     </scenes>
     <resources>
