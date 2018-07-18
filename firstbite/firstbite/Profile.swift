@@ -33,7 +33,7 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     //Display Child's name
     @IBOutlet weak var displayChildName: UILabel!
     func ChildName() {
-        displayChildName.text = UserChildName
+        displayChildName.text = "Name: " + UserChildName
     }
     
     //Display Child's age
@@ -53,13 +53,13 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
             age = 12 * (year - UserChildBirthYear) + (UserChildBirthMonth - month)
         }
         
-        displayChildAge.text = String(age) + " months"
+        displayChildAge.text = "Age: " + String(age) + " months"
     }
     
     //Display Child's gender
     @IBOutlet weak var displayChildGender: UILabel!
     func ChildGender() {
-        displayChildGender.text = UserChildGender
+        displayChildGender.text = "Gender: " + UserChildGender
     }
     
     //Display Child's Height
