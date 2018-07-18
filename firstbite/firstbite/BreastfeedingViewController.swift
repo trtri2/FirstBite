@@ -27,6 +27,7 @@ class BreastfeedingViewController: UIViewController {
     @IBOutlet weak var rightBtnOutlet: UIButton!
     @IBOutlet weak var noteOutlet: UITextView!
     
+    //create database object
     var fstore: Firestore!
     //var ref: DatabaseReference!
     
@@ -62,13 +63,7 @@ class BreastfeedingViewController: UIViewController {
         view.endEditing(true)
     }
     
-//    @IBAction func didChangeTime(_ sender: UIDatePicker) {
-//        let date:Date = sender.date
-//        let formatter:DateFormatter = DateFormatter()
-//        formatter.dateFormat = "EEEE MMM dd, h:mm a"
-//        dateTimeTemp = formatter.string(from: date)
-//    }
-    
+    //convert seconds into mm:ss format
     func timeString(time:TimeInterval) -> String {
         let minutes = Int(time) / 60 % 60
         let seconds = Int(time) % 60
@@ -76,11 +71,13 @@ class BreastfeedingViewController: UIViewController {
         return String(format:"%02i:%02i", minutes, seconds)
     }
     
+    //display left timer in mm:ss format
     @objc func updateTimerL() {
         counterL += 1
         leftTimer.text = timeString(time: TimeInterval(counterL))
     }
     
+    //display right timer in mm:ss format
     @objc func updateTimerR () {
         counterR += 1
         rightTimer.text = timeString(time: TimeInterval(counterR))
@@ -147,12 +144,6 @@ class BreastfeedingViewController: UIViewController {
 //            UserDefaults.standard.set(data, forKey: "breastfeed")
 //        }
         showAlert()
-        
-//        fstore.collection("Log").getDocuments(completion: {(snapshot, error) in
-//            for doc in (snapshot?.documents)!{
-//                print(doc.data()["datetime"] as! String)
-//            }
-//        })
     }
     
     func showAlert() {

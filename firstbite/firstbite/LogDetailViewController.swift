@@ -24,6 +24,7 @@ class LogDetailViewController: UIViewController {
     
     func setText(t:String) {
         text = t
+        //if view hasn't loaded yet, skip it. Let viewDidLoad handle the event
         if isViewLoaded{
             textView.text = t
         }

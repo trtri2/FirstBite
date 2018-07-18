@@ -30,17 +30,20 @@ class BottlefeedingViewController: UIViewController {
     
     let dateFormatter = DateFormatter()
     
+    //create database object
     var fstore: Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //set navigation buttons
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveData))
         self.navigationItem.rightBarButtonItem = saveButton
     
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         dataTextField.text = dateFormatter.string(from: Date())
         
+        //initiate database object
         fstore = Firestore.firestore()
     }
     
@@ -55,6 +58,7 @@ class BottlefeedingViewController: UIViewController {
         datePickerView.addTarget(self, action: #selector(BottlefeedingViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
     }
     
+    //display date and time in textfield when datePicker value is changed
     @objc func datePickerValueChanged(sender:UIDatePicker) {
         dataTextField.text = dateFormatter.string(from: sender.date)
 //        dateFormatter.dateStyle = DateFormatter.Style.short
@@ -62,6 +66,7 @@ class BottlefeedingViewController: UIViewController {
 //        dataTextField.text = dateFormatter.string(from: sender.date)
     }
     
+    //hide software keyboard when user touches screen
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
@@ -75,6 +80,7 @@ class BottlefeedingViewController: UIViewController {
         babyFormulaAlert()
     }
     
+    // Functionality: display alert
     func babyFormulaAlert(){
         let alert: UIAlertController = UIAlertController(title: "Baby Formula Calculator", message: "Input your baby's weight in pounds.", preferredStyle: .alert)
         
@@ -130,22 +136,9 @@ class BottlefeedingViewController: UIViewController {
     }
 
     
-    // Functionality: saves the data to the history log upon press
+    // Functionality: saves the data to the database upon press
     @objc func saveData() {
         fstore.collection("Log").addDocument(data: ["datetime":dataTextField.text!,"Activity":"Bottlefeeding","Formula Name":formulaTextFieldOutlet.text!,"Formula Amount":amountTextFieldOutlet.text!,"Notes":noteOutlet.text!])
-//        let date:Date = datePickerOutlet.date
-//        let formatter:DateFormatter = DateFormatter()
-//        formatter.dateFormat = "MMM dd, h:mm a"
-//        let dateTimeTemp = formatter.string(from: date)
-//        let tempResult = dataTextField.text! + " Bottlefeed: " + formulaTextFieldOutlet.text! + " " + amountTextFieldOutlet.text! + " ml"
-//        if var data:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
-//            data.insert(tempResult, at: 0)
-//            UserDefaults.standard.set(data, forKey: "breastfeed")
-//        } else {
-//            var data:[String] = []
-//            data.insert(tempResult, at: 0)
-//            UserDefaults.standard.set(data, forKey: "breastfeed")
-//        }
         showAlert()
     }
     
