@@ -14,6 +14,7 @@
 		84FA1D6920EC8523007A0E9E /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */; };
 		A435BFC120FAA64900695447 /* LogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A435BFC020FAA64900695447 /* LogDetailViewController.swift */; };
 		A4B7770E20F4798E00CCBC13 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4B7770D20F4798E00CCBC13 /* GoogleService-Info.plist */; };
+		B6D7833C20FD8DDE00C87CF4 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7833B20FD8DDE00C87CF4 /* Profile.swift */; };
 		BA40BC8020ECA857005F079F /* SupplementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C3A7E820EC85AF005BABCC /* SupplementViewController.swift */; };
 		BDB781BAFEFE45B682BAF77F /* Pods_firstbite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E900B36522A62D7A5CE0240 /* Pods_firstbite.framework */; };
 		D8C3A7E120EC687C005BABCC /* BreastfeedingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C3A7DA20EC687B005BABCC /* BreastfeedingViewController.swift */; };
@@ -42,6 +43,7 @@
 		84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		A435BFC020FAA64900695447 /* LogDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetailViewController.swift; sourceTree = "<group>"; };
 		A4B7770D20F4798E00CCBC13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B6D7833B20FD8DDE00C87CF4 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		D8C3A7DA20EC687B005BABCC /* BreastfeedingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreastfeedingViewController.swift; sourceTree = "<group>"; };
 		D8C3A7DB20EC687B005BABCC /* NewEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEntryViewController.swift; sourceTree = "<group>"; };
 		D8C3A7DD20EC687C005BABCC /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				109C362820FF66E400CA1BFC /* SolidFoodsViewController.swift */,
 				84B49AE920EC78E4005F4F05 /* ArticleTableViewCell.swift */,
 				D8EEC60D20E727F200C1E623 /* Main.storyboard */,
+				B6D7833B20FD8DDE00C87CF4 /* Profile.swift */,
 				D8EEC61020E727F200C1E623 /* Assets.xcassets */,
 				D8EEC61220E727F200C1E623 /* LaunchScreen.storyboard */,
 				D8EEC61520E727F200C1E623 /* Info.plist */,
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A435BFC120FAA64900695447 /* LogDetailViewController.swift in Sources */,
+				B6D7833C20FD8DDE00C87CF4 /* Profile.swift in Sources */,
 				84FA1D6920EC8523007A0E9E /* BookmarksViewController.swift in Sources */,
 				D8C3A7E120EC687C005BABCC /* BreastfeedingViewController.swift in Sources */,
 				109C362920FF66E400CA1BFC /* SolidFoodArticlesViewController.swift in Sources */,
