@@ -14,6 +14,9 @@ import FirebaseFirestore
 class SolidFoodsViewController: UITableViewController {
 
     var fstore: Firestore!
+    var collectionName = ""
+    var documentName = ""
+    var article = ""
 
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -32,39 +35,38 @@ class SolidFoodsViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
     let articleView:SolidFoodArticleViewController = segue.destination as! SolidFoodArticleViewController
        var regularText = ""
-        if segue.identifier == "isf"{
-            let docRef =  fstore.collection("Guide").document("Solid Foods")
-            docRef.getDocument(completion:{(snapshot, error) in
-                if let document = snapshot?.data() {
-                    regularText = document["A1_ISF"] as! String
+
+        switch segue.identifier {
+        case "isf" :
+            collectionName = "Guide"
+            documentName = "Solid Foods"
+            article = "A1_ISF"
+            break
+        case "cff" :
+            collectionName = "Guide"
+            documentName = "Solid Foods"
+            article = "A2_CFF"
+        case "gsm" :
+            collectionName = "Guide"
+            documentName = "Solid Foods"
+            article = "A3_GSM"
+        case "fc" :
+            collectionName = "Guide"
+            documentName = "Solid Foods"
+            article = "A4_FC"
+        default : break
                 }
-                let htmlText = regularText.htmlToAttributedString
-                articleView.setText(t: htmlText!)
-            })
-            
-        }
-        if segue.identifier == "cff"{
-            let docRef =  fstore.collection("Guide").document("Solid Foods")
-            docRef.getDocument(completion:{(snapshot, error) in
-                if let document = snapshot?.data() {
-                    regularText = document["A2_CFF"] as! String
-                }
-                let htmlText = regularText.htmlToAttributedString
-                articleView.setText(t: htmlText!)
-            })
-            
-        }
-        if segue.identifier == "gsm"{
-            let docRef =  fstore.collection("Guide").document("Solid Foods")
-            docRef.getDocument(completion:{(snapshot, error) in
-                if let document = snapshot?.data() {
-                    regularText = document["A3_GSM"] as! String
-                }
-                let htmlText = regularText.htmlToAttributedString
-                articleView.setText(t: htmlText!)
-            })
-            
-        }
+        
+        let docRef =  fstore.collection(collectionName).document(documentName)
+        docRef.getDocument(completion:{(snapshot, error) in
+            if let document = snapshot?.data() {
+                regularText = document[self.article] as! String
+            }
+            let htmlText = regularText.htmlToAttributedString
+            articleView.setText(t: htmlText!)
+        })
+        
+
         
         
     }

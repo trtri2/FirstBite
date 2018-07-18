@@ -13,6 +13,9 @@ import FirebaseFirestore
 class FeedingHabitsViewController: UITableViewController {
     
     var fstore: Firestore!
+    var collectionName = ""
+    var documentName = ""
+    var article = ""
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -31,40 +34,37 @@ class FeedingHabitsViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         let articleView:SolidFoodArticleViewController = segue.destination as! SolidFoodArticleViewController
         var regularText = ""
-        if segue.identifier == "fh_6to9"{
-            let docRef =  fstore.collection("Guide").document("Feeding Habits")
-            docRef.getDocument(completion:{(snapshot, error) in
-                if let document = snapshot?.data() {
-                    regularText = document["A1_6to9"] as! String
-                }
-                let htmlText = regularText.htmlToAttributedString
-                articleView.setText(t: htmlText!)
-            })
-            
-        }
-        if segue.identifier == "fh_9to12"{
-            let docRef =  fstore.collection("Guide").document("Feeding Habits")
-            docRef.getDocument(completion:{(snapshot, error) in
-                if let document = snapshot?.data() {
-                    regularText = document["A2_9to12"] as! String
-                }
-                let htmlText = regularText.htmlToAttributedString
-                articleView.setText(t: htmlText!)
-            })	
-            
-        }
-        if segue.identifier == "fh_12to24"{
-            let docRef =  fstore.collection("Guide").document("Feeding Habits")
-            docRef.getDocument(completion:{(snapshot, error) in
-                if let document = snapshot?.data() {
-                    regularText = document["A3_12to24"] as! String
-                }
-                let htmlText = regularText.htmlToAttributedString
-                articleView.setText(t: htmlText!)
-            })
-            
+
+        
+        switch segue.identifier {
+        case "fh_6to9" :
+            collectionName = "Guide"
+            documentName = "Feeding Habits"
+            article = "A1_6to9"
+            break
+        case "fh_9to12" :
+            collectionName = "Guide"
+            documentName = "Feeding Habits"
+            article = "A2_9to12"
+        case "fh_12to24" :
+            collectionName = "Guide"
+            documentName = "Feeding Habits"
+            article = "A3_12to24"
+        case "fh_24to36" :
+            collectionName = "Guide"
+            documentName = "Feeding Habits"
+            article = "A4_24to36"
+        default : break
         }
         
+        let docRef =  fstore.collection(collectionName).document(documentName)
+        docRef.getDocument(completion:{(snapshot, error) in
+            if let document = snapshot?.data() {
+                regularText = document[self.article] as! String
+            }
+            let htmlText = regularText.htmlToAttributedString
+            articleView.setText(t: htmlText!)
+        })
         
     }
 }

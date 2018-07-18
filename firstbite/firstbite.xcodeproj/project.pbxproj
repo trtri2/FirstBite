@@ -10,6 +10,8 @@
 		109C362920FF66E400CA1BFC /* SolidFoodArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362620FF66E200CA1BFC /* SolidFoodArticlesViewController.swift */; };
 		109C362A20FF66E400CA1BFC /* FeedingHabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362720FF66E300CA1BFC /* FeedingHabitsViewController.swift */; };
 		109C362B20FF66E400CA1BFC /* SolidFoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362820FF66E400CA1BFC /* SolidFoodsViewController.swift */; };
+		109C362D20FF7D6E00CA1BFC /* BreastfeedingTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362C20FF7D6D00CA1BFC /* BreastfeedingTopicViewController.swift */; };
+		109C362F20FF82D300CA1BFC /* DailyFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362E20FF82D300CA1BFC /* DailyFoodViewController.swift */; };
 		84B49AEA20EC78E4005F4F05 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49AE920EC78E4005F4F05 /* ArticleTableViewCell.swift */; };
 		84FA1D6920EC8523007A0E9E /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */; };
 		A435BFC120FAA64900695447 /* LogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A435BFC020FAA64900695447 /* LogDetailViewController.swift */; };
@@ -36,6 +38,8 @@
 		109C362620FF66E200CA1BFC /* SolidFoodArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolidFoodArticlesViewController.swift; sourceTree = "<group>"; };
 		109C362720FF66E300CA1BFC /* FeedingHabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingHabitsViewController.swift; sourceTree = "<group>"; };
 		109C362820FF66E400CA1BFC /* SolidFoodsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolidFoodsViewController.swift; sourceTree = "<group>"; };
+		109C362C20FF7D6D00CA1BFC /* BreastfeedingTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreastfeedingTopicViewController.swift; sourceTree = "<group>"; };
+		109C362E20FF82D300CA1BFC /* DailyFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyFoodViewController.swift; sourceTree = "<group>"; };
 		5E900B36522A62D7A5CE0240 /* Pods_firstbite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firstbite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		719EA596546FA1B68030F82F /* Pods-firstbite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firstbite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firstbite/Pods-firstbite.debug.xcconfig"; sourceTree = "<group>"; };
 		7C5232A82AACFF063FB9C37C /* Pods-firstbite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firstbite.release.xcconfig"; path = "Pods/Target Support Files/Pods-firstbite/Pods-firstbite.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 				109C362820FF66E400CA1BFC /* SolidFoodsViewController.swift */,
 				84B49AE920EC78E4005F4F05 /* ArticleTableViewCell.swift */,
 				D8EEC60D20E727F200C1E623 /* Main.storyboard */,
+				109C362E20FF82D300CA1BFC /* DailyFoodViewController.swift */,
+				109C362C20FF7D6D00CA1BFC /* BreastfeedingTopicViewController.swift */,
 				B6D7833B20FD8DDE00C87CF4 /* Profile.swift */,
 				D8EEC61020E727F200C1E623 /* Assets.xcassets */,
 				D8EEC61220E727F200C1E623 /* LaunchScreen.storyboard */,
@@ -276,12 +282,14 @@
 				D8C3A7E120EC687C005BABCC /* BreastfeedingViewController.swift in Sources */,
 				109C362920FF66E400CA1BFC /* SolidFoodArticlesViewController.swift in Sources */,
 				109C362A20FF66E400CA1BFC /* FeedingHabitsViewController.swift in Sources */,
+				109C362D20FF7D6E00CA1BFC /* BreastfeedingTopicViewController.swift in Sources */,
 				D8C3A7E720EC687C005BABCC /* LogViewController.swift in Sources */,
 				D8EEC64020E7395800C1E623 /* NewLog.swift in Sources */,
 				D8EEC60C20E727F200C1E623 /* TrackLog.swift in Sources */,
 				BA40BC8020ECA857005F079F /* SupplementViewController.swift in Sources */,
 				D8EEC60820E727F200C1E623 /* AppDelegate.swift in Sources */,
 				84B49AEA20EC78E4005F4F05 /* ArticleTableViewCell.swift in Sources */,
+				109C362F20FF82D300CA1BFC /* DailyFoodViewController.swift in Sources */,
 				D8C3A7E620EC687C005BABCC /* BottlefeedingViewController.swift in Sources */,
 				D8EEC60A20E727F200C1E623 /* HealthGuide.swift in Sources */,
 				D8C3A7E220EC687C005BABCC /* NewEntryViewController.swift in Sources */,
