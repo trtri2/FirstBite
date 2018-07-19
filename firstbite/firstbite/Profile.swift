@@ -13,7 +13,7 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     
     var firestore: Firestore!
     
-    //Creating test variables
+    //Creating variables
     var UserName = ""
     var UserChildName = ""
     var UserChildGender = ""
