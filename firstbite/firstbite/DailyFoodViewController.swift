@@ -37,20 +37,20 @@ class DailyFoodViewController: UITableViewController {
         
         
         switch segue.identifier {
-        case "dfs_6to9" :
+        case "dfs_6to9"? :
             collectionName = "Guide"
             documentName = "Daily Food Suggestions"
             article = "A1_6to9"
             break
-        case "dfs_9to12" :
+        case "dfs_9to12"? :
             collectionName = "Guide"
             documentName = "Daily Food Suggestions"
             article = "A2_9to12"
-        case "dfs_12to24" :
+        case "dfs_12to24"? :
             collectionName = "Guide"
             documentName = "Daily Food Suggestions"
             article = "A3_12to24"
-        case "dfs_24to36" :
+        case "dfs_24to36"? :
             collectionName = "Guide"
             documentName = "Daily Food Suggestions"
             article = "A4_24to36"

@@ -38,16 +38,16 @@ class BreastfeedingTopicViewController: UITableViewController {
         
         
         switch segue.identifier {
-        case "bb" :
+        case "bb"? :
             collectionName = "Guide"
             documentName = "Breastfeeding"
             article = "A1_BB"
             break
-        case "weaning" :
+        case "weaning"? :
             collectionName = "Guide"
             documentName = "Breastfeeding"
             article = "A2_WEANING"
-        case "faq_breastfeeding" :
+        case "faq_breastfeeding"? :
             collectionName = "Guide"
             documentName = "Breastfeeding"
             article = "A3_FAQ"

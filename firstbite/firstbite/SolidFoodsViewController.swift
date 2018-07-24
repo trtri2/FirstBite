@@ -37,20 +37,20 @@ class SolidFoodsViewController: UITableViewController {
        var regularText = ""
 
         switch segue.identifier {
-        case "isf" :
+        case "isf"? :
             collectionName = "Guide"
             documentName = "Solid Foods"
             article = "A1_ISF"
             break
-        case "cff" :
+        case "cff"? :
             collectionName = "Guide"
             documentName = "Solid Foods"
             article = "A2_CFF"
-        case "gsm" :
+        case "gsm"? :
             collectionName = "Guide"
             documentName = "Solid Foods"
             article = "A3_GSM"
-        case "fc" :
+        case "fc"? :
             collectionName = "Guide"
             documentName = "Solid Foods"
             article = "A4_FC"

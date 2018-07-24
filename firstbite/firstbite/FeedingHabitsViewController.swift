@@ -37,20 +37,20 @@ class FeedingHabitsViewController: UITableViewController {
 
         
         switch segue.identifier {
-        case "fh_6to9" :
+        case "fh_6to9"? :
             collectionName = "Guide"
             documentName = "Feeding Habits"
             article = "A1_6to9"
             break
-        case "fh_9to12" :
+        case "fh_9to12"? :
             collectionName = "Guide"
             documentName = "Feeding Habits"
             article = "A2_9to12"
-        case "fh_12to24" :
+        case "fh_12to24"? :
             collectionName = "Guide"
             documentName = "Feeding Habits"
             article = "A3_12to24"
-        case "fh_24to36" :
+        case "fh_24to36"? :
             collectionName = "Guide"
             documentName = "Feeding Habits"
             article = "A4_24to36"
