@@ -9,6 +9,8 @@
 import UIKit
 import FirebaseFirestore
 
+var userDocumentName = "test-user"
+
 class InitialProfile: UIViewController {
     
     var firestore: Firestore!
@@ -22,8 +24,6 @@ class InitialProfile: UIViewController {
     var ChildGender = ""
     var ChildHeight = 0.0
     var ChildWeight = 0.0
-    
-    var userDocumentName = ""
     
     //Input User Name
     @IBOutlet weak var userNameInput: UITextField!
@@ -72,8 +72,9 @@ class InitialProfile: UIViewController {
         userDocumentName = UserName + UserChildName + String(ChildBirthYear) + String(ChildBirthMonth) + String(ChildBirthDate)
         
         firestore = Firestore.firestore()
-        firestore.collection("Profile").document(userDocumentName).setData([            "Child_birthday": ChildBirthDate, "Child_birthmonth": ChildBirthMonth, "Child_birthyear": ChildBirthYear, "Child_gender": ChildGender, "Child_height": ChildHeight, "Child_name": UserChildName, "Child_weight": ChildWeight, "User_name": UserName
+        firestore.collection("Profile").document(userDocumentName).setData(["Child_birthday": ChildBirthDate, "Child_birthmonth": ChildBirthMonth, "Child_birthyear": ChildBirthYear, "Child_gender": ChildGender, "Child_height": ChildHeight, "Child_name": UserChildName, "Child_weight": ChildWeight, "User_name": UserName
             ])
+        print(userDocumentName)
     }
     
     //Separation Line

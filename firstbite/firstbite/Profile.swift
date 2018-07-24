@@ -141,6 +141,15 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     }
     
     //Separation Line
+    func initalization() {
+        if userDocumentName == "test-user" {
+            if let vc = UIStoryboard(name: "InitialProfile", bundle: nil).instantiateViewController(withIdentifier: "InitialProfile") as? InitialProfile
+            {
+                present(vc, animated: true, completion: nil)
+            }
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
@@ -151,7 +160,7 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
         
         //Load and Display Data from Firestore
         firestore = Firestore.firestore()
-        let doc = firestore.collection("Profile").document("test-user")
+        let doc = firestore.collection("Profile").document(userDocumentName)
         doc.getDocument(completion: {(snapshot, error) in
             if let d = snapshot?.data() {
                 self.UserName = d["User_name"] as! String

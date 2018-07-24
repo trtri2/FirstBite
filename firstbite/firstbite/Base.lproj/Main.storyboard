@@ -903,6 +903,9 @@ This is normal – you are getting him used to eating solid foods.
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration" identifier="InitialProfile">
+                            <bool key="isElement" value="NO"/>
+                        </accessibility>
                         <viewLayoutGuide key="safeArea" id="c8h-ou-RXo"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="IFu-r8-gH3"/>
@@ -1080,7 +1083,6 @@ This is normal – you are getting him used to eating solid foods.
                         <segue destination="jb4-FA-ztp" kind="relationship" relationship="viewControllers" id="Ycy-Qo-5Lh"/>
                         <segue destination="1k2-b3-lla" kind="relationship" relationship="viewControllers" id="nMt-em-IKG"/>
                         <segue destination="Npl-qF-I16" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="CAN-yZ-0q0" kind="relationship" relationship="viewControllers" id="UAg-nA-cdc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
