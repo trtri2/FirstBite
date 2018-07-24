@@ -12,6 +12,7 @@
 		109C362B20FF66E400CA1BFC /* SolidFoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362820FF66E400CA1BFC /* SolidFoodsViewController.swift */; };
 		109C362D20FF7D6E00CA1BFC /* BreastfeedingTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362C20FF7D6D00CA1BFC /* BreastfeedingTopicViewController.swift */; };
 		109C362F20FF82D300CA1BFC /* DailyFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362E20FF82D300CA1BFC /* DailyFoodViewController.swift */; };
+		84E8DA7C2106D75400CD55CD /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E8DA7B2106D75400CD55CD /* OverviewViewController.swift */; };
 		84FA1D6920EC8523007A0E9E /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */; };
 		A435BFC120FAA64900695447 /* LogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A435BFC020FAA64900695447 /* LogDetailViewController.swift */; };
 		A4B7770E20F4798E00CCBC13 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4B7770D20F4798E00CCBC13 /* GoogleService-Info.plist */; };
@@ -37,6 +38,7 @@
 		5E900B36522A62D7A5CE0240 /* Pods_firstbite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firstbite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		719EA596546FA1B68030F82F /* Pods-firstbite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firstbite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firstbite/Pods-firstbite.debug.xcconfig"; sourceTree = "<group>"; };
 		7C5232A82AACFF063FB9C37C /* Pods-firstbite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firstbite.release.xcconfig"; path = "Pods/Target Support Files/Pods-firstbite/Pods-firstbite.release.xcconfig"; sourceTree = "<group>"; };
+		84E8DA7B2106D75400CD55CD /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		A435BFC020FAA64900695447 /* LogDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetailViewController.swift; sourceTree = "<group>"; };
 		A4B7770D20F4798E00CCBC13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				D8C3A7DD20EC687C005BABCC /* Base.lproj */,
 				D8C3A7DF20EC687C005BABCC /* BottlefeedingViewController.swift */,
 				D8C3A7DA20EC687B005BABCC /* BreastfeedingViewController.swift */,
+				84E8DA7B2106D75400CD55CD /* OverviewViewController.swift */,
 				D8C3A7E020EC687C005BABCC /* LogViewController.swift */,
 				A435BFC020FAA64900695447 /* LogDetailViewController.swift */,
 				D8C3A7E820EC85AF005BABCC /* SupplementViewController.swift */,
@@ -267,6 +270,7 @@
 				109C362D20FF7D6E00CA1BFC /* BreastfeedingTopicViewController.swift in Sources */,
 				D8C3A7E720EC687C005BABCC /* LogViewController.swift in Sources */,
 				BA40BC8020ECA857005F079F /* SupplementViewController.swift in Sources */,
+				84E8DA7C2106D75400CD55CD /* OverviewViewController.swift in Sources */,
 				D8EEC60820E727F200C1E623 /* AppDelegate.swift in Sources */,
 				109C362F20FF82D300CA1BFC /* DailyFoodViewController.swift in Sources */,
 				D8C3A7E620EC687C005BABCC /* BottlefeedingViewController.swift in Sources */,
