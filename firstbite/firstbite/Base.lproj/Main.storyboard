@@ -1074,6 +1074,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSw-88-SKh">
+                                <rect key="frame" x="191" y="543" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="doBtnSignout:" destination="1k2-b3-lla" eventType="touchUpInside" id="bsM-z2-4sS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="lpQ-Bq-rbd"/>
@@ -1172,6 +1180,7 @@
                         <outlet property="btnLogin" destination="UJK-R1-Tgy" id="PVQ-O3-zl9"/>
                         <outlet property="tfEmail" destination="saZ-8B-Ja8" id="tw9-gZ-EVq"/>
                         <outlet property="tfPassword" destination="exX-ye-ybf" id="8Ey-Ao-IUR"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="authed" id="x8S-DZ-8Xc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aq7-KA-TyR" userLabel="First Responder" sceneMemberID="firstResponder"/>

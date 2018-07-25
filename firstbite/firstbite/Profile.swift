@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseFirestore
+import Firebase
 
 class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -170,6 +170,14 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
             self.ChildHeight()
             self.ChildWeight()
         })
+    }
+    
+    @IBAction func doBtnSignout(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+        }
+        catch {}
+        self.dismiss(animated: false, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

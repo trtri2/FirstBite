@@ -28,11 +28,46 @@ class AuthViewController: UIViewController {
     }
     
     @IBAction func doBtnLogin(_ sender: Any) {
+        if Auth.auth().currentUser == nil {
+            if let email = tfEmail.text, let password = tfPassword.text {
+                Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+                    if error == nil {
+//                        self.btnLogin.setTitle("Logout", for: .normal)
+                        self.performSegue(withIdentifier: "authed", sender: nil)
+                    }
+                    else {
+                        self.showAlert()
+                    }
+                })
+            }
+        }
     }
     
     @IBAction func doBtnCreate(_ sender: Any) {
         if let email = tfEmail.text, let password = tfPassword.text {
-            
+            Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+                self.performSegue(withIdentifier: "authed", sender: nil)
+            })
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if Auth.auth().currentUser != nil {
+            performSegue(withIdentifier: "authed", sender: nil)
+        }
+    }
+    
+    func showAlert() {
+        let alert:UIAlertController = UIAlertController(title: "User Not Fount", message: "Incorrect username and Password. Please try again", preferredStyle: .alert)
+        let action1: UIAlertAction = UIAlertAction(title: "OK", style: .cancel) {
+            (_:UIAlertAction) in
+            print("cancel handler")
+        }
+        alert.addAction(action1)
+        self.present(alert,animated:true) {
+            print("alert handler")
         }
     }
     /*
