@@ -9,5 +9,6 @@ target 'firstbite' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Firestore'
+  pod 'Charts'
 
 end
