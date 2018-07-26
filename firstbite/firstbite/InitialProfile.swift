@@ -56,23 +56,54 @@ class InitialProfile: UIViewController {
         
         UserChildName = userChildNameInput.text!
         
+        let date = Date()
+        let ccalendar = Calendar.current
+        let year = ccalendar.component(.year, from: date)
+        let month = ccalendar.component(.month, from: date)
+        var age: Int
         let calendar = Calendar.current
         ChildBirthYear = calendar.component(.year, from: datePicker.date)
         ChildBirthMonth = calendar.component(.month, from: datePicker.date)
         ChildBirthDate = calendar.component(.day, from: datePicker.date)
+        if month >= ChildBirthMonth {
+            age = 12 * (year - ChildBirthYear) + (month - ChildBirthMonth)
+        }
+        else {
+            age = 12 * (year - ChildBirthYear) + (ChildBirthMonth - month)
+        }
         
         if userChildHeightInput.text != "" {
             ChildHeight = Double(userChildHeightInput.text!)!
+        }
+        else {
+            ChildHeight = 0
+        }
+        var HeightTrendCount: Int
+        if ChildHeight == 0 {
+            HeightTrendCount = 0
+        }
+        else {
+            HeightTrendCount = 1
         }
         
         if userChildWeightInput.text != "" {
             ChildWeight = Double(userChildWeightInput.text!)!
         }
+        else {
+            ChildWeight = 0
+        }
+        var WeightTrendCount: Int
+        if ChildWeight == 0 {
+            WeightTrendCount = 0
+        }
+        else {
+            WeightTrendCount = 1
+        }
         
         userDocumentName = UserName + UserChildName + String(ChildBirthYear) + String(ChildBirthMonth) + String(ChildBirthDate)
         
         firestore = Firestore.firestore()
-        firestore.collection("Profile").document(userDocumentName).setData(["Child_birthday": ChildBirthDate, "Child_birthmonth": ChildBirthMonth, "Child_birthyear": ChildBirthYear, "Child_gender": ChildGender, "Child_height": ChildHeight, "Child_name": UserChildName, "Child_weight": ChildWeight, "User_name": UserName
+        firestore.collection("Profile").document(userDocumentName).setData(["AgeTrendCount": 1, "Age_trend0": age, "Age_trend1": -1, "Age_trend2": -1, "Age_trend3": -1, "Age_trend4": -1, "Child_birthday": ChildBirthDate, "Child_birthmonth": ChildBirthMonth, "Child_birthyear": ChildBirthYear, "Child_gender": ChildGender, "Child_height": ChildHeight, "Child_name": UserChildName, "Child_weight": ChildWeight, "HeightTrendCount": HeightTrendCount, "Height_trend0": ChildHeight, "Height_trend1": 0, "Height_trend2": 0, "Height_trend3": 0, "Height_trend4": 0, "User_name": UserName, "WeightTrendCount": WeightTrendCount, "Weight_trend0": ChildWeight, "Weight_trend1": 0, "Weight_trend2": 0, "Weight_trend3": 0, "Weight_trend4": 0
             ])
         print(userDocumentName)
     }
