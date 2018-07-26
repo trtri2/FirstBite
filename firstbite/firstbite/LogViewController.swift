@@ -76,8 +76,11 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
             }
             //var selectedArray = [String](DictArray.values)
             //var numberInArry = DictArray.count
-            for (key, value) in DictArray {
-                textString += "\(key) : \(value)\n"
+//            for (key, value) in DictArray {
+//                textString += "\(key) : \(value)\n"
+//            }
+            if DictArray["Activity"] == "Breastfeeding" {
+                
             }
             detailView.setText(t: textString)
         })
