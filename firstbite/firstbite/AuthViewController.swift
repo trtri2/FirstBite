@@ -36,7 +36,7 @@ class AuthViewController: UIViewController {
                         self.performSegue(withIdentifier: "authed", sender: nil)
                     }
                     else {
-                        self.showAlert()
+                        self.showLoginAlert()
                     }
                 })
             }
@@ -46,7 +46,12 @@ class AuthViewController: UIViewController {
     @IBAction func doBtnCreate(_ sender: Any) {
         if let email = tfEmail.text, let password = tfPassword.text {
             Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-                self.performSegue(withIdentifier: "authed", sender: nil)
+                if error == nil {
+                    self.performSegue(withIdentifier: "authed", sender: nil)
+                }
+                else {
+                    self.showCreateAlert()
+                }
             })
         }
     }
@@ -59,7 +64,7 @@ class AuthViewController: UIViewController {
         }
     }
     
-    func showAlert() {
+    func showLoginAlert() {
         let alert:UIAlertController = UIAlertController(title: "User Not Fount", message: "Incorrect username and Password. Please try again", preferredStyle: .alert)
         let action1: UIAlertAction = UIAlertAction(title: "OK", style: .cancel) {
             (_:UIAlertAction) in
@@ -70,6 +75,19 @@ class AuthViewController: UIViewController {
             print("alert handler")
         }
     }
+    
+    func showCreateAlert() {
+        let alert:UIAlertController = UIAlertController(title: "Cannot Create User", message: "Check if the email is valid", preferredStyle: .alert)
+        let action1: UIAlertAction = UIAlertAction(title: "OK", style: .cancel) {
+            (_:UIAlertAction) in
+            print("cancel handler")
+        }
+        alert.addAction(action1)
+        self.present(alert,animated:true) {
+            print("alert handler")
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
