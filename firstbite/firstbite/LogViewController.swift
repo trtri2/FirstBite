@@ -65,15 +65,16 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     //go to the detailed view
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var DictArray: [String:String] = [:]
+        var activity:String = ""
+//        var DictArray: [String:String] = [:]
         fstore.collection("Log").whereField("datetime", isEqualTo: data[indexPath.row]).getDocuments(completion: {(snapshot, error) in
             for doc in (snapshot?.documents)! {
-                DictArray = doc.data() as! [String : String]
+                activity = doc.data()["Activity"] as! String
             }
             
-            if DictArray["Activity"] == "Breastfeeding" {
+            if activity == "Breastfeeding" {
                 self.performSegue(withIdentifier: "breastfeeding", sender: nil)
-            } else if DictArray["Activity"] == "Bottlefeeding" {
+            } else if activity == "Bottlefeeding" {
                 self.performSegue(withIdentifier: "bottlefeeding", sender: nil)
             } else {
                 self.performSegue(withIdentifier: "supplement", sender: nil)
@@ -83,11 +84,10 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     //prepare data to be displayed in the detailed view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let breastfeedDetailView:BreastfeedingDetailedViewController = segue.destination as! BreastfeedingDetailedViewController
-        let bottlefeedDetailView:BottlefeedingDetailedViewController = segue.destination as! BottlefeedingDetailedViewController
-        let supplementDetailView:SupplementDetailedViewController = segue.destination as! SupplementDetailedViewController
         
-
+        
+//        let supplementDetailView:SupplementDetailedViewController = segue.destination as! SupplementDetailedViewController
+        
         var DictArray: [String:String] = [:];
 //        var textString: String = ""
 
@@ -105,7 +105,11 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
 //                textString += "\(key) : \(value)\n"
 //            }
             if DictArray["Activity"] == "Breastfeeding" {
-
+                let breastfeedDetailView:BreastfeedingDetailedViewController = segue.destination as! BreastfeedingDetailedViewController
+                breastfeedDetailView.setText(datetimeInput: DictArray["datetime"]!, leftInput: DictArray["Left Timer"]!, rightInput: DictArray["Right Timer"]!, noteInput: DictArray["Notes"]!)
+            } else if DictArray["Activity"] == "Bottlefeeding" {
+                let bottlefeedDetailView:BottlefeedingDetailedViewController = segue.destination as! BottlefeedingDetailedViewController
+                bottlefeedDetailView.setText(datetimeInput: DictArray["datetime"]!, nameInput: DictArray["Formula Name"]!, amountInput: DictArray["Formula Amount"]!, reactionInput: DictArray["Reaction"]!, noteInput: DictArray["Notes"]!)
             }
 //            detailView.setText(t: textString)
         })
