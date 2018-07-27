@@ -8,7 +8,7 @@
 
 import UIKit
 import FirebaseFirestore
-
+import Foundation
 
 // Functionality: used to add and manage bookmarks from the Guidebook
 class BookmarksViewController:  UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -62,7 +62,18 @@ class BookmarksViewController:  UIViewController, UITableViewDataSource, UITable
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        let articleView:BookmarkArticleView = segue.destination as! BookmarkArticleView
+        var regularText = ""
         
+        selectedRow = bookmarkTable.indexPathForSelectedRow!.row
+        
+        let docRef = fstore.collection("Bookmarks").document(data[selectedRow])
+        docRef.getDocument(completion:{(snapshot, error) in
+            if let doc = snapshot?.data(){
+                regularText = doc["displayText"] as! String
+            }
+            articleView.setText(t: regularText)
+        })
     }
 
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -71,11 +82,9 @@ class BookmarksViewController:  UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        fstore.collection("Log").whereField("title", isEqualTo: data[indexPath.row]).getDocuments(completion: {(snapshot, error) in
-            for doc in (snapshot?.documents)! {
-                doc.reference.delete()
-            }
-        })
+        
+        fstore.collection("Bookmarks").document(data[indexPath.row]).delete()
+
         data.remove(at: indexPath.row)
         bookmarkTable.deleteRows(at: [indexPath], with: .fade)
         //UserDefaults.standard.set(data, forKey: "breastfeed")

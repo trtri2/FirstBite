@@ -1789,6 +1789,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Xrg-DG-9Pr"/>
                     </view>
+                    <connections>
+                        <outlet property="displayText" destination="Tfm-MH-bEX" id="O2W-n4-TCR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7F-kR-cNp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
