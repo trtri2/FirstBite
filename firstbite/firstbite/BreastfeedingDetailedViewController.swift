@@ -24,12 +24,27 @@ class BreastfeedingDetailedViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.largeTitleDisplayMode = .never
         
+        lbDateTime.text = datetimeText
+        lbLeft.text = leftText
+        lbRight.text = rightText
+        lbNote.text = noteText
         
     }
     
-    func setText(t:String) {
+    func setText(datetimeInput:String,leftInput:String,rightInput:String,noteInput:String) {
+        datetimeText = datetimeInput
+        leftText = leftInput
+        rightText = rightInput
+        noteText = noteInput
         
+        if isViewLoaded{
+            lbDateTime.text = datetimeInput
+            lbLeft.text = leftInput
+            lbRight.text = rightInput
+            lbNote.text = noteInput
+        }
     }
 
     override func didReceiveMemoryWarning() {

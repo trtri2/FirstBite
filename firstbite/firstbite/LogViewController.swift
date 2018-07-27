@@ -48,24 +48,49 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     //set title in the tableview
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        var imageName: String = ""
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = data[indexPath.row]
         
+        fstore.collection("Log").whereField("datetime", isEqualTo: data[indexPath.row]).getDocuments {(snapshot, error) in
+            for doc in (snapshot?.documents)! {
+                imageName = doc.data()["Activity"] as! String
+            }
+//            cell.imageView?.image = UIImage(named: imageName)
+        }
+//        cell.imageView?.image = UIImage(named: imageName)
         return cell
     }
     
     //go to the detailed view
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "logSegue", sender: nil)
+        var DictArray: [String:String] = [:]
+        fstore.collection("Log").whereField("datetime", isEqualTo: data[indexPath.row]).getDocuments(completion: {(snapshot, error) in
+            for doc in (snapshot?.documents)! {
+                DictArray = doc.data() as! [String : String]
+            }
+            
+            if DictArray["Activity"] == "Breastfeeding" {
+                self.performSegue(withIdentifier: "breastfeeding", sender: nil)
+            } else if DictArray["Activity"] == "Bottlefeeding" {
+                self.performSegue(withIdentifier: "bottlefeeding", sender: nil)
+            } else {
+                self.performSegue(withIdentifier: "supplement", sender: nil)
+            }
+        })
     }
     
     //prepare data to be displayed in the detailed view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let detailView:LogDetailViewController = segue.destination as! LogDetailViewController
+        let breastfeedDetailView:BreastfeedingDetailedViewController = segue.destination as! BreastfeedingDetailedViewController
+        let bottlefeedDetailView:BottlefeedingDetailedViewController = segue.destination as! BottlefeedingDetailedViewController
+        let supplementDetailView:SupplementDetailedViewController = segue.destination as! SupplementDetailedViewController
         
+
         var DictArray: [String:String] = [:];
-        var textString: String = ""
-        
+//        var textString: String = ""
+
         //get the index of the selected row
         selectedRow = logTable.indexPathForSelectedRow!.row
 
@@ -80,12 +105,12 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
 //                textString += "\(key) : \(value)\n"
 //            }
             if DictArray["Activity"] == "Breastfeeding" {
-                
+
             }
-            detailView.setText(t: textString)
+//            detailView.setText(t: textString)
         })
     }
-    
+
     //enable deleting feature in tableview
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)

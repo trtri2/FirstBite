@@ -186,16 +186,15 @@ class BottlefeedingViewController: UIViewController {
     
     // Functionality: saves the data to the database upon press
     @objc func saveData() {
-        print()
-//        let reaction = getReaction()
-//        var tempNotes = noteOutlet.text!
-//
-//        if(tempNotes == "Add optional notes such as allergies, reactions, etc..."){
-//            tempNotes = " "
-//        }
-//
-//        fstore.collection("Log").addDocument(data: ["datetime":dataTextField.text!,"Activity":"Bottlefeeding","Formula Name":formulaTextFieldOutlet.text!,"Formula Amount":amountTextFieldOutlet.text!,"Notes":tempNotes, "Reaction":reaction])
-//        showAlert()
+        let reaction = getReaction()
+        var tempNotes = noteOutlet.text!
+
+        if(tempNotes == "Add optional notes such as allergies, reactions, etc..."){
+            tempNotes = " "
+        }
+
+        fstore.collection("Log").addDocument(data: ["datetime":dataTextField.text!,"Activity":"Bottlefeeding","Formula Name":formulaTextFieldOutlet.text!,"Formula Amount":amountTextFieldOutlet.text!,"Notes":tempNotes, "Reaction":reaction])
+        showAlert()
     }
     
     
