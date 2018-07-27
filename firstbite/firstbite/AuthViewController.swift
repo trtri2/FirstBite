@@ -48,7 +48,7 @@ class AuthViewController: UIViewController {
         if let email = tfEmail.text, let password = tfPassword.text {
             Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
                 if error == nil {
-                    self.performSegue(withIdentifier: "authed", sender: nil)
+                    self.performSegue(withIdentifier: "createAccount", sender: nil)
                 }
                 else if(email.count < 0){
                     self.showCreateAlert()

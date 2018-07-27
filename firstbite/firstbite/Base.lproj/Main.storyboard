@@ -821,18 +821,6 @@
                                                     <segue destination="mJc-1S-SaA" kind="show" id="mGS-DK-BUl"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynk-QC-GLF">
-                                                <rect key="frame" x="236" y="687" width="102" height="41"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
-                                                <state key="normal" title="Daily Food Suggestions" backgroundImage="topicPlaceholderV2-2">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="f5g-Z1-yT6" kind="show" id="MhH-im-9CA"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="tFz-BA-y9b">
                                                 <rect key="frame" x="13" y="404" width="349" height="162"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -874,7 +862,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PnO-ge-e29">
-                                                <rect key="frame" x="14" y="574" width="349" height="162"/>
+                                                <rect key="frame" x="13" y="574" width="349" height="162"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
@@ -889,6 +877,18 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynk-QC-GLF">
+                                                <rect key="frame" x="8" y="744" width="359" height="147"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                                <state key="normal" title="Daily Food Suggestions" backgroundImage="topicPlaceholderV2-2">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="f5g-Z1-yT6" kind="show" id="MhH-im-9CA"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -926,7 +926,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CTb-WB-0Ew" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="687" y="810"/>
+            <point key="canvasLocation" x="685.60000000000002" y="809.59520239880067"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fKX-TF-aiE">
@@ -1442,6 +1442,7 @@
                                 </state>
                                 <connections>
                                     <action selector="submit:" destination="CAN-yZ-0q0" eventType="touchUpInside" id="JpY-En-TR9"/>
+                                    <segue destination="49e-Tb-3d3" kind="show" id="4C0-S1-5lo"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u19-oa-efK" userLabel="User name">
@@ -1469,7 +1470,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRM-1H-Qle" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-852" y="2740.4797601199402"/>
+            <point key="canvasLocation" x="-2954" y="929"/>
         </scene>
         <!--Profile-->
         <scene sceneID="g98-Lu-xc5">
@@ -1738,13 +1739,6 @@
                                     <action selector="updateStat:" destination="1k2-b3-lla" eventType="touchUpInside" id="KQL-4i-OgV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Child Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hb-b0-E4t" userLabel="Child Name">
-                                <rect key="frame" x="132" y="66" width="115" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSw-88-SKh">
                                 <rect key="frame" x="191" y="543" width="76" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1848,6 +1842,7 @@
                                 <state key="normal" title="Create New Account"/>
                                 <connections>
                                     <action selector="doBtnCreate:" destination="LUP-JK-eQc" eventType="touchUpInside" id="SHC-yr-ral"/>
+                                    <segue destination="CAN-yZ-0q0" kind="show" id="lTv-zf-5Jd"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account yet?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nT0-CU-YdR">
@@ -2453,6 +2448,7 @@
         <image name="topicPlaceholderV2-2" width="3000" height="1688"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="x8S-DZ-8Xc"/>
         <segue reference="m2K-1O-sIg"/>
     </inferredMetricsTieBreakers>
 </document>
