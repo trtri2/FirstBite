@@ -7,37 +7,100 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import Foundation
 
 // Functionality: used to add and manage bookmarks from the Guidebook
-class BookmarksViewController: UITableViewController {
- let myarray = ["Bookmark 1", "Bookmark 2", "Bookmark 3"]
- 
+class BookmarksViewController:  UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    @IBOutlet weak var bookmarkTable: UITableView!
+    var data:[String] = []
+    var selectedRow:Int = -1
+    var fstore: Firestore!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
+        bookmarkTable.dataSource = self
+        bookmarkTable.delegate = self
+        self.title = "Bookmarks"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.largeTitleDisplayMode = .always
+        self.navigationItem.rightBarButtonItem = editButtonItem
+        
+        fstore = Firestore.firestore()
+        load()
+    }
+    
+    //reload data whenever the bookmark view should be displayed
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        load()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myarray.count
+
+    //number of rows in the table
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = UITableViewCell(style:UITableViewCellStyle.default, reuseIdentifier:"bookmarksCell")
-        cell.textLabel?.text = myarray[indexPath.row]
+    //set title in the tableview
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        cell.textLabel?.text = data[indexPath.row]
         
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "solidfood") as UIViewController
-        
-        self.present(viewController, animated: false, completion: nil)
+    //go to the bookmark page view
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "bookmarkSegue", sender: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        let articleView:BookmarkArticleView = segue.destination as! BookmarkArticleView
+        var regularText = ""
+        
+        selectedRow = bookmarkTable.indexPathForSelectedRow!.row
+        
+        let docRef = fstore.collection("Bookmarks").document(data[selectedRow])
+        docRef.getDocument(completion:{(snapshot, error) in
+            if let doc = snapshot?.data(){
+                regularText = doc["displayText"] as! String
+            }
+            articleView.setText(t: regularText)
+        })
+    }
+
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        bookmarkTable.setEditing(editing, animated: animated)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        fstore.collection("Bookmarks").document(data[indexPath.row]).delete()
+
+        data.remove(at: indexPath.row)
+        bookmarkTable.deleteRows(at: [indexPath], with: .fade)
+        //UserDefaults.standard.set(data, forKey: "breastfeed")
+    }
+    
+    func load() {
+        var loadedData:[String] = []
+        fstore.collection("Bookmarks").getDocuments(completion: {(snapshot, error) in
+            for doc in (snapshot?.documents)! {
+                loadedData.insert(doc.documentID , at: 0)
+            }
+            self.data = loadedData.sorted()
+            self.bookmarkTable.reloadData()
+        })
+    }
+    
+    
 }
 

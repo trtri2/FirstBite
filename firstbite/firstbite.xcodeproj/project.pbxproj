@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		10199BDD210B32BF007DFF3F /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10199BDC210B32BE007DFF3F /* AuthViewController.swift */; };
+		102954FC210ACDBC00EE8994 /* BookmarkArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102954FB210ACDBA00EE8994 /* BookmarkArticleView.swift */; };
 		109C362920FF66E400CA1BFC /* SolidFoodArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362620FF66E200CA1BFC /* SolidFoodArticlesViewController.swift */; };
 		109C362A20FF66E400CA1BFC /* FeedingHabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362720FF66E300CA1BFC /* FeedingHabitsViewController.swift */; };
 		109C362B20FF66E400CA1BFC /* SolidFoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362820FF66E400CA1BFC /* SolidFoodsViewController.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		10199BDC210B32BE007DFF3F /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		102954FB210ACDBA00EE8994 /* BookmarkArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkArticleView.swift; sourceTree = "<group>"; };
 		109C362620FF66E200CA1BFC /* SolidFoodArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolidFoodArticlesViewController.swift; sourceTree = "<group>"; };
 		109C362720FF66E300CA1BFC /* FeedingHabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingHabitsViewController.swift; sourceTree = "<group>"; };
 		109C362820FF66E400CA1BFC /* SolidFoodsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolidFoodsViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				D8C3A7E020EC687C005BABCC /* LogViewController.swift */,
 				A435BFC020FAA64900695447 /* LogDetailViewController.swift */,
 				D8C3A7E820EC85AF005BABCC /* SupplementViewController.swift */,
+				102954FB210ACDBA00EE8994 /* BookmarkArticleView.swift */,
 				D8234DB72109892B0000A9A5 /* SupplementDetailedViewController.swift */,
 				D8EEC60720E727F200C1E623 /* AppDelegate.swift */,
 				84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */,
@@ -309,6 +312,7 @@
 				D8234DB82109892B0000A9A5 /* SupplementDetailedViewController.swift in Sources */,
 				109C362B20FF66E400CA1BFC /* SolidFoodsViewController.swift in Sources */,
 				8446CE8C210A82DD00078728 /* PieViewController.swift in Sources */,
+				102954FC210ACDBC00EE8994 /* BookmarkArticleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

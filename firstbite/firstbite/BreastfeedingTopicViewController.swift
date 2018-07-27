@@ -60,8 +60,8 @@ class BreastfeedingTopicViewController: UITableViewController {
             if let document = snapshot?.data() {
                 regularText = document[self.article] as! String
             }
-            let htmlText = regularText.htmlToAttributedString
-            articleView.setText(t: htmlText!)
+            articleView.setText(t: regularText)
+            articleView.setTitle(t:self.article)
         })
         
     }
