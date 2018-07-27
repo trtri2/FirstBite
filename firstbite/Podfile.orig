@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'firstbite' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for firstbite
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Firestore'
+<<<<<<< HEAD
+  pod 'Firebase/Storage'
+  
+=======
+  pod 'Charts'
+
+>>>>>>> Winston_branch_jul23
+end

@@ -12,6 +12,9 @@
 		109C362B20FF66E400CA1BFC /* SolidFoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362820FF66E400CA1BFC /* SolidFoodsViewController.swift */; };
 		109C362D20FF7D6E00CA1BFC /* BreastfeedingTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362C20FF7D6D00CA1BFC /* BreastfeedingTopicViewController.swift */; };
 		109C362F20FF82D300CA1BFC /* DailyFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362E20FF82D300CA1BFC /* DailyFoodViewController.swift */; };
+		8446CE89210A7D9E00078728 /* GraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446CE88210A7D9E00078728 /* GraphsViewController.swift */; };
+		8446CE8C210A82DD00078728 /* PieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446CE8B210A82DD00078728 /* PieViewController.swift */; };
+		84E8DA7C2106D75400CD55CD /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E8DA7B2106D75400CD55CD /* OverviewViewController.swift */; };
 		84FA1D6920EC8523007A0E9E /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */; };
 		A435BFC120FAA64900695447 /* LogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A435BFC020FAA64900695447 /* LogDetailViewController.swift */; };
 		A4B7770E20F4798E00CCBC13 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4B7770D20F4798E00CCBC13 /* GoogleService-Info.plist */; };
@@ -41,6 +44,9 @@
 		5E900B36522A62D7A5CE0240 /* Pods_firstbite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firstbite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		719EA596546FA1B68030F82F /* Pods-firstbite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firstbite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firstbite/Pods-firstbite.debug.xcconfig"; sourceTree = "<group>"; };
 		7C5232A82AACFF063FB9C37C /* Pods-firstbite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firstbite.release.xcconfig"; path = "Pods/Target Support Files/Pods-firstbite/Pods-firstbite.release.xcconfig"; sourceTree = "<group>"; };
+		8446CE88210A7D9E00078728 /* GraphsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphsViewController.swift; sourceTree = "<group>"; };
+		8446CE8B210A82DD00078728 /* PieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieViewController.swift; sourceTree = "<group>"; };
+		84E8DA7B2106D75400CD55CD /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		A435BFC020FAA64900695447 /* LogDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetailViewController.swift; sourceTree = "<group>"; };
 		A4B7770D20F4798E00CCBC13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -117,6 +123,7 @@
 				D8234DB5210989120000A9A5 /* BottlefeedingDetailedViewController.swift */,
 				D8C3A7DA20EC687B005BABCC /* BreastfeedingViewController.swift */,
 				D8234DB3210988F50000A9A5 /* BreastfeedingDetailedViewController.swift */,
+				84E8DA7B2106D75400CD55CD /* OverviewViewController.swift */,
 				D8C3A7E020EC687C005BABCC /* LogViewController.swift */,
 				A435BFC020FAA64900695447 /* LogDetailViewController.swift */,
 				D8C3A7E820EC85AF005BABCC /* SupplementViewController.swift */,
@@ -128,6 +135,8 @@
 				109C362820FF66E400CA1BFC /* SolidFoodsViewController.swift */,
 				D8EEC60D20E727F200C1E623 /* Main.storyboard */,
 				A4E64C9621083DDF004A43E7 /* AuthViewController.swift */,
+				8446CE88210A7D9E00078728 /* GraphsViewController.swift */,
+				8446CE8B210A82DD00078728 /* PieViewController.swift */,
 				109C362E20FF82D300CA1BFC /* DailyFoodViewController.swift */,
 				109C362C20FF7D6D00CA1BFC /* BreastfeedingTopicViewController.swift */,
 				B6D7833B20FD8DDE00C87CF4 /* Profile.swift */,
@@ -220,6 +229,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-firstbite/Pods-firstbite-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
@@ -233,6 +243,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
@@ -280,8 +291,10 @@
 				109C362920FF66E400CA1BFC /* SolidFoodArticlesViewController.swift in Sources */,
 				109C362A20FF66E400CA1BFC /* FeedingHabitsViewController.swift in Sources */,
 				109C362D20FF7D6E00CA1BFC /* BreastfeedingTopicViewController.swift in Sources */,
+				8446CE89210A7D9E00078728 /* GraphsViewController.swift in Sources */,
 				D8C3A7E720EC687C005BABCC /* LogViewController.swift in Sources */,
 				BA40BC8020ECA857005F079F /* SupplementViewController.swift in Sources */,
+				84E8DA7C2106D75400CD55CD /* OverviewViewController.swift in Sources */,
 				D8EEC60820E727F200C1E623 /* AppDelegate.swift in Sources */,
 				D8234DB6210989120000A9A5 /* BottlefeedingDetailedViewController.swift in Sources */,
 				A4E64C9721083DDF004A43E7 /* AuthViewController.swift in Sources */,
@@ -289,6 +302,7 @@
 				D8C3A7E620EC687C005BABCC /* BottlefeedingViewController.swift in Sources */,
 				D8234DB82109892B0000A9A5 /* SupplementDetailedViewController.swift in Sources */,
 				109C362B20FF66E400CA1BFC /* SolidFoodsViewController.swift in Sources */,
+				8446CE8C210A82DD00078728 /* PieViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
