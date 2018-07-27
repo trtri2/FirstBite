@@ -14,39 +14,45 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     
     var firestore: Firestore!
     
-    //Creating test variables
+    //Creating variables
     var UserName = ""
     var UserChildName = ""
     var UserChildGender = ""
     var UserChildHeight = Double()
+    var AgeTrend: [Int] = [-1, -1, -1, -1, -1]
+    var AgeTrendCount = 0
+    var HeightTrend: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0]
+    var HeightTrendCount = 0
     var UserChildWeight = Double()
+    var WeightTrend: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0]
+    var WeightTrendCount = 0
     var image = UIImagePickerController()
     var UserChildBirthYear = Int()
     var UserChildBirthMonth = Int()
     var UserChildBirthDay = Int()
+    var UserChildAge = Int()
     
     //Display User's Child
     @IBOutlet weak var displayWhoseChild: UILabel!
     func WhoseChild() {
-        displayWhoseChild.text = UserName + "'s baby"
+        displayWhoseChild.text = "  " + UserName + "'s baby"
     }
     
     //Display Child's name
     @IBOutlet weak var displayChildName: UILabel!
     func ChildName() {
-        displayChildName.text = UserChildName
+        displayChildName.text = "Name: " + UserChildName
     }
     
     //Display Child's age
     @IBOutlet weak var displayChildAge: UILabel!
-    func ChildAge() {
+    func ChildAge(_ age: inout Int) {
         let date = Date()
         let calendar = Calendar.current
         
         let year = calendar.component(.year, from: date)
         let month = calendar.component(.month, from: date)
         
-        var age = Int()
         if month >= UserChildBirthMonth {
             age = 12 * (year - UserChildBirthYear) + (month - UserChildBirthMonth)
         }
@@ -54,7 +60,7 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
             age = 12 * (year - UserChildBirthYear) + (UserChildBirthMonth - month)
         }
         
-        displayChildAge.text = String(age) + " months"
+        displayChildAge.text = "Age: " + String(age) + " months"
     }
     
     //Display Child's gender
@@ -76,12 +82,6 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     
     //Edit Child's Height
     @IBOutlet weak var inputNewHeight: UITextField!
-    @IBAction func submitNewHeight(_ sender: Any) {
-        UserChildHeight = Double(inputNewHeight.text!)!
-        let doc = firestore.collection("Profile").document("test-user")
-        doc.updateData(["Child_height": UserChildHeight])
-        ChildHeight()
-    }
     
     //Display Child's Weight
     @IBOutlet weak var displayChildWeight: UILabel!
@@ -96,12 +96,6 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     
     //Edit Child's Weight
     @IBOutlet weak var inputNewWeight: UITextField!
-    @IBAction func submitNewWeight(_ sender: Any) {
-        UserChildWeight = Double(inputNewWeight.text!)!
-        let doc = firestore.collection("Profile").document("test-user")
-        doc.updateData(["Child_weight": UserChildWeight])
-        ChildWeight()
-    }
     
     //Display Child's Pictures
     @IBOutlet weak var displayChildPicture: UIImageView!
@@ -141,6 +135,261 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
         }
     }
     
+    //Display Trend
+    //Age Labels
+    @IBOutlet weak var age1: UILabel!
+    @IBOutlet weak var age2: UILabel!
+    @IBOutlet weak var age3: UILabel!
+    @IBOutlet weak var age4: UILabel!
+    @IBOutlet weak var age5: UILabel!
+    func displayAge() {
+        firestore = Firestore.firestore()
+        let doc = firestore.collection("Profile").document(userDocumentName)
+        doc.getDocument(completion: {(snapshot, error) in
+            if let d = snapshot?.data() {
+                let array0 = d["Age_trend0"] as! Int
+                let array1 = d["Age_trend1"] as! Int
+                let array2 = d["Age_trend2"] as! Int
+                let array3 = d["Age_trend3"] as! Int
+                let array4 = d["Age_trend4"] as! Int
+                
+                if array0 != -1 {
+                    self.age1.text = String(array0)
+                }
+                else {
+                    self.age1.text = "-"
+                }
+                
+                if array1 != -1 {
+                    self.age2.text = String(array1)
+                }
+                else {
+                    self.age2.text = "-"
+                }
+                
+                if array2 != -1 {
+                    self.age3.text = String(array2)
+                }
+                else {
+                    self.age3.text = "-"
+                }
+                
+                if array3 != -1 {
+                    self.age4.text = String(array3)
+                }
+                else {
+                    self.age4.text = "-"
+                }
+                
+                if array4 != -1 {
+                    self.age5.text = String(array4)
+                }
+                else {
+                    self.age5.text = "-"
+                }
+            }
+        })
+    }
+    
+    //Height Labels
+    @IBOutlet weak var height1: UILabel!
+    @IBOutlet weak var height2: UILabel!
+    @IBOutlet weak var height3: UILabel!
+    @IBOutlet weak var height4: UILabel!
+    @IBOutlet weak var height5: UILabel!
+    func displayHeight() {
+        firestore = Firestore.firestore()
+        let doc = firestore.collection("Profile").document(userDocumentName)
+        doc.getDocument(completion: {(snapshot, error) in
+            if let d = snapshot?.data() {
+                let array0 = d["Height_trend0"] as! Double
+                let array1 = d["Height_trend1"] as! Double
+                let array2 = d["Height_trend2"] as! Double
+                let array3 = d["Height_trend3"] as! Double
+                let array4 = d["Height_trend4"] as! Double
+                
+                if array0 != 0.0 {
+                    self.height1.text = String(array0)
+                }
+                else {
+                    self.height1.text = "-"
+                }
+                
+                if array1 != 0.0 {
+                    self.height2.text = String(array1)
+                }
+                else {
+                    self.height2.text = "-"
+                }
+                
+                if array2 != 0.0 {
+                    self.height3.text = String(array2)
+                }
+                else {
+                    self.height3.text = "-"
+                }
+                
+                if array3 != 0.0 {
+                    self.height4.text = String(array3)
+                }
+                else {
+                    self.height4.text = "-"
+                }
+                
+                if array4 != 0.0 {
+                    self.height5.text = String(array4)
+                }
+                else {
+                    self.height5.text = "-"
+                }
+            }
+        })
+    }
+    
+    //Weight Labels
+    @IBOutlet weak var weight1: UILabel!
+    @IBOutlet weak var weight2: UILabel!
+    @IBOutlet weak var weight3: UILabel!
+    @IBOutlet weak var weight4: UILabel!
+    @IBOutlet weak var weight5: UILabel!
+    func displayWeight() {
+        firestore = Firestore.firestore()
+        let doc = firestore.collection("Profile").document(userDocumentName)
+        doc.getDocument(completion: {(snapshot, error) in
+            if let d = snapshot?.data() {
+                let array0 = d["Weight_trend0"] as! Double
+                let array1 = d["Weight_trend1"] as! Double
+                let array2 = d["Weight_trend2"] as! Double
+                let array3 = d["Weight_trend3"] as! Double
+                let array4 = d["Weight_trend4"] as! Double
+                
+                if array0 != 0.0 {
+                    self.weight1.text = String(array0)
+                }
+                else {
+                    self.weight1.text = "-"
+                }
+                
+                if array1 != 0.0 {
+                    self.weight2.text = String(array1)
+                }
+                else {
+                    self.weight2.text = "-"
+                }
+                
+                if array2 != 0.0 {
+                    self.weight3.text = String(array2)
+                }
+                else {
+                    self.weight3.text = "-"
+                }
+                
+                if array3 != 0.0 {
+                    self.weight4.text = String(array3)
+                }
+                else {
+                    self.weight4.text = "-"
+                }
+                
+                if array4 != 0.0 {
+                    self.weight5.text = String(array4)
+                }
+                else {
+                    self.weight5.text = "-"
+                }
+            }
+        })
+    }
+    
+    //Update Stat
+    @IBAction func updateStat(_ sender: Any) {
+        let doc = firestore.collection("Profile").document(userDocumentName)
+        doc.getDocument(completion: {(snapshot, error) in
+            if let d = snapshot?.data() {
+                let Count1 = d["AgeTrendCount"] as! Int
+                let Count2 = d["HeightTrendCount"] as! Int
+                let Count3 = d["WeightTrendCount"] as! Int
+                
+                let BirthYear = d["Child_birthyear"] as! Int
+                let BirthMonth = d["Child_birthmonth"] as! Int
+                let date = Date()
+                let calendar = Calendar.current
+                let year = calendar.component(.year, from: date)
+                let month = calendar.component(.month, from: date)
+                var age: Int
+                if month >= BirthMonth {
+                    age = 12 * (year - BirthYear) + (month - BirthMonth)
+                }
+                else {
+                    age = 12 * (year - BirthYear) + (BirthMonth - month)
+                }
+                if Count1 < 5 {
+                    let entry = "Age_trend" + String(Count1)
+                    doc.updateData([entry: age])
+                    doc.updateData(["AgeTrendCount": Count1 + 1])
+                }
+                else {
+                    let a1 = d["Age_trend1"] as! Int
+                    let a2 = d["Age_trend2"] as! Int
+                    let a3 = d["Age_trend3"] as! Int
+                    let a4 = d["Age_trend4"] as! Int
+                    
+                    doc.updateData(["Age_trend0": a1])
+                    doc.updateData(["Age_trend1": a2])
+                    doc.updateData(["Age_trend2": a3])
+                    doc.updateData(["Age_trend3": a4])
+                    doc.updateData(["Age_trend4": age])
+                }
+                
+                self.UserChildHeight = (Double(self.inputNewHeight.text!))!
+                doc.updateData(["Child_height": self.UserChildHeight])
+                self.ChildHeight()
+                if Count2 < 5 {
+                    let entry = "Height_trend" + String(Count2)
+                    doc.updateData([entry: self.UserChildHeight])
+                    doc.updateData(["HeightTrendCount": Count2 + 1])
+                }
+                else {
+                    let h1 = d["Height_trend1"] as! Double
+                    let h2 = d["Height_trend2"] as! Double
+                    let h3 = d["Height_trend3"] as! Double
+                    let h4 = d["Height_trend4"] as! Double
+                    
+                    doc.updateData(["Height_trend0": h1])
+                    doc.updateData(["Height_trend1": h2])
+                    doc.updateData(["Height_trend2": h3])
+                    doc.updateData(["Height_trend3": h4])
+                    doc.updateData(["Height_trend4": self.UserChildHeight])
+                }
+                
+                self.UserChildWeight = (Double(self.inputNewWeight.text!))!
+                doc.updateData(["Child_weight": self.UserChildWeight])
+                self.ChildWeight()
+                if Count3 < 5 {
+                    let entry = "Weight_trend" + String(Count3)
+                    doc.updateData([entry: self.UserChildWeight])
+                    doc.updateData(["WeightTrendCount": Count3 + 1])
+                }
+                else {
+                    let w1 = d["Weight_trend1"] as! Double
+                    let w2 = d["Weight_trend2"] as! Double
+                    let w3 = d["Weight_trend3"] as! Double
+                    let w4 = d["Weight_trend4"] as! Double
+                    
+                    doc.updateData(["Weight_trend0": w1])
+                    doc.updateData(["Weight_trend1": w2])
+                    doc.updateData(["Weight_trend2": w3])
+                    doc.updateData(["Weight_trend3": w4])
+                    doc.updateData(["Weight_trend4": self.UserChildWeight])
+                }
+            }
+        })
+        
+        displayAge()
+        displayHeight()
+        displayWeight()
+    }
+    
     //Separation Line
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -149,10 +398,9 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
         //Load and Display Data from Firestore
         firestore = Firestore.firestore()
-        let doc = firestore.collection("Profile").document("test-user")
+        let doc = firestore.collection("Profile").document(userDocumentName)
         doc.getDocument(completion: {(snapshot, error) in
             if let d = snapshot?.data() {
                 self.UserName = d["User_name"] as! String
@@ -166,11 +414,15 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
             }
             self.WhoseChild()
             self.ChildName()
-            self.ChildAge()
+            self.ChildAge(&self.UserChildAge)
             self.ChildGender()
             self.ChildHeight()
             self.ChildWeight()
         })
+        print(UserChildAge)
+        displayAge()
+        displayHeight()
+        displayWeight()
     }
     
     @IBAction func doBtnSignout(_ sender: Any) {
