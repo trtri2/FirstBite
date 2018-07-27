@@ -16,6 +16,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var logTable: UITableView!
     var data:[String] = []
     var selectedRow:Int = -1
+//    var imageName:String = ""
     
     //Create Firestore variable
     var fstore: Firestore!
@@ -46,18 +47,20 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         return data.count
     }
     
+//    func receiveImageString(imgName:String){
+//        imageName = imgName
+//    }
+    
     //set title in the tableview
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var imageName: String = ""
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = data[indexPath.row]
         
         fstore.collection("Log").whereField("datetime", isEqualTo: data[indexPath.row]).getDocuments {(snapshot, error) in
             for doc in (snapshot?.documents)! {
-                imageName = doc.data()["Activity"] as! String
+                cell.imageView?.image = UIImage(named: doc.data()["Activity"] as! String)
             }
-//            cell.imageView?.image = UIImage(named: imageName)
         }
 //        cell.imageView?.image = UIImage(named: imageName)
         return cell
