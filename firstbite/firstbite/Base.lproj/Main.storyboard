@@ -918,7 +918,7 @@
                     <navigationItem key="navigationItem" title="Guidebook" id="qeH-Wh-Vtg">
                         <barButtonItem key="rightBarButtonItem" title="Bookmarks" id="TSF-cv-CLv">
                             <connections>
-                                <segue destination="PLB-5A-jDZ" kind="show" id="api-h8-bya"/>
+                                <segue destination="QxQ-Rm-mdj" kind="show" id="Yeh-mr-5rX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2442,7 +2442,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zab-gM-G4c" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="780" y="1682"/>
+            <point key="canvasLocation" x="3071" y="1854"/>
         </scene>
         <!--Bookmark Article-->
         <scene sceneID="XaG-ll-b8c">
@@ -2470,7 +2470,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7F-kR-cNp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1608.8" y="1656.521739130435"/>
+            <point key="canvasLocation" x="3804" y="1854"/>
         </scene>
     </scenes>
     <resources>

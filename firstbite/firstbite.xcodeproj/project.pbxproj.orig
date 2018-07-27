@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
+		10199BDD210B32BF007DFF3F /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10199BDC210B32BE007DFF3F /* AuthViewController.swift */; };
+=======
+		102954FC210ACDBC00EE8994 /* BookmarkArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102954FB210ACDBA00EE8994 /* BookmarkArticleView.swift */; };
+>>>>>>> Leon_branch_jul26
 		109C362920FF66E400CA1BFC /* SolidFoodArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362620FF66E200CA1BFC /* SolidFoodArticlesViewController.swift */; };
 		109C362A20FF66E400CA1BFC /* FeedingHabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362720FF66E300CA1BFC /* FeedingHabitsViewController.swift */; };
 		109C362B20FF66E400CA1BFC /* SolidFoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362820FF66E400CA1BFC /* SolidFoodsViewController.swift */; };
@@ -18,11 +23,8 @@
 		84FA1D6920EC8523007A0E9E /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */; };
 		A435BFC120FAA64900695447 /* LogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A435BFC020FAA64900695447 /* LogDetailViewController.swift */; };
 		A4B7770E20F4798E00CCBC13 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4B7770D20F4798E00CCBC13 /* GoogleService-Info.plist */; };
-<<<<<<< HEAD
-		A4E64C9721083DDF004A43E7 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E64C9621083DDF004A43E7 /* AuthViewController.swift */; };
-=======
+		A4E64C9721083DDF004A43E7 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		B6316BB320FFEEB300239941 /* InitialProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6316BB220FFEEB300239941 /* InitialProfile.swift */; };
->>>>>>> new_Kelvin_branch
 		B6D7833C20FD8DDE00C87CF4 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7833B20FD8DDE00C87CF4 /* Profile.swift */; };
 		BA40BC8020ECA857005F079F /* SupplementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C3A7E820EC85AF005BABCC /* SupplementViewController.swift */; };
 		BDB781BAFEFE45B682BAF77F /* Pods_firstbite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E900B36522A62D7A5CE0240 /* Pods_firstbite.framework */; };
@@ -40,6 +42,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
+		10199BDC210B32BE007DFF3F /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+=======
+		102954FB210ACDBA00EE8994 /* BookmarkArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkArticleView.swift; sourceTree = "<group>"; };
+>>>>>>> Leon_branch_jul26
 		109C362620FF66E200CA1BFC /* SolidFoodArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolidFoodArticlesViewController.swift; sourceTree = "<group>"; };
 		109C362720FF66E300CA1BFC /* FeedingHabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingHabitsViewController.swift; sourceTree = "<group>"; };
 		109C362820FF66E400CA1BFC /* SolidFoodsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolidFoodsViewController.swift; sourceTree = "<group>"; };
@@ -54,11 +61,7 @@
 		84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		A435BFC020FAA64900695447 /* LogDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetailViewController.swift; sourceTree = "<group>"; };
 		A4B7770D20F4798E00CCBC13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		A4E64C9621083DDF004A43E7 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
-=======
 		B6316BB220FFEEB300239941 /* InitialProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialProfile.swift; sourceTree = "<group>"; };
->>>>>>> new_Kelvin_branch
 		B6D7833B20FD8DDE00C87CF4 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		D8234DB3210988F50000A9A5 /* BreastfeedingDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreastfeedingDetailedViewController.swift; sourceTree = "<group>"; };
 		D8234DB5210989120000A9A5 /* BottlefeedingDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottlefeedingDetailedViewController.swift; sourceTree = "<group>"; };
@@ -132,9 +135,11 @@
 				D8C3A7DA20EC687B005BABCC /* BreastfeedingViewController.swift */,
 				D8234DB3210988F50000A9A5 /* BreastfeedingDetailedViewController.swift */,
 				84E8DA7B2106D75400CD55CD /* OverviewViewController.swift */,
+				10199BDC210B32BE007DFF3F /* AuthViewController.swift */,
 				D8C3A7E020EC687C005BABCC /* LogViewController.swift */,
 				A435BFC020FAA64900695447 /* LogDetailViewController.swift */,
 				D8C3A7E820EC85AF005BABCC /* SupplementViewController.swift */,
+				102954FB210ACDBA00EE8994 /* BookmarkArticleView.swift */,
 				D8234DB72109892B0000A9A5 /* SupplementDetailedViewController.swift */,
 				D8EEC60720E727F200C1E623 /* AppDelegate.swift */,
 				84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */,
@@ -142,15 +147,11 @@
 				109C362620FF66E200CA1BFC /* SolidFoodArticlesViewController.swift */,
 				109C362820FF66E400CA1BFC /* SolidFoodsViewController.swift */,
 				D8EEC60D20E727F200C1E623 /* Main.storyboard */,
-<<<<<<< HEAD
-				A4E64C9621083DDF004A43E7 /* AuthViewController.swift */,
 				8446CE88210A7D9E00078728 /* GraphsViewController.swift */,
 				8446CE8B210A82DD00078728 /* PieViewController.swift */,
 				109C362E20FF82D300CA1BFC /* DailyFoodViewController.swift */,
 				109C362C20FF7D6D00CA1BFC /* BreastfeedingTopicViewController.swift */,
-=======
 				B6316BB220FFEEB300239941 /* InitialProfile.swift */,
->>>>>>> new_Kelvin_branch
 				B6D7833B20FD8DDE00C87CF4 /* Profile.swift */,
 				D8EEC61020E727F200C1E623 /* Assets.xcassets */,
 				D8EEC61220E727F200C1E623 /* LaunchScreen.storyboard */,
@@ -295,30 +296,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10199BDD210B32BF007DFF3F /* AuthViewController.swift in Sources */,
 				A435BFC120FAA64900695447 /* LogDetailViewController.swift in Sources */,
 				B6D7833C20FD8DDE00C87CF4 /* Profile.swift in Sources */,
 				84FA1D6920EC8523007A0E9E /* BookmarksViewController.swift in Sources */,
 				D8C3A7E120EC687C005BABCC /* BreastfeedingViewController.swift in Sources */,
-<<<<<<< HEAD
 				D8234DB4210988F50000A9A5 /* BreastfeedingDetailedViewController.swift in Sources */,
 				109C362920FF66E400CA1BFC /* SolidFoodArticlesViewController.swift in Sources */,
 				109C362A20FF66E400CA1BFC /* FeedingHabitsViewController.swift in Sources */,
 				109C362D20FF7D6E00CA1BFC /* BreastfeedingTopicViewController.swift in Sources */,
 				8446CE89210A7D9E00078728 /* GraphsViewController.swift in Sources */,
-=======
 				B6316BB320FFEEB300239941 /* InitialProfile.swift in Sources */,
->>>>>>> new_Kelvin_branch
 				D8C3A7E720EC687C005BABCC /* LogViewController.swift in Sources */,
 				BA40BC8020ECA857005F079F /* SupplementViewController.swift in Sources */,
 				84E8DA7C2106D75400CD55CD /* OverviewViewController.swift in Sources */,
 				D8EEC60820E727F200C1E623 /* AppDelegate.swift in Sources */,
 				D8234DB6210989120000A9A5 /* BottlefeedingDetailedViewController.swift in Sources */,
-				A4E64C9721083DDF004A43E7 /* AuthViewController.swift in Sources */,
+				A4E64C9721083DDF004A43E7 /* (null) in Sources */,
 				109C362F20FF82D300CA1BFC /* DailyFoodViewController.swift in Sources */,
 				D8C3A7E620EC687C005BABCC /* BottlefeedingViewController.swift in Sources */,
 				D8234DB82109892B0000A9A5 /* SupplementDetailedViewController.swift in Sources */,
 				109C362B20FF66E400CA1BFC /* SolidFoodsViewController.swift in Sources */,
+<<<<<<< HEAD
 				8446CE8C210A82DD00078728 /* PieViewController.swift in Sources */,
+=======
+				102954FC210ACDBC00EE8994 /* BookmarkArticleView.swift in Sources */,
+>>>>>>> Leon_branch_jul26
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
