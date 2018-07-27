@@ -49,6 +49,12 @@ class AuthViewController: UIViewController {
                 if error == nil {
                     self.performSegue(withIdentifier: "authed", sender: nil)
                 }
+                else if(email.count < 0){
+                    self.showCreateAlert()
+                }
+                else if(password.count < 5){
+                    self.showCreatePWAlert()
+                }
                 else {
                     self.showCreateAlert()
                 }
@@ -65,7 +71,7 @@ class AuthViewController: UIViewController {
     }
     
     func showLoginAlert() {
-        let alert:UIAlertController = UIAlertController(title: "User Not Fount", message: "Incorrect username and Password. Please try again", preferredStyle: .alert)
+        let alert:UIAlertController = UIAlertController(title: "Unable to login", message: "Incorrect username or password. Please try again", preferredStyle: .alert)
         let action1: UIAlertAction = UIAlertAction(title: "OK", style: .cancel) {
             (_:UIAlertAction) in
             print("cancel handler")
@@ -77,7 +83,20 @@ class AuthViewController: UIViewController {
     }
     
     func showCreateAlert() {
-        let alert:UIAlertController = UIAlertController(title: "Cannot Create User", message: "Check if the email is valid", preferredStyle: .alert)
+        let alert:UIAlertController = UIAlertController(title: "Cannot Create User", message: "Check if your email is valid", preferredStyle: .alert)
+        let action1: UIAlertAction = UIAlertAction(title: "OK", style: .cancel) {
+            (_:UIAlertAction) in
+            print("cancel handler")
+        }
+        alert.addAction(action1)
+        self.present(alert,animated:true) {
+            print("alert handler")
+        }
+    }
+    
+    // Functionality: invalid password alert
+    func showCreatePWAlert() {
+        let alert:UIAlertController = UIAlertController(title: "Cannot Create User", message: "Your password must contain 6 or more characters.", preferredStyle: .alert)
         let action1: UIAlertAction = UIAlertAction(title: "OK", style: .cancel) {
             (_:UIAlertAction) in
             print("cancel handler")
