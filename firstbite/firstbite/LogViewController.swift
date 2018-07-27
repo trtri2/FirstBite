@@ -85,9 +85,6 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     //prepare data to be displayed in the detailed view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        
-//        let supplementDetailView:SupplementDetailedViewController = segue.destination as! SupplementDetailedViewController
-        
         var DictArray: [String:String] = [:];
 //        var textString: String = ""
 
@@ -110,6 +107,9 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
             } else if DictArray["Activity"] == "Bottlefeeding" {
                 let bottlefeedDetailView:BottlefeedingDetailedViewController = segue.destination as! BottlefeedingDetailedViewController
                 bottlefeedDetailView.setText(datetimeInput: DictArray["datetime"]!, nameInput: DictArray["Formula Name"]!, amountInput: DictArray["Formula Amount"]!, reactionInput: DictArray["Reaction"]!, noteInput: DictArray["Notes"]!)
+            } else {
+                let supplementDetailView:SupplementDetailedViewController = segue.destination as! SupplementDetailedViewController
+                supplementDetailView.setText(datetimeInput: DictArray["datetime"]!, nameInput: DictArray["Food Name"]!, categoryInput: DictArray["Food Category"]!, quantityInput: DictArray["Quantity"]!, unitInput: DictArray["Quantity Unit"]!, reactionInput: DictArray["Reaction"]!, noteInput: DictArray["Notes"]!)
             }
 //            detailView.setText(t: textString)
         })
