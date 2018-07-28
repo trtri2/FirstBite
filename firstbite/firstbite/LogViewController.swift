@@ -47,10 +47,6 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         return data.count
     }
     
-//    func receiveImageString(imgName:String){
-//        imageName = imgName
-//    }
-    
     //set title in the tableview
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -79,7 +75,6 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         var DictArray: [String:String] = [:];
-//        var textString: String = ""
 
         //get the index of the selected row
         selectedRow = logTable.indexPathForSelectedRow!.row
@@ -89,11 +84,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
             for doc in (snapshot?.documents)! {
                 DictArray = doc.data() as! [String : String]
             }
-            //var selectedArray = [String](DictArray.values)
-            //var numberInArry = DictArray.count
-//            for (key, value) in DictArray {
-//                textString += "\(key) : \(value)\n"
-//            }
+            
             if DictArray["Activity"] == "Breastfeeding" {
                 let breastfeedDetailView:BreastfeedingDetailedViewController = segue.destination as! BreastfeedingDetailedViewController
                 breastfeedDetailView.setText(datetimeInput: DictArray["datetime"]!, leftInput: DictArray["Left Timer"]!, rightInput: DictArray["Right Timer"]!, noteInput: DictArray["Notes"]!)
@@ -104,7 +95,6 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 let supplementDetailView:SupplementDetailedViewController = segue.destination as! SupplementDetailedViewController
                 supplementDetailView.setText(datetimeInput: DictArray["datetime"]!, nameInput: DictArray["Food Name"]!, categoryInput: DictArray["Food Category"]!, quantityInput: DictArray["Quantity"]!, unitInput: DictArray["Quantity Unit"]!, reactionInput: DictArray["Reaction"]!, noteInput: DictArray["Notes"]!)
             }
-//            detailView.setText(t: textString)
         })
     }
 
@@ -123,12 +113,10 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         })
         data.remove(at: indexPath.row)
         logTable.deleteRows(at: [indexPath], with: .fade)
-        //UserDefaults.standard.set(data, forKey: "breastfeed")
     }
     
     //load data from database and put into local array for tableview
     func load() {
-        //if let loadedData:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
         var loadedData:[String] = []
         var loadedDict:[String:String] = [:]
         

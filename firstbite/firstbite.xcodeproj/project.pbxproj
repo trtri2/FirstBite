@@ -18,7 +18,6 @@
 		8446CE8C210A82DD00078728 /* PieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446CE8B210A82DD00078728 /* PieViewController.swift */; };
 		84E8DA7C2106D75400CD55CD /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E8DA7B2106D75400CD55CD /* OverviewViewController.swift */; };
 		84FA1D6920EC8523007A0E9E /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */; };
-		A435BFC120FAA64900695447 /* LogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A435BFC020FAA64900695447 /* LogDetailViewController.swift */; };
 		A4B7770E20F4798E00CCBC13 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4B7770D20F4798E00CCBC13 /* GoogleService-Info.plist */; };
 		A4E64C9721083DDF004A43E7 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		B6316BB320FFEEB300239941 /* InitialProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6316BB220FFEEB300239941 /* InitialProfile.swift */; };
@@ -53,7 +52,6 @@
 		8446CE8B210A82DD00078728 /* PieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieViewController.swift; sourceTree = "<group>"; };
 		84E8DA7B2106D75400CD55CD /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
-		A435BFC020FAA64900695447 /* LogDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetailViewController.swift; sourceTree = "<group>"; };
 		A4B7770D20F4798E00CCBC13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B6316BB220FFEEB300239941 /* InitialProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialProfile.swift; sourceTree = "<group>"; };
 		B6D7833B20FD8DDE00C87CF4 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 				84E8DA7B2106D75400CD55CD /* OverviewViewController.swift */,
 				10199BDC210B32BE007DFF3F /* AuthViewController.swift */,
 				D8C3A7E020EC687C005BABCC /* LogViewController.swift */,
-				A435BFC020FAA64900695447 /* LogDetailViewController.swift */,
 				D8C3A7E820EC85AF005BABCC /* SupplementViewController.swift */,
 				D8234DB72109892B0000A9A5 /* SupplementDetailedViewController.swift */,
 				D8EEC60720E727F200C1E623 /* AppDelegate.swift */,
@@ -291,7 +288,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				10199BDD210B32BF007DFF3F /* AuthViewController.swift in Sources */,
-				A435BFC120FAA64900695447 /* LogDetailViewController.swift in Sources */,
 				B6D7833C20FD8DDE00C87CF4 /* Profile.swift in Sources */,
 				84FA1D6920EC8523007A0E9E /* BookmarksViewController.swift in Sources */,
 				D8C3A7E120EC687C005BABCC /* BreastfeedingViewController.swift in Sources */,
