@@ -16,7 +16,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var logTable: UITableView!
     var data:[String] = []
     var selectedRow:Int = -1
-//    var imageName:String = ""
+    var dateActivityDict:[String:String] = [:]
     
     //Create Firestore variable
     var fstore: Firestore!
@@ -56,25 +56,16 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = data[indexPath.row]
-        
-        fstore.collection("Log").whereField("datetime", isEqualTo: data[indexPath.row]).getDocuments {(snapshot, error) in
-            for doc in (snapshot?.documents)! {
-                cell.imageView?.image = UIImage(named: doc.data()["Activity"] as! String)
-            }
-        }
-//        cell.imageView?.image = UIImage(named: imageName)
+        cell.imageView?.image = UIImage(named: dateActivityDict[data[indexPath.row]]!)
         return cell
     }
     
     //go to the detailed view
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var activity:String = ""
-//        var DictArray: [String:String] = [:]
-        fstore.collection("Log").whereField("datetime", isEqualTo: data[indexPath.row]).getDocuments(completion: {(snapshot, error) in
-            for doc in (snapshot?.documents)! {
-                activity = doc.data()["Activity"] as! String
-            }
-            
+        
+        activity = dateActivityDict[data[indexPath.row]]!
+        
             if activity == "Breastfeeding" {
                 self.performSegue(withIdentifier: "breastfeeding", sender: nil)
             } else if activity == "Bottlefeeding" {
@@ -82,7 +73,6 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
             } else {
                 self.performSegue(withIdentifier: "supplement", sender: nil)
             }
-        })
     }
     
     //prepare data to be displayed in the detailed view
@@ -140,11 +130,15 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     func load() {
         //if let loadedData:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
         var loadedData:[String] = []
+        var loadedDict:[String:String] = [:]
+        
         fstore.collection("Log").getDocuments(completion: {(snapshot, error) in
             for doc in (snapshot?.documents)! {
-                loadedData.insert(doc.data()["datetime"] as! String, at: 0)
+                loadedDict[doc.data()["datetime"] as! String] = doc.data()["Activity"] as? String
             }
+            loadedData = [String](loadedDict.keys)
             self.data = loadedData.sorted()
+            self.dateActivityDict = loadedDict
             self.logTable.reloadData()
         })
     }
