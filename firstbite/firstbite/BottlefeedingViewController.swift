@@ -192,6 +192,10 @@ class BottlefeedingViewController: UIViewController {
         if(tempNotes == "Add optional notes such as allergies, reactions, etc..."){
             tempNotes = " "
         }
+        
+        if(formulaTextFieldOutlet.text! == "")||(formulaTextFieldOutlet.text! == " "){
+            formulaTextFieldOutlet.text = "Baby Formula"
+        }
 
         fstore.collection("Log").addDocument(data: ["datetime":dataTextField.text!,"Activity":"Bottlefeeding","Formula Name":formulaTextFieldOutlet.text!,"Formula Amount":amountTextFieldOutlet.text!,"Notes":tempNotes, "Reaction":reaction])
         showAlert()

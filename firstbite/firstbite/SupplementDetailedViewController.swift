@@ -22,9 +22,8 @@ class SupplementDetailedViewController: UIViewController {
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbCategory: UILabel!
     @IBOutlet weak var lbQuantity: UILabel!
-    @IBOutlet weak var lbUnit: UILabel!
     @IBOutlet weak var lbReaction: UILabel!
-    @IBOutlet weak var lbNotes: UILabel!
+    @IBOutlet var notesView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,33 +31,47 @@ class SupplementDetailedViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.navigationItem.largeTitleDisplayMode = .never
         
-        lbDateTime.text = datetimeText
-        lbName.text = nameText
-        lbCategory.text = categoryText
-        lbQuantity.text = quantityText
-        lbUnit.text = unitText
-        lbReaction.text = reactionText
-        lbNotes.text = noteText
+//        lbDateTime.text = datetimeText
+//        lbName.text = nameText
+//        lbCategory.text = categoryText
+//        lbQuantity.text = quantityText
+//        lbUnit.text = unitText
+//        lbReaction.text = reactionText
+//        lbNotes.text = noteText
     }
     
     func setText(datetimeInput:String,nameInput:String,categoryInput:String,quantityInput:String,unitInput:String,reactionInput:String,noteInput:String){
         
-        datetimeText = datetimeInput
+//        datetimeText = datetimeInput
         nameText = nameInput
-        categoryText = categoryInput
-        quantityText = quantityInput
-        unitText = unitInput
+//        categoryText = categoryInput
+//        quantityText = quantityInput
+//        unitText = unitInput
         reactionText = reactionInput
-        noteText = noteInput
+//        noteText = noteInput
+        
+        // for underlining name
+        let textRange = NSRange(location: 0, length: (nameText.count))
+        let attributedText = NSMutableAttributedString(string: nameText)
+        attributedText.addAttribute(NSAttributedStringKey.underlineStyle, value: NSUnderlineStyle.styleSingle.rawValue, range: textRange)
+        
+        if(reactionText == "Good"){
+            reactionText = "🤤"
+        }
+        else if(reactionText == "Bad"){
+            reactionText = "😧"
+        }
+        else{
+            reactionText = "😐"
+        }
         
         if isViewLoaded{
             lbDateTime.text = datetimeInput
-            lbName.text = nameInput
+            lbName.attributedText = attributedText
             lbCategory.text = categoryInput
-            lbQuantity.text = quantityInput
-            lbUnit.text = unitInput
-            lbReaction.text = reactionInput
-            lbNotes.text = noteInput
+            lbQuantity.text = quantityInput + unitInput
+            lbReaction.text = reactionText
+            notesView.text = noteInput
         }
     }
 

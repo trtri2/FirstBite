@@ -20,7 +20,7 @@ class BottlefeedingDetailedViewController: UIViewController {
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbAmount: UILabel!
     @IBOutlet weak var lbReaction: UILabel!
-    @IBOutlet weak var lbNotes: UILabel!
+    @IBOutlet var notesView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,27 +28,42 @@ class BottlefeedingDetailedViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.navigationItem.largeTitleDisplayMode = .never
         
-        lbDateTime.text = datetimeText
-        lbName.text = nameText
-        lbAmount.text = amountText
-        lbReaction.text = reactionText
-        lbNotes.text = noteText
+        // not needed?
+//        lbDateTime.text = datetimeText
+//        lbAmount.text = amountText + "mL"
+//        lbReaction.text = reactionText
+//        lbNotes.text = noteText
         
     }
     
     func setText(datetimeInput:String,nameInput:String,amountInput:String,reactionInput:String,noteInput:String){
-        datetimeText = datetimeInput
+//        datetimeText = datetimeInput
         nameText = nameInput
-        amountText = amountInput
+//        amountText = amountInput
         reactionText = reactionInput
-        noteText = noteInput
+//        noteText = noteInput
+        
+        // for underlining name
+        let textRange = NSRange(location: 0, length: (nameText.count))
+        let attributedText = NSMutableAttributedString(string: nameText)
+        attributedText.addAttribute(NSAttributedStringKey.underlineStyle, value: NSUnderlineStyle.styleSingle.rawValue, range: textRange)
+        
+        if(reactionText == "Good"){
+            reactionText = "🤤"
+        }
+        else if(reactionText == "Bad"){
+            reactionText = "😧"
+        }
+        else{
+            reactionText = "😐"
+        }
         
         if isViewLoaded{
+            lbName.attributedText = attributedText
             lbDateTime.text = datetimeInput
-            lbName.text = nameInput
-            lbAmount.text = amountInput
-            lbReaction.text = reactionInput
-            lbNotes.text = noteInput
+            lbAmount.text = amountInput + "mL"
+            lbReaction.text = reactionText
+            notesView.text = noteInput
         }
     }
 

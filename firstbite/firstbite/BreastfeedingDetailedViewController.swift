@@ -18,18 +18,18 @@ class BreastfeedingDetailedViewController: UIViewController {
     @IBOutlet weak var lbDateTime: UILabel!
     @IBOutlet weak var lbLeft: UILabel!
     @IBOutlet weak var lbRight: UILabel!
-    @IBOutlet weak var lbNote: UILabel!
+    @IBOutlet var notesView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.navigationItem.largeTitleDisplayMode = .never
-        
-        lbDateTime.text = datetimeText
-        lbLeft.text = leftText
-        lbRight.text = rightText
-        lbNote.text = noteText
+//
+//        lbDateTime.text = datetimeText
+//        lbLeft.text = leftText
+//        lbRight.text = rightText
+//        lbNote.text = noteText
         
     }
     
@@ -43,7 +43,7 @@ class BreastfeedingDetailedViewController: UIViewController {
             lbDateTime.text = datetimeInput
             lbLeft.text = leftInput
             lbRight.text = rightInput
-            lbNote.text = noteInput
+            notesView.text = noteInput
         }
     }
 
