@@ -14,11 +14,15 @@ class GraphsViewController: UIViewController {
      var numbers : [Double] = [25.2, 10, 3, 5, 6]
     
     @IBOutlet var chtChart: LineChartView!
+    @IBOutlet weak var pieChart: PieChartView!
     
-    @IBAction func dosmth(_ sender: Any) {
-        updateGraph()
-    }
+    @IBOutlet weak var iosStepper: UIStepper!
+    @IBOutlet weak var macStepper: UIStepper!
     
+    var iosDataEntry = PieChartDataEntry(value: 0)
+    var macDataEntry = PieChartDataEntry(value: 0)
+    
+    var numberOfDownloadsDataEntries = [PieChartDataEntry]()
     
     
     func updateGraph(){
@@ -42,8 +46,44 @@ class GraphsViewController: UIViewController {
         chtChart.data = data //finally - it adds the chart data to the chart and causes an update
         chtChart.chartDescription?.text = "My awesome chart" // Here we set the description for the graph
     }
+    
+    @IBAction func changeiOS(_ sender: UIStepper) {
+        iosDataEntry.value = sender.value
+        updateChartData()
+    }
+    
+    @IBAction func changeMac(_ sender: UIStepper) {
+        macDataEntry.value = sender.value
+        updateChartData()
+    }
+    
+    
+    func updateChartData() {
+        
+        let chartDataSet = PieChartDataSet(values: numberOfDownloadsDataEntries, label: nil)
+        let chartData = PieChartData(dataSet: chartDataSet)
+        
+        let colors = [UIColor.blue, UIColor.red]
+        chartDataSet.colors = colors
+        
+        pieChart.data = chartData
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        pieChart.chartDescription?.text = ""
+        
+        iosDataEntry.value = iosStepper.value
+        iosDataEntry.label = "herb"
+        
+        macDataEntry.value = macStepper.value
+        macDataEntry.label = "gerry"
+        
+        numberOfDownloadsDataEntries = [iosDataEntry, macDataEntry]
+        
+        updateChartData()
+        updateGraph()
 
         // Do any additional setup after loading the view.
     }
