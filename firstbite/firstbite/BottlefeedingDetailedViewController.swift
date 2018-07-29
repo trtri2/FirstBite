@@ -26,7 +26,11 @@ class BottlefeedingDetailedViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navigationItem.largeTitleDisplayMode = .never
+        if #available(iOS 11.0, *) {
+            self.navigationItem.largeTitleDisplayMode = .never
+        } else {
+            // Fallback on earlier versions
+        }
         
         // not needed?
 //        lbDateTime.text = datetimeText

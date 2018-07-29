@@ -25,8 +25,16 @@ class BookmarksViewController:  UIViewController, UITableViewDataSource, UITable
         bookmarkTable.dataSource = self
         bookmarkTable.delegate = self
         self.title = "Bookmarks"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.largeTitleDisplayMode = .always
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            // Fallback on earlier versions
+        }
+        if #available(iOS 11.0, *) {
+            self.navigationItem.largeTitleDisplayMode = .always
+        } else {
+            // Fallback on earlier versions
+        }
         self.navigationItem.rightBarButtonItem = editButtonItem
         
         fstore = Firestore.firestore()

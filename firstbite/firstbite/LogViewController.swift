@@ -29,8 +29,16 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         logTable.dataSource = self
         logTable.delegate = self
         self.title = "History Log"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.largeTitleDisplayMode = .always
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            // Fallback on earlier versions
+        }
+        if #available(iOS 11.0, *) {
+            self.navigationItem.largeTitleDisplayMode = .always
+        } else {
+            // Fallback on earlier versions
+        }
         self.navigationItem.rightBarButtonItem = editButtonItem
         
         //initiate Firestore
@@ -127,7 +135,8 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 loadedDict[doc.data()["datetime"] as! String] = doc.data()["Activity"] as? String
             }
             loadedData = [String](loadedDict.keys)
-            self.data = loadedData.sorted()
+            self.data = loadedData.sorted().reversed()
+            
             self.dateActivityDict = loadedDict
             self.logTable.reloadData()
         })
