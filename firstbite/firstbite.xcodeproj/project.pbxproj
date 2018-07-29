@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10199BDD210B32BF007DFF3F /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10199BDC210B32BE007DFF3F /* AuthViewController.swift */; };
 		10199BDF210B37DF007DFF3F /* BookmarkArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10199BDE210B37D6007DFF3F /* BookmarkArticleView.swift */; };
+		1070B945210DC7B900B2236E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070B944210DC7B800B2236E /* AuthViewController.swift */; };
+		1070B947210DC7B900B2236E /* FoodAllergiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070B946210DC7B900B2236E /* FoodAllergiesViewController.swift */; };
+		1070B949210DC7B900B2236E /* HealthyChoicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070B948210DC7B900B2236E /* HealthyChoicesViewController.swift */; };
+		1070B94B210DC7B900B2236E /* MindfulEatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070B94A210DC7B900B2236E /* MindfulEatingViewController.swift */; };
+		1070B94D210DC7B900B2236E /* VitaminsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070B94C210DC7B900B2236E /* VitaminsViewController.swift */; };
+		1070B94F210DC7B900B2236E /* LifestyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070B94E210DC7B900B2236E /* LifestyleViewController.swift */; };
 		109C362920FF66E400CA1BFC /* SolidFoodArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362620FF66E200CA1BFC /* SolidFoodArticlesViewController.swift */; };
 		109C362A20FF66E400CA1BFC /* FeedingHabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362720FF66E300CA1BFC /* FeedingHabitsViewController.swift */; };
 		109C362B20FF66E400CA1BFC /* SolidFoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362820FF66E400CA1BFC /* SolidFoodsViewController.swift */; };
@@ -38,8 +43,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		10199BDC210B32BE007DFF3F /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		10199BDE210B37D6007DFF3F /* BookmarkArticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkArticleView.swift; sourceTree = "<group>"; };
+		1070B944210DC7B800B2236E /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		1070B946210DC7B900B2236E /* FoodAllergiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAllergiesViewController.swift; sourceTree = "<group>"; };
+		1070B948210DC7B900B2236E /* HealthyChoicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthyChoicesViewController.swift; sourceTree = "<group>"; };
+		1070B94A210DC7B900B2236E /* MindfulEatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfulEatingViewController.swift; sourceTree = "<group>"; };
+		1070B94C210DC7B900B2236E /* VitaminsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminsViewController.swift; sourceTree = "<group>"; };
+		1070B94E210DC7B900B2236E /* LifestyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifestyleViewController.swift; sourceTree = "<group>"; };
 		109C362620FF66E200CA1BFC /* SolidFoodArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolidFoodArticlesViewController.swift; sourceTree = "<group>"; };
 		109C362720FF66E300CA1BFC /* FeedingHabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingHabitsViewController.swift; sourceTree = "<group>"; };
 		109C362820FF66E400CA1BFC /* SolidFoodsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolidFoodsViewController.swift; sourceTree = "<group>"; };
@@ -122,28 +132,33 @@
 			isa = PBXGroup;
 			children = (
 				D8C3A7DD20EC687C005BABCC /* Base.lproj */,
+				1070B944210DC7B800B2236E /* AuthViewController.swift */,
 				D8C3A7DF20EC687C005BABCC /* BottlefeedingViewController.swift */,
 				D8234DB5210989120000A9A5 /* BottlefeedingDetailedViewController.swift */,
 				D8C3A7DA20EC687B005BABCC /* BreastfeedingViewController.swift */,
 				D8234DB3210988F50000A9A5 /* BreastfeedingDetailedViewController.swift */,
 				84E8DA7B2106D75400CD55CD /* OverviewViewController.swift */,
-				10199BDC210B32BE007DFF3F /* AuthViewController.swift */,
 				D8C3A7E020EC687C005BABCC /* LogViewController.swift */,
 				D8C3A7E820EC85AF005BABCC /* SupplementViewController.swift */,
 				D8234DB72109892B0000A9A5 /* SupplementDetailedViewController.swift */,
 				D8EEC60720E727F200C1E623 /* AppDelegate.swift */,
-				84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */,
-				109C362720FF66E300CA1BFC /* FeedingHabitsViewController.swift */,
-				109C362620FF66E200CA1BFC /* SolidFoodArticlesViewController.swift */,
-				109C362820FF66E400CA1BFC /* SolidFoodsViewController.swift */,
 				D8EEC60D20E727F200C1E623 /* Main.storyboard */,
 				8446CE88210A7D9E00078728 /* GraphsViewController.swift */,
 				8446CE8B210A82DD00078728 /* PieViewController.swift */,
-				109C362E20FF82D300CA1BFC /* DailyFoodViewController.swift */,
+				84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */,
 				10199BDE210B37D6007DFF3F /* BookmarkArticleView.swift */,
-				109C362C20FF7D6D00CA1BFC /* BreastfeedingTopicViewController.swift */,
 				B6316BB220FFEEB300239941 /* InitialProfile.swift */,
 				B6D7833B20FD8DDE00C87CF4 /* Profile.swift */,
+				109C362620FF66E200CA1BFC /* SolidFoodArticlesViewController.swift */,
+				109C362820FF66E400CA1BFC /* SolidFoodsViewController.swift */,
+				109C362720FF66E300CA1BFC /* FeedingHabitsViewController.swift */,
+				109C362C20FF7D6D00CA1BFC /* BreastfeedingTopicViewController.swift */,
+				109C362E20FF82D300CA1BFC /* DailyFoodViewController.swift */,
+				1070B946210DC7B900B2236E /* FoodAllergiesViewController.swift */,
+				1070B948210DC7B900B2236E /* HealthyChoicesViewController.swift */,
+				1070B94A210DC7B900B2236E /* MindfulEatingViewController.swift */,
+				1070B94E210DC7B900B2236E /* LifestyleViewController.swift */,
+				1070B94C210DC7B900B2236E /* VitaminsViewController.swift */,
 				D8EEC61020E727F200C1E623 /* Assets.xcassets */,
 				D8EEC61220E727F200C1E623 /* LaunchScreen.storyboard */,
 				D8EEC61520E727F200C1E623 /* Info.plist */,
@@ -287,22 +302,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10199BDD210B32BF007DFF3F /* AuthViewController.swift in Sources */,
+				1070B945210DC7B900B2236E /* AuthViewController.swift in Sources */,
+				1070B947210DC7B900B2236E /* FoodAllergiesViewController.swift in Sources */,
 				B6D7833C20FD8DDE00C87CF4 /* Profile.swift in Sources */,
 				84FA1D6920EC8523007A0E9E /* BookmarksViewController.swift in Sources */,
 				D8C3A7E120EC687C005BABCC /* BreastfeedingViewController.swift in Sources */,
+				1070B949210DC7B900B2236E /* HealthyChoicesViewController.swift in Sources */,
 				D8234DB4210988F50000A9A5 /* BreastfeedingDetailedViewController.swift in Sources */,
 				109C362920FF66E400CA1BFC /* SolidFoodArticlesViewController.swift in Sources */,
 				109C362A20FF66E400CA1BFC /* FeedingHabitsViewController.swift in Sources */,
+				1070B94F210DC7B900B2236E /* LifestyleViewController.swift in Sources */,
 				109C362D20FF7D6E00CA1BFC /* BreastfeedingTopicViewController.swift in Sources */,
 				8446CE89210A7D9E00078728 /* GraphsViewController.swift in Sources */,
 				B6316BB320FFEEB300239941 /* InitialProfile.swift in Sources */,
 				D8C3A7E720EC687C005BABCC /* LogViewController.swift in Sources */,
+				1070B94D210DC7B900B2236E /* VitaminsViewController.swift in Sources */,
 				BA40BC8020ECA857005F079F /* SupplementViewController.swift in Sources */,
 				10199BDF210B37DF007DFF3F /* BookmarkArticleView.swift in Sources */,
 				84E8DA7C2106D75400CD55CD /* OverviewViewController.swift in Sources */,
 				D8EEC60820E727F200C1E623 /* AppDelegate.swift in Sources */,
 				D8234DB6210989120000A9A5 /* BottlefeedingDetailedViewController.swift in Sources */,
+				1070B94B210DC7B900B2236E /* MindfulEatingViewController.swift in Sources */,
 				A4E64C9721083DDF004A43E7 /* (null) in Sources */,
 				109C362F20FF82D300CA1BFC /* DailyFoodViewController.swift in Sources */,
 				D8C3A7E620EC687C005BABCC /* BottlefeedingViewController.swift in Sources */,

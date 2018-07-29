@@ -1,8 +1,8 @@
 //
-//  FeedingHabitsViewController.swift
+//  MindfulEatingViewController.swift
 //  firstbite
 //
-//  Created by Leon Trieu on 2018-07-17.
+//  Created by Leon Trieu on 2018-07-28.
 //  Copyright © 2018 Healthy7. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import FirebaseFirestore
 
-class FeedingHabitsViewController: UITableViewController {
+class MindfulEatingViewController: UITableViewController {
     
     var fstore: Firestore!
     var collectionName = ""
@@ -34,34 +34,24 @@ class FeedingHabitsViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         let articleView:SolidFoodArticleViewController = segue.destination as! SolidFoodArticleViewController
         var regularText = ""
-
+        collectionName = "Guide"
+        documentName = "Mindful Eating"
         
         switch segue.identifier {
-        case "fh_6to9"? :
-            collectionName = "Guide"
-            documentName = "Feeding Habits"
-            article = "Feeding Habits: 6-9mo"
+        case "dsam"? :
+            article = "Don't Stress About the Mess"
             break
-        case "fh_9to12"? :
-            collectionName = "Guide"
-            documentName = "Feeding Habits"
-            article = "Feeding Habits: 9-12mo"
+        case "fc"? :
+            article = "Feeding Cues"
             break
-        case "fh_12to24"? :
-            collectionName = "Guide"
-            documentName = "Feeding Habits"
-            article = "Feeding Habits: 12-24mo"
+        case "fj"? :
+            article = "Feeding Jobs"
             break
-        case "fh_24to36"? :
-            collectionName = "Guide"
-            documentName = "Feeding Habits"
-            article = "Feeding Habits: 24-36mo"
+        case "et"? :
+            article = "Eating Together"
             break
-        case "chokinghazard"? :
-            collectionName = "Guide"
-            documentName = "Feeding Habits"
-            article = "Choking Hazards"
-            break
+        case "ppe"? :
+            article = "Preventing Picky Eating"
         default : break
         }
         
@@ -70,7 +60,7 @@ class FeedingHabitsViewController: UITableViewController {
             if let document = snapshot?.data() {
                 regularText = document[self.article] as! String
             }
-            articleView.setText(t:regularText)
+            articleView.setText(t: regularText)
             articleView.setTitle(t:self.article)
         })
         

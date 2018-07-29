@@ -35,25 +35,25 @@ class SolidFoodsViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
     let articleView:SolidFoodArticleViewController = segue.destination as! SolidFoodArticleViewController
        var regularText = ""
-
+        collectionName = "Guide"
+        documentName = "Solid Foods"
         switch segue.identifier {
+            
         case "isf"? :
-            collectionName = "Guide"
-            documentName = "Solid Foods"
-            article = "A1_ISF"
+            article = "Introducing Solid Foods"
             break
         case "cff"? :
-            collectionName = "Guide"
-            documentName = "Solid Foods"
-            article = "A2_CFF"
+            article = "Choosing a First Food"
+            break
         case "gsm"? :
-            collectionName = "Guide"
-            documentName = "Solid Foods"
-            article = "A3_GSM"
+            article = "Getting Started with Meat"
+            break
         case "fc"? :
-            collectionName = "Guide"
-            documentName = "Solid Foods"
-            article = "A4_FC"
+            article = "Food Choices"
+            break
+        case "f&s"? :
+            article = "Fish & Seafood"
+
         default : break
                 }
         

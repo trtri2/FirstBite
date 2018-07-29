@@ -34,26 +34,21 @@ class DailyFoodViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         let articleView:SolidFoodArticleViewController = segue.destination as! SolidFoodArticleViewController
         var regularText = ""
-        
+        collectionName = "Guide"
+        documentName = "Daily Food Suggestions"
         
         switch segue.identifier {
         case "dfs_6to9"? :
-            collectionName = "Guide"
-            documentName = "Daily Food Suggestions"
-            article = "A1_6to9"
+            article = "Food Suggestions: 6-9mo"
             break
         case "dfs_9to12"? :
-            collectionName = "Guide"
-            documentName = "Daily Food Suggestions"
-            article = "A2_9to12"
+            article = "Food Suggestions: 9-12mo"
+            break
         case "dfs_12to24"? :
-            collectionName = "Guide"
-            documentName = "Daily Food Suggestions"
-            article = "A3_12to24"
+            article = "Food Suggestions: 12-24mo"
+            break
         case "dfs_24to36"? :
-            collectionName = "Guide"
-            documentName = "Daily Food Suggestions"
-            article = "A4_24to36"
+            article = "Food Suggestions: 24-36mo"
         default : break
         }
         

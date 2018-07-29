@@ -35,23 +35,19 @@ class BreastfeedingTopicViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         let articleView:SolidFoodArticleViewController = segue.destination as! SolidFoodArticleViewController
         var regularText = ""
-        
+        collectionName = "Guide"
+        documentName = "Breastfeeding"
         
         switch segue.identifier {
         case "bb"? :
-            collectionName = "Guide"
-            documentName = "Breastfeeding"
-            article = "A1_BB"
+            article = "Benefits of Breastfeeding"
             break
         case "weaning"? :
-            collectionName = "Guide"
-            documentName = "Breastfeeding"
-            article = "A2_WEANING"
+            article = "Weaning"
+            break
         case "faq_breastfeeding"? :
-            collectionName = "Guide"
-            documentName = "Breastfeeding"
-            article = "A3_FAQ"
-
+            article = "Breastfeeding FAQ"
+            break
         default : break
         }
         

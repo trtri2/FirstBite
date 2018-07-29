@@ -101,7 +101,7 @@ class InitialProfile: UIViewController {
             WeightTrendCount = 1
         }
         
-        userDocumentName = UserName + UserChildName + String(ChildBirthYear) + String(ChildBirthMonth) + String(ChildBirthDate)
+        userDocumentName = UserName + "'s Profile"
         
         firestore = Firestore.firestore()
         firestore.collection(Auth.auth().currentUser!.uid).document(userDocumentName).setData(["AgeTrendCount": 1, "Age_trend0": age, "Age_trend1": -1, "Age_trend2": -1, "Age_trend3": -1, "Age_trend4": -1, "Child_birthday": ChildBirthDate, "Child_birthmonth": ChildBirthMonth, "Child_birthyear": ChildBirthYear, "Child_gender": ChildGender, "Child_height": ChildHeight, "Child_name": UserChildName, "Child_weight": ChildWeight, "HeightTrendCount": HeightTrendCount, "Height_trend0": ChildHeight, "Height_trend1": 0, "Height_trend2": 0, "Height_trend3": 0, "Height_trend4": 0, "User_name": UserName, "WeightTrendCount": WeightTrendCount, "Weight_trend0": ChildWeight, "Weight_trend1": 0, "Weight_trend2": 0, "Weight_trend3": 0, "Weight_trend4": 0
