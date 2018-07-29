@@ -13,6 +13,7 @@ import FirebaseAuth
 class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     var firestore: Firestore!
+    var userID = Auth.auth().currentUser!.uid
     
     //Creating variables
     var UserName = ""
@@ -144,7 +145,7 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     @IBOutlet weak var age5: UILabel!
     func displayAge() {
         firestore = Firestore.firestore()
-        let doc = firestore.collection("Profile").document(userDocumentName)
+        let doc = firestore.collection(userID).document(userDocumentName)
         doc.getDocument(completion: {(snapshot, error) in
             if let d = snapshot?.data() {
                 let array0 = d["Age_trend0"] as! Int
@@ -199,7 +200,7 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     @IBOutlet weak var height5: UILabel!
     func displayHeight() {
         firestore = Firestore.firestore()
-        let doc = firestore.collection("Profile").document(userDocumentName)
+        let doc = firestore.collection(userID).document(userDocumentName)
         doc.getDocument(completion: {(snapshot, error) in
             if let d = snapshot?.data() {
                 let array0 = d["Height_trend0"] as! Double
@@ -254,7 +255,7 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     @IBOutlet weak var weight5: UILabel!
     func displayWeight() {
         firestore = Firestore.firestore()
-        let doc = firestore.collection("Profile").document(userDocumentName)
+        let doc = firestore.collection(userID).document(userDocumentName)
         doc.getDocument(completion: {(snapshot, error) in
             if let d = snapshot?.data() {
                 let array0 = d["Weight_trend0"] as! Double
@@ -303,7 +304,7 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     
     //Update Stat
     @IBAction func updateStat(_ sender: Any) {
-        let doc = firestore.collection("Profile").document(userDocumentName)
+        let doc = firestore.collection(userID).document(userDocumentName)
         doc.getDocument(completion: {(snapshot, error) in
             if let d = snapshot?.data() {
                 let Count1 = d["AgeTrendCount"] as! Int
@@ -400,7 +401,7 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
         // Do any additional setup after loading the view, typically from a nib.
         //Load and Display Data from Firestore
         firestore = Firestore.firestore()
-        let doc = firestore.collection("Profile").document(userDocumentName)
+        let doc = firestore.collection(userID).document(userDocumentName)
         doc.getDocument(completion: {(snapshot, error) in
             if let d = snapshot?.data() {
                 self.UserName = d["User_name"] as! String

@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 // Functionality: used to add solid/liquid foods to the history log
 class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -41,6 +42,8 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     //create database object
     var fstore: Firestore!
+    // get user ID reference
+    var userID = Auth.auth().currentUser!.uid
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -180,7 +183,7 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
             tempNotes = " "
         }
         
-        fstore.collection("Log").addDocument(data: ["datetime":dataTextField.text!,"Activity":"Supplement","Food Name":foodTextFieldOutlet.text!,"Food Category":categoryTypeString,"Quantity":quantityTextFieldOutlet.text!,"Quantity Unit":quantityUnitString,"Notes":tempNotes,"Reaction":reaction])
+        fstore.collection(userID).addDocument(data: ["datetime":dataTextField.text!,"Activity":"Supplement","Food Name":foodTextFieldOutlet.text!,"Food Category":categoryTypeString,"Quantity":quantityTextFieldOutlet.text!,"Quantity Unit":quantityUnitString,"Notes":tempNotes,"Reaction":reaction, "userID":userID,"isLog":"true"])
 
         showAlert()
     }

@@ -9,6 +9,7 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 // Functionality: the history log interface that will be used for all new logs
 class LogViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -20,6 +21,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     //Create Firestore variable
     var fstore: Firestore!
+    var userID = Auth.auth().currentUser!.uid
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +82,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         selectedRow = logTable.indexPathForSelectedRow!.row
 
         //use the text in the table row to filter database info
-        fstore.collection("Log").whereField("datetime", isEqualTo: data[selectedRow]).getDocuments(completion: {(snapshot, error) in
+        fstore.collection(userID).whereField("datetime", isEqualTo: data[selectedRow]).getDocuments(completion: {(snapshot, error) in
             for doc in (snapshot?.documents)! {
                 DictArray = doc.data() as! [String : String]
             }
@@ -106,7 +108,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     //delete database entry, remove entry from data array, then remove row from table
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        fstore.collection("Log").whereField("datetime", isEqualTo: data[indexPath.row]).getDocuments(completion: {(snapshot, error) in
+        fstore.collection(userID).whereField("datetime", isEqualTo: data[indexPath.row]).getDocuments(completion: {(snapshot, error) in
             for doc in (snapshot?.documents)! {
                 doc.reference.delete()
             }
@@ -120,7 +122,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         var loadedData:[String] = []
         var loadedDict:[String:String] = [:]
         
-        fstore.collection("Log").getDocuments(completion: {(snapshot, error) in
+        fstore.collection(userID).whereField("isLog", isEqualTo: "true").getDocuments(completion: {(snapshot, error) in
             for doc in (snapshot?.documents)! {
                 loadedDict[doc.data()["datetime"] as! String] = doc.data()["Activity"] as? String
             }

@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 import Foundation
 
 // Functionality: used to add and manage bookmarks from the Guidebook
@@ -17,7 +18,7 @@ class BookmarksViewController:  UIViewController, UITableViewDataSource, UITable
     var data:[String] = []
     var selectedRow:Int = -1
     var fstore: Firestore!
-    
+    var userID = Auth.auth().currentUser!.uid
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -29,6 +30,7 @@ class BookmarksViewController:  UIViewController, UITableViewDataSource, UITable
         self.navigationItem.rightBarButtonItem = editButtonItem
         
         fstore = Firestore.firestore()
+    
         load()
     }
     
@@ -67,7 +69,7 @@ class BookmarksViewController:  UIViewController, UITableViewDataSource, UITable
         
         selectedRow = bookmarkTable.indexPathForSelectedRow!.row
         
-        let docRef = fstore.collection("Bookmarks").document(data[selectedRow])
+        let docRef =  fstore.collection(userID).document("Bookmarks Log").collection("Bookmarks").document(data[selectedRow])
         docRef.getDocument(completion:{(snapshot, error) in
             if let doc = snapshot?.data(){
                 regularText = doc["displayText"] as! String
@@ -83,7 +85,7 @@ class BookmarksViewController:  UIViewController, UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
-        fstore.collection("Bookmarks").document(data[indexPath.row]).delete()
+        fstore.collection(userID).document("Bookmarks Log").collection("Bookmarks").document(data[indexPath.row]).delete()
 
         data.remove(at: indexPath.row)
         bookmarkTable.deleteRows(at: [indexPath], with: .fade)
@@ -92,7 +94,7 @@ class BookmarksViewController:  UIViewController, UITableViewDataSource, UITable
     
     func load() {
         var loadedData:[String] = []
-        fstore.collection("Bookmarks").getDocuments(completion: {(snapshot, error) in
+        fstore.collection(userID).document("Bookmarks Log").collection("Bookmarks").getDocuments(completion: {(snapshot, error) in
             for doc in (snapshot?.documents)! {
                 loadedData.insert(doc.documentID , at: 0)
             }

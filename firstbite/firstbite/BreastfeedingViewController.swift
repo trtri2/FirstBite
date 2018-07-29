@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 // Functionality: used to allow the user to input breastfeeding to the history log
 class BreastfeedingViewController: UIViewController {
@@ -29,6 +30,9 @@ class BreastfeedingViewController: UIViewController {
     
     //create database object
     var fstore: Firestore!
+    
+    // get user ID reference
+    var userID = Auth.auth().currentUser!.uid
     //var ref: DatabaseReference!
     
     override func viewDidLoad() {
@@ -166,7 +170,7 @@ class BreastfeedingViewController: UIViewController {
             tempNotes = " "
         }
         
-        fstore.collection("Log").addDocument(data: ["datetime":dataTextField.text!,"Activity":"Breastfeeding","Left Timer":leftTimer.text!,"Right Timer":rightTimer.text!,"Notes":tempNotes])
+        fstore.collection(userID).addDocument(data: ["datetime":dataTextField.text!,"Activity":"Breastfeeding","Left Timer":leftTimer.text!,"Right Timer":rightTimer.text!,"Notes":tempNotes, "userID":userID,"isLog":"true"])
         
         //ref.child("Log").childByAutoId().setValue(["datetime":dataTextField.text!,"Activity":"Breastfeed","Left Timer":leftTimer.text!,"Right Timer":rightTimer.text!])
         

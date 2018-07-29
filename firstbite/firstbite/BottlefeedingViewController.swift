@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 // Functionality: used to log bottlefeeding into the Food Diary logs
 class BottlefeedingViewController: UIViewController {
@@ -32,7 +33,8 @@ class BottlefeedingViewController: UIViewController {
     
     //create database object
     var fstore: Firestore!
-    
+    // get user ID reference
+    var userID = Auth.auth().currentUser!.uid
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -197,7 +199,7 @@ class BottlefeedingViewController: UIViewController {
             formulaTextFieldOutlet.text = "Baby Formula"
         }
 
-        fstore.collection("Log").addDocument(data: ["datetime":dataTextField.text!,"Activity":"Bottlefeeding","Formula Name":formulaTextFieldOutlet.text!,"Formula Amount":amountTextFieldOutlet.text!,"Notes":tempNotes, "Reaction":reaction])
+        fstore.collection(userID).addDocument(data: ["datetime":dataTextField.text!,"Activity":"Bottlefeeding","Formula Name":formulaTextFieldOutlet.text!,"Formula Amount":amountTextFieldOutlet.text!,"Notes":tempNotes, "Reaction":reaction, "userID":userID, "isLog":"true"])
         showAlert()
     }
     

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 class SolidFoodArticleViewController: UIViewController{
     
@@ -20,6 +21,7 @@ class SolidFoodArticleViewController: UIViewController{
     var text = ""
     var tempTitle = ""
     var displayText = NSAttributedString()
+    var userID = Auth.auth().currentUser!.uid
     
     
     override func viewDidLoad() {
@@ -35,13 +37,13 @@ class SolidFoodArticleViewController: UIViewController{
     @IBAction func bookmarkThis(_ sender: Any) {
         
         // creating alert popup
-        let bmalert = UIAlertController(title:"Confirm Bookmark", message:"Bookmark This Page?", preferredStyle:UIAlertControllerStyle.alert)
+        let bmalert = UIAlertController(title:"Add this page to bookmarks?", message:"View bookmarks on the bookmarks table", preferredStyle:UIAlertControllerStyle.alert)
         
         // adding button options (two)
         bmalert.addAction(UIAlertAction(title:"Bookmark", style:UIAlertActionStyle.default, handler: { action in
             
             //save html string into bookmark collection
-            self.fstore.collection("Bookmarks").document(self.tempTitle).setData(["displayText":self.text], merge : true)
+            self.fstore.collection(self.userID).document("Bookmarks Log").collection("Bookmarks").document(self.tempTitle).setData(["displayText":self.text], merge : true)
         
         }))
         bmalert.addAction(UIAlertAction(title:"Cancel", style:UIAlertActionStyle.cancel, handler:nil))
