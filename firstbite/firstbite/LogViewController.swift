@@ -142,7 +142,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     func load() {
         //if let loadedData:[String] = UserDefaults.standard.value(forKey: "breastfeed") as? [String] {
         var loadedData:[String] = []
-        fstore.collection(userID).whereField("isLog", isEqualTo: true).getDocuments(completion: {(snapshot, error) in
+        fstore.collection(userID).whereField("isLog", isEqualTo: "true").getDocuments(completion: {(snapshot, error) in
             for doc in (snapshot?.documents)! {
                 loadedData.insert(doc.data()["datetime"] as! String, at: 0)
             }

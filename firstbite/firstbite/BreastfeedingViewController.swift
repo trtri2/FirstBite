@@ -170,7 +170,7 @@ class BreastfeedingViewController: UIViewController {
             tempNotes = " "
         }
         
-        fstore.collection(userID).addDocument(data: ["datetime":dataTextField.text!,"Activity":"Breastfeeding","Left Timer":leftTimer.text!,"Right Timer":rightTimer.text!,"Notes":tempNotes, "userID":userID,"isLog":true])
+        fstore.collection(userID).addDocument(data: ["datetime":dataTextField.text!,"Activity":"Breastfeeding","Left Timer":leftTimer.text!,"Right Timer":rightTimer.text!,"Notes":tempNotes, "userID":userID,"isLog":"true"])
         
         //ref.child("Log").childByAutoId().setValue(["datetime":dataTextField.text!,"Activity":"Breastfeed","Left Timer":leftTimer.text!,"Right Timer":rightTimer.text!])
         

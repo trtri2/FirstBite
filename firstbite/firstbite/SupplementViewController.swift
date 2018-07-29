@@ -183,7 +183,7 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
             tempNotes = " "
         }
         
-        fstore.collection(userID).addDocument(data: ["datetime":dataTextField.text!,"Activity":"Supplement","Food Name":foodTextFieldOutlet.text!,"Food Category":categoryTypeString,"Quantity":quantityTextFieldOutlet.text!,"Quantity Unit":quantityUnitString,"Notes":tempNotes,"Reaction":reaction, "userID":userID,"isLog":true])
+        fstore.collection(userID).addDocument(data: ["datetime":dataTextField.text!,"Activity":"Supplement","Food Name":foodTextFieldOutlet.text!,"Food Category":categoryTypeString,"Quantity":quantityTextFieldOutlet.text!,"Quantity Unit":quantityUnitString,"Notes":tempNotes,"Reaction":reaction, "userID":userID,"isLog":"true"])
 
         showAlert()
     }

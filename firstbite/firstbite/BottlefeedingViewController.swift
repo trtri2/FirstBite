@@ -195,7 +195,7 @@ class BottlefeedingViewController: UIViewController {
             tempNotes = " "
         }
 
-        fstore.collection(userID).addDocument(data: ["datetime":dataTextField.text!,"Activity":"Bottlefeeding","Formula Name":formulaTextFieldOutlet.text!,"Formula Amount":amountTextFieldOutlet.text!,"Notes":tempNotes, "Reaction":reaction, "userID":userID, "isLog":true])
+        fstore.collection(userID).addDocument(data: ["datetime":dataTextField.text!,"Activity":"Bottlefeeding","Formula Name":formulaTextFieldOutlet.text!,"Formula Amount":amountTextFieldOutlet.text!,"Notes":tempNotes, "Reaction":reaction, "userID":userID, "isLog":"true"])
         showAlert()
     }
     
