@@ -34,14 +34,20 @@ class InitialProfile: UIViewController {
     //Input User Child Birthday
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    //Input User Child Gender as Boy
-    @IBAction func selectBoy(_ sender: Any) {
-        ChildGender = "Boy"
-    }
-    
-    //Input User Child Gender as Girl
-    @IBAction func selectGirl(_ sender: Any) {
-        ChildGender = "Girl"
+    //Segmented Control Gender
+    @IBOutlet var genderControl: UISegmentedControl!
+    @IBAction func choseGender(_ sender: UISegmentedControl) {
+        switch genderControl.selectedSegmentIndex
+        {
+        case 0:
+            ChildGender = ""
+        case 1:
+            ChildGender = "Male"
+        case 2:
+            ChildGender = "Female"
+        default:
+            break
+        }
     }
     
     //Input User Child Height
@@ -107,6 +113,7 @@ class InitialProfile: UIViewController {
             ])
         print(userDocumentName)
     }
+    
     
     //Separation Line
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
