@@ -23,8 +23,14 @@ class InitialProfile: UIViewController {
     var ChildBirthMonth = 0
     var ChildBirthDate = 0
     var ChildGender = ""
-    var ChildHeight = 0.0
-    var ChildWeight = 0.0
+    
+    var ChildHeight = 0
+    var ChildWeight = 0
+    var ChildHeightArr: Array<Int> = []
+    var ChildWeightArr: Array<Int> = []
+    
+    var HeightMonthsArr: Array<Int> = []
+    var WeightMonthsArr: Array<Int> = []
     
     //Input Email
     @IBOutlet weak var emailInput: UITextField!
@@ -90,55 +96,44 @@ class InitialProfile: UIViewController {
         
         UserChildName = userChildNameInput.text!
         
-        let date = Date()
-        let ccalendar = Calendar.current
-        let year = ccalendar.component(.year, from: date)
-        let month = ccalendar.component(.month, from: date)
-        var age: Int
+//        let date = Date()
+//        let ccalendar = Calendar.current
+//        let year = ccalendar.component(.year, from: date)
+//        let month = ccalendar.component(.month, from: date)
+//        var age: Int
         let calendar = Calendar.current
         ChildBirthYear = calendar.component(.year, from: datePicker.date)
         ChildBirthMonth = calendar.component(.month, from: datePicker.date)
         ChildBirthDate = calendar.component(.day, from: datePicker.date)
-        if month >= ChildBirthMonth {
-            age = 12 * (year - ChildBirthYear) + (month - ChildBirthMonth)
-        }
-        else {
-            age = 12 * (year - ChildBirthYear) + (ChildBirthMonth - month)
-        }
+//        if month >= ChildBirthMonth {
+//            age = 12 * (year - ChildBirthYear) + (month - ChildBirthMonth)
+//        }
+//        else {
+//            age = 12 * (year - ChildBirthYear) + (ChildBirthMonth - month)
+//        }
         
         if userChildHeightInput.text != "" {
-            ChildHeight = Double(userChildHeightInput.text!)!
+            ChildHeight = Int(userChildHeightInput.text!)!
+            ChildHeightArr.append(ChildHeight)
         }
         else {
             ChildHeight = 0
-        }
-        var HeightTrendCount: Int
-        if ChildHeight == 0 {
-            HeightTrendCount = 0
-        }
-        else {
-            HeightTrendCount = 1
+            ChildHeightArr.append(ChildHeight)
+            HeightMonthsArr.append(ChildBirthMonth)
         }
         
         if userChildWeightInput.text != "" {
-            ChildWeight = Double(userChildWeightInput.text!)!
+            ChildWeight = Int(userChildWeightInput.text!)!
         }
         else {
-            ChildWeight = 0
-        }
-        var WeightTrendCount: Int
-        if ChildWeight == 0 {
-            WeightTrendCount = 0
-        }
-        else {
-            WeightTrendCount = 1
+            ChildWeightArr.append(ChildWeight)
+            WeightMonthsArr.append(ChildBirthMonth)
         }
         
         userDocumentName = UserName + "'s Profile"
         
         firestore = Firestore.firestore()
-        firestore.collection(Auth.auth().currentUser!.uid).document(userDocumentName).setData(["AgeTrendCount": 1, "Age_trend0": age, "Age_trend1": -1, "Age_trend2": -1, "Age_trend3": -1, "Age_trend4": -1, "Child_birthday": ChildBirthDate, "Child_birthmonth": ChildBirthMonth, "Child_birthyear": ChildBirthYear, "Child_gender": ChildGender, "Child_height": ChildHeight, "Child_name": UserChildName, "Child_weight": ChildWeight, "HeightTrendCount": HeightTrendCount, "Height_trend0": ChildHeight, "Height_trend1": 0, "Height_trend2": 0, "Height_trend3": 0, "Height_trend4": 0, "User_name": UserName, "WeightTrendCount": WeightTrendCount, "Weight_trend0": ChildWeight, "Weight_trend1": 0, "Weight_trend2": 0, "Weight_trend3": 0, "Weight_trend4": 0
-            ])
+        firestore.collection(Auth.auth().currentUser!.uid).document(userDocumentName).setData(["Child_birthday": ChildBirthDate, "Child_birthmonth": ChildBirthMonth, "Child_birthyear": ChildBirthYear, "Child_gender": ChildGender, "Child_name": UserChildName, "User_name": UserName, "Child_heights": ChildHeightArr, "Child_weights": ChildWeightArr, "Heights_months" : HeightMonthsArr, "Weights_months" : WeightMonthsArr])
         
         // data is saved
         if Auth.auth().currentUser != nil {

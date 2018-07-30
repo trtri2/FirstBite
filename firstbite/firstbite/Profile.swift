@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 import FirebaseFirestore
 import FirebaseAuth
 
@@ -19,21 +20,25 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     var UserName = ""
     var UserChildName = ""
     var UserChildGender = ""
-    var UserChildHeight = Double()
-    var AgeTrend: [Int] = [-1, -1, -1, -1, -1]
-    var AgeTrendCount = 0
-    var HeightTrend: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0]
-    var HeightTrendCount = 0
-    var UserChildWeight = Double()
-    var WeightTrend: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0]
-    var WeightTrendCount = 0
+    var weightArr: [Int] = []
+    var heightArr: [Int] = []
+    
+    var heightsMonthsArr: [Int] = []
+    var weightsMonthsArr: [Int] = []
+    
     var image = UIImagePickerController()
     var UserChildBirthYear = Int()
     var UserChildBirthMonth = Int()
     var UserChildBirthDay = Int()
     var UserChildAge = Int()
+    
+    // graphics
     @IBOutlet var childPicture: UIImageView!
     @IBOutlet var gradientLayer: UIView!
+    
+    // charts
+    @IBOutlet var heightChartView: LineChartView!
+    @IBOutlet var weightChartView: LineChartView!
     
     //Display User's Child
     @IBOutlet weak var displayWhoseChild: UILabel!
@@ -83,34 +88,6 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
         displayChildGender.text = UserChildGender
     }
     
-    //Display Child's Height
-    @IBOutlet weak var displayChildHeight: UILabel!
-    func ChildHeight() {
-        if UserChildHeight == 0.0 {
-            displayChildHeight.text = "N/A"
-        }
-        else {
-            displayChildHeight.text = String(UserChildHeight)
-        }
-    }
-    
-    //Edit Child's Height
-    @IBOutlet weak var inputNewHeight: UITextField!
-    
-    //Display Child's Weight
-    @IBOutlet weak var displayChildWeight: UILabel!
-    func ChildWeight() {
-        if UserChildWeight == 0.0 {
-            displayChildWeight.text = "N/A"
-        }
-        else {
-            displayChildWeight.text = String(UserChildWeight)
-        }
-    }
-    
-    //Edit Child's Weight
-    @IBOutlet weak var inputNewWeight: UITextField!
-    
     //Display Child's Pictures
     @IBOutlet weak var displayChildPicture: UIImageView!
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -138,6 +115,7 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
         }
     }
     
+    
     //Import from Camera
     @IBAction func importFromCamera(_ sender: Any) {
         image.delegate = self
@@ -149,261 +127,197 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
         }
     }
     
-    //Display Trend
-    //Age Labels
-    @IBOutlet weak var age1: UILabel!
-    @IBOutlet weak var age2: UILabel!
-    @IBOutlet weak var age3: UILabel!
-    @IBOutlet weak var age4: UILabel!
-    @IBOutlet weak var age5: UILabel!
-    func displayAge() {
-        firestore = Firestore.firestore()
-        let doc = firestore.collection(userID).document(userDocumentName)
-        doc.getDocument(completion: {(snapshot, error) in
-            if let d = snapshot?.data() {
-                let array0 = d["Age_trend0"] as! Int
-                let array1 = d["Age_trend1"] as! Int
-                let array2 = d["Age_trend2"] as! Int
-                let array3 = d["Age_trend3"] as! Int
-                let array4 = d["Age_trend4"] as! Int
-                
-                if array0 != -1 {
-                    self.age1.text = String(array0)
-                }
-                else {
-                    self.age1.text = "-"
-                }
-                
-                if array1 != -1 {
-                    self.age2.text = String(array1)
-                }
-                else {
-                    self.age2.text = "-"
-                }
-                
-                if array2 != -1 {
-                    self.age3.text = String(array2)
-                }
-                else {
-                    self.age3.text = "-"
-                }
-                
-                if array3 != -1 {
-                    self.age4.text = String(array3)
-                }
-                else {
-                    self.age4.text = "-"
-                }
-                
-                if array4 != -1 {
-                    self.age5.text = String(array4)
-                }
-                else {
-                    self.age5.text = "-"
-                }
-            }
-        })
-    }
-    
-    //Height Labels
-    @IBOutlet weak var height1: UILabel!
-    @IBOutlet weak var height2: UILabel!
-    @IBOutlet weak var height3: UILabel!
-    @IBOutlet weak var height4: UILabel!
-    @IBOutlet weak var height5: UILabel!
-    func displayHeight() {
-        firestore = Firestore.firestore()
-        let doc = firestore.collection(userID).document(userDocumentName)
-        doc.getDocument(completion: {(snapshot, error) in
-            if let d = snapshot?.data() {
-                let array0 = d["Height_trend0"] as! Double
-                let array1 = d["Height_trend1"] as! Double
-                let array2 = d["Height_trend2"] as! Double
-                let array3 = d["Height_trend3"] as! Double
-                let array4 = d["Height_trend4"] as! Double
-                
-                if array0 != 0.0 {
-                    self.height1.text = String(array0)
-                }
-                else {
-                    self.height1.text = "-"
-                }
-                
-                if array1 != 0.0 {
-                    self.height2.text = String(array1)
-                }
-                else {
-                    self.height2.text = "-"
-                }
-                
-                if array2 != 0.0 {
-                    self.height3.text = String(array2)
-                }
-                else {
-                    self.height3.text = "-"
-                }
-                
-                if array3 != 0.0 {
-                    self.height4.text = String(array3)
-                }
-                else {
-                    self.height4.text = "-"
-                }
-                
-                if array4 != 0.0 {
-                    self.height5.text = String(array4)
-                }
-                else {
-                    self.height5.text = "-"
-                }
-            }
-        })
-    }
-    
-    //Weight Labels
-    @IBOutlet weak var weight1: UILabel!
-    @IBOutlet weak var weight2: UILabel!
-    @IBOutlet weak var weight3: UILabel!
-    @IBOutlet weak var weight4: UILabel!
-    @IBOutlet weak var weight5: UILabel!
-    func displayWeight() {
-        firestore = Firestore.firestore()
-        let doc = firestore.collection(userID).document(userDocumentName)
-        doc.getDocument(completion: {(snapshot, error) in
-            if let d = snapshot?.data() {
-                let array0 = d["Weight_trend0"] as! Double
-                let array1 = d["Weight_trend1"] as! Double
-                let array2 = d["Weight_trend2"] as! Double
-                let array3 = d["Weight_trend3"] as! Double
-                let array4 = d["Weight_trend4"] as! Double
-                
-                if array0 != 0.0 {
-                    self.weight1.text = String(array0)
-                }
-                else {
-                    self.weight1.text = "-"
-                }
-                
-                if array1 != 0.0 {
-                    self.weight2.text = String(array1)
-                }
-                else {
-                    self.weight2.text = "-"
-                }
-                
-                if array2 != 0.0 {
-                    self.weight3.text = String(array2)
-                }
-                else {
-                    self.weight3.text = "-"
-                }
-                
-                if array3 != 0.0 {
-                    self.weight4.text = String(array3)
-                }
-                else {
-                    self.weight4.text = "-"
-                }
-                
-                if array4 != 0.0 {
-                    self.weight5.text = String(array4)
-                }
-                else {
-                    self.weight5.text = "-"
-                }
-            }
-        })
-    }
-    
-    //Update Stat
-    @IBAction func updateStat(_ sender: Any) {
-        let doc = firestore.collection(userID).document(userDocumentName)
-        doc.getDocument(completion: {(snapshot, error) in
-            if let d = snapshot?.data() {
-                let Count1 = d["AgeTrendCount"] as! Int
-                let Count2 = d["HeightTrendCount"] as! Int
-                let Count3 = d["WeightTrendCount"] as! Int
-                
-                let BirthYear = d["Child_birthyear"] as! Int
-                let BirthMonth = d["Child_birthmonth"] as! Int
-                let date = Date()
-                let calendar = Calendar.current
-                let year = calendar.component(.year, from: date)
-                let month = calendar.component(.month, from: date)
-                var age: Int
-                if month >= BirthMonth {
-                    age = 12 * (year - BirthYear) + (month - BirthMonth)
-                }
-                else {
-                    age = 12 * (year - BirthYear) + (BirthMonth - month)
-                }
-                if Count1 < 5 {
-                    let entry = "Age_trend" + String(Count1)
-                    doc.updateData([entry: age])
-                    doc.updateData(["AgeTrendCount": Count1 + 1])
-                }
-                else {
-                    let a1 = d["Age_trend1"] as! Int
-                    let a2 = d["Age_trend2"] as! Int
-                    let a3 = d["Age_trend3"] as! Int
-                    let a4 = d["Age_trend4"] as! Int
-                    
-                    doc.updateData(["Age_trend0": a1])
-                    doc.updateData(["Age_trend1": a2])
-                    doc.updateData(["Age_trend2": a3])
-                    doc.updateData(["Age_trend3": a4])
-                    doc.updateData(["Age_trend4": age])
-                }
-                
-                self.UserChildHeight = (Double(self.inputNewHeight.text!))!
-                doc.updateData(["Child_height": self.UserChildHeight])
-                self.ChildHeight()
-                if Count2 < 5 {
-                    let entry = "Height_trend" + String(Count2)
-                    doc.updateData([entry: self.UserChildHeight])
-                    doc.updateData(["HeightTrendCount": Count2 + 1])
-                }
-                else {
-                    let h1 = d["Height_trend1"] as! Double
-                    let h2 = d["Height_trend2"] as! Double
-                    let h3 = d["Height_trend3"] as! Double
-                    let h4 = d["Height_trend4"] as! Double
-                    
-                    doc.updateData(["Height_trend0": h1])
-                    doc.updateData(["Height_trend1": h2])
-                    doc.updateData(["Height_trend2": h3])
-                    doc.updateData(["Height_trend3": h4])
-                    doc.updateData(["Height_trend4": self.UserChildHeight])
-                }
-                
-                self.UserChildWeight = (Double(self.inputNewWeight.text!))!
-                doc.updateData(["Child_weight": self.UserChildWeight])
-                self.ChildWeight()
-                if Count3 < 5 {
-                    let entry = "Weight_trend" + String(Count3)
-                    doc.updateData([entry: self.UserChildWeight])
-                    doc.updateData(["WeightTrendCount": Count3 + 1])
-                }
-                else {
-                    let w1 = d["Weight_trend1"] as! Double
-                    let w2 = d["Weight_trend2"] as! Double
-                    let w3 = d["Weight_trend3"] as! Double
-                    let w4 = d["Weight_trend4"] as! Double
-                    
-                    doc.updateData(["Weight_trend0": w1])
-                    doc.updateData(["Weight_trend1": w2])
-                    doc.updateData(["Weight_trend2": w3])
-                    doc.updateData(["Weight_trend3": w4])
-                    doc.updateData(["Weight_trend4": self.UserChildWeight])
-                }
-            }
-        })
+    // Display Add Height Alert
+    @IBAction func pressedAddHeight(_ sender: Any) {
         
-        displayAge()
-        displayHeight()
-        displayWeight()
+        let alert: UIAlertController = UIAlertController(title: "Height (cm)", message: "Add a height to the growth chart.", preferredStyle: .alert)
+    
+        // height field
+        alert.addTextField { (textField) in
+            textField.placeholder = "Height" // default text field
+            textField.delegate = self as? UITextFieldDelegate
+            textField.keyboardType = .numberPad
+        }
+        
+        // month field
+        alert.addTextField { (textField) in
+            textField.placeholder = "Months old" // default text field
+            textField.delegate = self as? UITextFieldDelegate
+            textField.keyboardType = .numberPad
+        }
+        
+        // add button
+        alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { [weak alert] (_) in
+            let heightField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            let monthField = alert?.textFields![1]
+            
+            var heightVal: Int = 0
+            var monthVal: Int = 0
+            
+            // if user sets empty string in either field
+            if(heightField?.text == ""){
+                heightVal = 0
+            }
+            else{
+                heightVal = Int(heightField!.text!)!
+            }
+            
+            if(monthField?.text == ""){
+                monthVal = 0
+            }
+            else{
+                monthVal = Int(monthField!.text!)!
+            }
+            
+            self.updateHeight(newHeight: heightVal, newMonth: monthVal)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action : UIAlertAction!) -> Void in }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
+    
+    //Display Add Weight Alert
+    @IBAction func pressedAddWeight(_ sender: Any) {
+        
+        let alert: UIAlertController = UIAlertController(title: "Weight (kg)", message: "Add a weight to the growth chart.", preferredStyle: .alert)
+        
+        // weight field
+        alert.addTextField { (textField) in
+            textField.placeholder = "Weight" // default text field
+            textField.delegate = self as? UITextFieldDelegate
+            textField.keyboardType = .numberPad
+        }
+        
+        // month field
+        alert.addTextField { (textField) in
+            textField.placeholder = "Months old" // default text field
+            textField.delegate = self as? UITextFieldDelegate
+            textField.keyboardType = .numberPad
+        }
+        
+        // add button
+        alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { [weak alert] (_) in
+            let weightField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            let monthField = alert?.textFields![1]
+            
+            var weightVal: Int = 0
+            var monthVal: Int = 0
+            
+            // if user sets empty string in either field
+            if(weightField?.text == ""){
+                weightVal = 0
+            }
+            else{
+                weightVal = Int(weightField!.text!)!
+            }
+            
+            if(monthField?.text == ""){
+                monthVal = 0
+            }
+            else{
+                monthVal = Int(monthField!.text!)!
+            }
+            
+            self.updateWeight(newWeight: weightVal, newMonth: monthVal)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action : UIAlertAction!) -> Void in }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    // Update Child_heights array witihn user's database
+    func updateHeight(newHeight: Int, newMonth: Int){
+        let doc = firestore.collection(userID).document("hey2's Profile")
+        doc.getDocument(completion: {(snapshot, error) in
+            if let d = snapshot?.data(){
+                var tempHeightsArr = d["Child_heights"] as! Array<Int>
+                var tempHeightsMonthsArr = d["Heights_months"] as! Array<Int>
+                
+                tempHeightsArr.append(newHeight)
+                tempHeightsMonthsArr.append(newMonth)
+                
+                doc.updateData(["Child_heights": tempHeightsArr])
+                doc.updateData(["Heights_months": tempHeightsMonthsArr])
+                
+                // update global arr, then update charts
+                self.heightArr = tempHeightsArr
+                self.heightsMonthsArr = tempHeightsMonthsArr
+                self.updateHeightChart()
+            }
+        })
+    }
+    
+    // Update Child_weights array witihn user's database
+    func updateWeight(newWeight: Int, newMonth: Int){
+        let doc = firestore.collection(userID).document("hey2's Profile")
+        doc.getDocument(completion: {(snapshot, error) in
+            if let d = snapshot?.data(){
+                var tempWeightsArr = d["Child_weights"] as! Array<Int>
+                var tempWeightsMonthsArr = d["Weights_months"] as! Array<Int>
+                
+                tempWeightsArr.append(newWeight)
+                tempWeightsMonthsArr.append(newMonth)
+                
+                doc.updateData(["Child_weights": tempWeightsArr])
+                 doc.updateData(["Weights_months": tempWeightsMonthsArr])
+                
+                // update global arr, then update charts
+                self.weightArr = tempWeightsArr
+                self.weightsMonthsArr = tempWeightsMonthsArr
+                self.updateWeightChart()
+            }
+        })
+    }
+    
+    // Update Height Chart
+    func updateHeightChart(){
+        var lineChartEntry  = [ChartDataEntry]() //this is the Array that will eventually be displayed on the graph.
+        
+        
+        //here is the for loop
+        for i in 0..<heightArr.count {
+            
+            let value = ChartDataEntry(x: Double(heightsMonthsArr[i]), y: Double(heightArr[i])) // here we set the X and Y status in a data chart entry
+            lineChartEntry.append(value) // here we add it to the data set
+        }
+        
+        let line1 = LineChartDataSet(values: lineChartEntry, label: "Number") //Here we convert lineChartEntry to a LineChartDataSet
+        line1.colors = [NSUIColor.blue] //Sets the colour to blue
+        
+        let data = LineChartData() //This is the object that will be added to the chart
+        data.addDataSet(line1) //Adds the line to the dataSet
+        
+        heightChartView.data = data //finally - it adds the chart data to the chart and causes an update
+        heightChartView.chartDescription?.text = "My awesome chart" // Here we set the description for the graph
+    }
+    
+    // Update Weight Chart
+    func updateWeightChart(){
+        var lineChartEntry  = [ChartDataEntry]() //this is the Array that will eventually be displayed on the graph.
+        
+        
+        //here is the for loop
+        for i in 0..<weightArr.count {
+            
+            let value = ChartDataEntry(x: Double(weightsMonthsArr[i]), y: Double(weightArr[i])) // here we set the X and Y status in a data chart entry
+            lineChartEntry.append(value) // here we add it to the data set
+        }
+        
+        let line1 = LineChartDataSet(values: lineChartEntry, label: "Number") //Here we convert lineChartEntry to a LineChartDataSet
+        line1.colors = [NSUIColor.blue] //Sets the colour to blue
+        
+        let data = LineChartData() //This is the object that will be added to the chart
+        data.addDataSet(line1) //Adds the line to the dataSet
+        
+        weightChartView.data = data //finally - it adds the chart data to the chart and causes an update
+        weightChartView.chartDescription?.text = "My awesome chart" // Here we set the description for the graph
+    }
+        
+
     //Separation Line
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -414,30 +328,29 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
         // Do any additional setup after loading the view, typically from a nib.
         //Load and Display Data from Firestore
         firestore = Firestore.firestore()
-        let doc = firestore.collection(userID).document(userDocumentName)
+        let doc = firestore.collection(userID).document("hey2's Profile")
         doc.getDocument(completion: {(snapshot, error) in
             if let d = snapshot?.data() {
                 self.UserName = d["User_name"] as! String
                 self.UserChildName = d["Child_name"] as! String
                 self.UserChildGender = d["Child_gender"] as! String
-                self.UserChildHeight = d["Child_height"] as! Double
-                self.UserChildWeight = d["Child_weight"] as! Double
                 self.UserChildBirthYear = d["Child_birthyear"] as! Int
                 self.UserChildBirthMonth = d["Child_birthmonth"] as! Int
                 self.UserChildBirthDay = d["Child_birthday"] as! Int
+                self.weightArr = d["Child_weights"] as! Array<Int>
+                self.heightArr = d["Child_heights"] as! Array<Int>
+                self.heightsMonthsArr = d["Heights_months"] as! Array<Int>
+                self.weightsMonthsArr = d["Weights_months"] as! Array<Int>
             }
             self.WhoseChild()
             self.ChildName()
             self.ChildAge(&self.UserChildAge)
             self.ChildGender()
-            self.ChildHeight()
-            self.ChildWeight()
+            self.updateHeightChart()
+            self.updateWeightChart()
         })
-        print(UserChildAge)
-        displayAge()
-        displayHeight()
-        displayWeight()
         
+        // graphics
         setGradientBackground()
         childPicture.layer.borderColor = UIColor.white.cgColor
     }

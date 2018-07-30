@@ -83,6 +83,7 @@ class GraphsViewController: UIViewController {
         numberOfDownloadsDataEntries = [iosDataEntry, macDataEntry]
         
         updateChartData()
+        
         updateGraph()
 
         // Do any additional setup after loading the view.
