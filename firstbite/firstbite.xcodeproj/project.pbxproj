@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10199BDD210B32BF007DFF3F /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10199BDC210B32BE007DFF3F /* AuthViewController.swift */; };
 		10199BDF210B37DF007DFF3F /* BookmarkArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10199BDE210B37D6007DFF3F /* BookmarkArticleView.swift */; };
-		1070B945210DC7B900B2236E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070B944210DC7B800B2236E /* AuthViewController.swift */; };
 		1070B947210DC7B900B2236E /* FoodAllergiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070B946210DC7B900B2236E /* FoodAllergiesViewController.swift */; };
 		1070B949210DC7B900B2236E /* HealthyChoicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070B948210DC7B900B2236E /* HealthyChoicesViewController.swift */; };
 		1070B94B210DC7B900B2236E /* MindfulEatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070B94A210DC7B900B2236E /* MindfulEatingViewController.swift */; };
@@ -19,8 +19,8 @@
 		109C362B20FF66E400CA1BFC /* SolidFoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362820FF66E400CA1BFC /* SolidFoodsViewController.swift */; };
 		109C362D20FF7D6E00CA1BFC /* BreastfeedingTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362C20FF7D6D00CA1BFC /* BreastfeedingTopicViewController.swift */; };
 		109C362F20FF82D300CA1BFC /* DailyFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109C362E20FF82D300CA1BFC /* DailyFoodViewController.swift */; };
+		843B5002210D2E0C00F5D8AA /* RemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B5001210D2E0C00F5D8AA /* RemindersViewController.swift */; };
 		8446CE89210A7D9E00078728 /* GraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446CE88210A7D9E00078728 /* GraphsViewController.swift */; };
-		8446CE8C210A82DD00078728 /* PieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446CE8B210A82DD00078728 /* PieViewController.swift */; };
 		84E8DA7C2106D75400CD55CD /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E8DA7B2106D75400CD55CD /* OverviewViewController.swift */; };
 		84FA1D6920EC8523007A0E9E /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */; };
 		A4B7770E20F4798E00CCBC13 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4B7770D20F4798E00CCBC13 /* GoogleService-Info.plist */; };
@@ -43,9 +43,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10199BDC210B32BE007DFF3F /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		10199BDE210B37D6007DFF3F /* BookmarkArticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkArticleView.swift; sourceTree = "<group>"; };
-		1070B944210DC7B800B2236E /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
-		1070B946210DC7B900B2236E /* FoodAllergiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAllergiesViewController.swift; sourceTree = "<group>"; };
+        1070B946210DC7B900B2236E /* FoodAllergiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAllergiesViewController.swift; sourceTree = "<group>"; };
 		1070B948210DC7B900B2236E /* HealthyChoicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthyChoicesViewController.swift; sourceTree = "<group>"; };
 		1070B94A210DC7B900B2236E /* MindfulEatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfulEatingViewController.swift; sourceTree = "<group>"; };
 		1070B94C210DC7B900B2236E /* VitaminsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminsViewController.swift; sourceTree = "<group>"; };
@@ -58,8 +58,8 @@
 		5E900B36522A62D7A5CE0240 /* Pods_firstbite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firstbite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		719EA596546FA1B68030F82F /* Pods-firstbite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firstbite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firstbite/Pods-firstbite.debug.xcconfig"; sourceTree = "<group>"; };
 		7C5232A82AACFF063FB9C37C /* Pods-firstbite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firstbite.release.xcconfig"; path = "Pods/Target Support Files/Pods-firstbite/Pods-firstbite.release.xcconfig"; sourceTree = "<group>"; };
+		843B5001210D2E0C00F5D8AA /* RemindersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersViewController.swift; sourceTree = "<group>"; };
 		8446CE88210A7D9E00078728 /* GraphsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphsViewController.swift; sourceTree = "<group>"; };
-		8446CE8B210A82DD00078728 /* PieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieViewController.swift; sourceTree = "<group>"; };
 		84E8DA7B2106D75400CD55CD /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		A4B7770D20F4798E00CCBC13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -132,19 +132,19 @@
 			isa = PBXGroup;
 			children = (
 				D8C3A7DD20EC687C005BABCC /* Base.lproj */,
-				1070B944210DC7B800B2236E /* AuthViewController.swift */,
 				D8C3A7DF20EC687C005BABCC /* BottlefeedingViewController.swift */,
 				D8234DB5210989120000A9A5 /* BottlefeedingDetailedViewController.swift */,
 				D8C3A7DA20EC687B005BABCC /* BreastfeedingViewController.swift */,
 				D8234DB3210988F50000A9A5 /* BreastfeedingDetailedViewController.swift */,
 				84E8DA7B2106D75400CD55CD /* OverviewViewController.swift */,
+				10199BDC210B32BE007DFF3F /* AuthViewController.swift */,
 				D8C3A7E020EC687C005BABCC /* LogViewController.swift */,
 				D8C3A7E820EC85AF005BABCC /* SupplementViewController.swift */,
 				D8234DB72109892B0000A9A5 /* SupplementDetailedViewController.swift */,
 				D8EEC60720E727F200C1E623 /* AppDelegate.swift */,
 				D8EEC60D20E727F200C1E623 /* Main.storyboard */,
+				843B5001210D2E0C00F5D8AA /* RemindersViewController.swift */,
 				8446CE88210A7D9E00078728 /* GraphsViewController.swift */,
-				8446CE8B210A82DD00078728 /* PieViewController.swift */,
 				84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */,
 				10199BDE210B37D6007DFF3F /* BookmarkArticleView.swift */,
 				B6316BB220FFEEB300239941 /* InitialProfile.swift */,
@@ -302,8 +302,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1070B945210DC7B900B2236E /* AuthViewController.swift in Sources */,
 				1070B947210DC7B900B2236E /* FoodAllergiesViewController.swift in Sources */,
+				10199BDD210B32BF007DFF3F /* AuthViewController.swift in Sources */,
 				B6D7833C20FD8DDE00C87CF4 /* Profile.swift in Sources */,
 				84FA1D6920EC8523007A0E9E /* BookmarksViewController.swift in Sources */,
 				D8C3A7E120EC687C005BABCC /* BreastfeedingViewController.swift in Sources */,
@@ -323,12 +323,11 @@
 				D8EEC60820E727F200C1E623 /* AppDelegate.swift in Sources */,
 				D8234DB6210989120000A9A5 /* BottlefeedingDetailedViewController.swift in Sources */,
 				1070B94B210DC7B900B2236E /* MindfulEatingViewController.swift in Sources */,
-				A4E64C9721083DDF004A43E7 /* (null) in Sources */,
+				843B5002210D2E0C00F5D8AA /* RemindersViewController.swift in Sources */,
 				109C362F20FF82D300CA1BFC /* DailyFoodViewController.swift in Sources */,
 				D8C3A7E620EC687C005BABCC /* BottlefeedingViewController.swift in Sources */,
 				D8234DB82109892B0000A9A5 /* SupplementDetailedViewController.swift in Sources */,
 				109C362B20FF66E400CA1BFC /* SolidFoodsViewController.swift in Sources */,
-				8446CE8C210A82DD00078728 /* PieViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,14 +470,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FQVXLQGTYN;
 				INFOPLIST_FILE = firstbite/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.healthy7.firstbite.leon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.healthy7.firstbite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -488,14 +486,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FQVXLQGTYN;
 				INFOPLIST_FILE = firstbite/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.healthy7.firstbite.leon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.healthy7.firstbite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -32,17 +32,24 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     var UserChildBirthMonth = Int()
     var UserChildBirthDay = Int()
     var UserChildAge = Int()
+    @IBOutlet var childPicture: UIImageView!
+    @IBOutlet var gradientLayer: UIView!
     
     //Display User's Child
     @IBOutlet weak var displayWhoseChild: UILabel!
     func WhoseChild() {
-        displayWhoseChild.text = "  " + UserName + "'s baby"
+        displayWhoseChild.text = UserName + "'s baby"
     }
     
     //Display Child's name
     @IBOutlet weak var displayChildName: UILabel!
     func ChildName() {
-        displayChildName.text = "Name: " + UserChildName
+        if(UserChildName == ""){
+            displayChildName.text = UserName + "'s baby"
+        }
+        else{
+            displayChildName.text = UserChildName
+        }
     }
     
     //Display Child's age
@@ -50,6 +57,8 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     func ChildAge(_ age: inout Int) {
         let date = Date()
         let calendar = Calendar.current
+        
+        var monthString: String = " months"
         
         let year = calendar.component(.year, from: date)
         let month = calendar.component(.month, from: date)
@@ -61,7 +70,11 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
             age = 12 * (year - UserChildBirthYear) + (UserChildBirthMonth - month)
         }
         
-        displayChildAge.text = "Age: " + String(age) + " months"
+        if(age <= 1){
+            monthString = " month"
+        }
+        
+        displayChildAge.text = String(age) + monthString
     }
     
     //Display Child's gender
@@ -107,11 +120,11 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
             UserDefaults.standard.set(imageData, forKey: "savedImage")
             let data = UserDefaults.standard.object(forKey: "savedImage") as! NSData
             displayChildPicture.image = UIImage(data: data as Data)
+            
         }
         else {
             // Error
         }
-        self.dismiss(animated: true, completion: nil)
     }
     
     //Import from Library
@@ -424,6 +437,9 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
         displayAge()
         displayHeight()
         displayWeight()
+        
+        setGradientBackground()
+        childPicture.layer.borderColor = UIColor.white.cgColor
     }
     
     @IBAction func doBtnSignout(_ sender: Any) {
@@ -432,6 +448,19 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
         }
         catch {}
         self.dismiss(animated: false, completion: nil)
+    }
+    
+    // from stackoverflow, generic 2 point gradient
+    func setGradientBackground() {
+        let colorTop =  UIColor(red: 90/255.0, green: 200/255.0, blue: 250/255.0, alpha: 1.0).cgColor
+        let colorBottom = UIColor(red: 255.0/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0).cgColor
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [colorTop, colorBottom]
+        gradientLayer.locations = [0.0, 1]
+        gradientLayer.frame = self.view.bounds
+        
+        self.gradientLayer.layer.insertSublayer(gradientLayer, at:0)
     }
     
     override func didReceiveMemoryWarning() {

@@ -15,7 +15,6 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
     @IBOutlet weak var btnLogin: UIButton!
-    @IBOutlet weak var btnCreate: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,24 +43,24 @@ class AuthViewController: UIViewController {
         }
     }
     
-    @IBAction func doBtnCreate(_ sender: Any) {
-        if let email = tfEmail.text, let password = tfPassword.text {
-            Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-                if error == nil {
-                    self.performSegue(withIdentifier: "createAccount", sender: nil)
-                }
-                else if(email.count < 0){
-                    self.showCreateAlert()
-                }
-                else if(password.count < 5){
-                    self.showCreatePWAlert()
-                }
-                else {
-                    self.showCreateAlert()
-                }
-            })
-        }
-    }
+//    @IBAction func doBtnCreate(_ sender: Any) {
+//        if let email = tfEmail.text, let password = tfPassword.text {
+//            Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+//                if error == nil {
+//                    self.performSegue(withIdentifier: "createAccount", sender: nil)
+//                }
+//                else if(email.count < 0){
+//                    self.showCreateAlert()
+//                }
+//                else if(password.count < 5){
+//                    self.showCreatePWAlert()
+//                }
+//                else {
+//                    self.showCreateAlert()
+//                }
+//            })
+//        }
+//    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
