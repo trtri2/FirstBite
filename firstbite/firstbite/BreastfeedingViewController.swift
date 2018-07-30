@@ -41,7 +41,7 @@ class BreastfeedingViewController: UIViewController {
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveData))
         self.navigationItem.rightBarButtonItem = saveButton
         
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         dataTextField.text = dateFormatter.string(from: Date())
         
         //Initiate FireStore Object

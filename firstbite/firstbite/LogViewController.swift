@@ -61,7 +61,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = data[indexPath.row]
+        cell.textLabel?.text = formatDate(d: data[indexPath.row])
         cell.imageView?.image = UIImage(named: dateActivityDict[data[indexPath.row]]!)
         return cell
     }
@@ -136,10 +136,23 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
             }
             loadedData = [String](loadedDict.keys)
             self.data = loadedData.sorted().reversed()
-            
             self.dateActivityDict = loadedDict
             self.logTable.reloadData()
         })
+    }
+    
+    func formatDate(d:String) -> String {
+        //convert data to a formatted date
+        let inputDateFormatter = DateFormatter()
+        inputDateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let outputDateFormatter = DateFormatter()
+        outputDateFormatter.dateFormat = "MMM d, h:mm a"
+        var returnValue = ""
+
+        if let date = inputDateFormatter.date(from: d) {
+            returnValue = outputDateFormatter.string(from: date)
+        }
+        return returnValue
     }
     
     override func didReceiveMemoryWarning() {
