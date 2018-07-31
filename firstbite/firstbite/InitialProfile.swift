@@ -113,6 +113,7 @@ class InitialProfile: UIViewController {
         if userChildHeightInput.text != "" {
             ChildHeight = Int(userChildHeightInput.text!)!
             ChildHeightArr.append(ChildHeight)
+            HeightMonthsArr.append(ChildBirthMonth)
         }
         else {
             ChildHeight = 0
@@ -122,8 +123,11 @@ class InitialProfile: UIViewController {
         
         if userChildWeightInput.text != "" {
             ChildWeight = Int(userChildWeightInput.text!)!
+            ChildWeightArr.append(ChildWeight)
+            WeightMonthsArr.append(ChildBirthMonth)
         }
         else {
+            ChildWeight = 0
             ChildWeightArr.append(ChildWeight)
             WeightMonthsArr.append(ChildBirthMonth)
         }
