@@ -14,7 +14,8 @@ class OverviewViewController: UIPageViewController, UIPageViewControllerDelegate
     lazy var orderedViewControllers: [UIViewController] = {
         return [self.nextView(viewController: "ReminderViewController"),
                 self.nextView(viewController: "GraphPageView"),
-                self.nextView(viewController: "SummaryViewController")]
+                self.nextView(viewController: "SummaryViewController"),
+                self.nextView(viewController: "BMIViewController")]
     }()
     
     // page control, which allows page dots
