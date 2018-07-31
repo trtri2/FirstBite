@@ -24,6 +24,7 @@
 		84E8DA7C2106D75400CD55CD /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E8DA7B2106D75400CD55CD /* OverviewViewController.swift */; };
 		84FA1D6920EC8523007A0E9E /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */; };
 		A448204D21102E0C00FC5F50 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A448204C21102E0C00FC5F50 /* ReminderViewController.swift */; };
+		A47EE761211042D30029C037 /* ReminderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EE760211042D30029C037 /* ReminderDetailViewController.swift */; };
 		A4B7770E20F4798E00CCBC13 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4B7770D20F4798E00CCBC13 /* GoogleService-Info.plist */; };
 		B6316BB320FFEEB300239941 /* InitialProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6316BB220FFEEB300239941 /* InitialProfile.swift */; };
 		B6D7833C20FD8DDE00C87CF4 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7833B20FD8DDE00C87CF4 /* Profile.swift */; };
@@ -63,6 +64,7 @@
 		84E8DA7B2106D75400CD55CD /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		A448204C21102E0C00FC5F50 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
+		A47EE760211042D30029C037 /* ReminderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailViewController.swift; sourceTree = "<group>"; };
 		A4B7770D20F4798E00CCBC13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B6316BB220FFEEB300239941 /* InitialProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialProfile.swift; sourceTree = "<group>"; };
 		B6D7833B20FD8DDE00C87CF4 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				1070B94E210DC7B900B2236E /* LifestyleViewController.swift */,
 				1070B94C210DC7B900B2236E /* VitaminsViewController.swift */,
 				A448204C21102E0C00FC5F50 /* ReminderViewController.swift */,
+				A47EE760211042D30029C037 /* ReminderDetailViewController.swift */,
 				D8EEC61020E727F200C1E623 /* Assets.xcassets */,
 				D8EEC61220E727F200C1E623 /* LaunchScreen.storyboard */,
 				D8EEC61520E727F200C1E623 /* Info.plist */,
@@ -325,6 +328,7 @@
 				84E8DA7C2106D75400CD55CD /* OverviewViewController.swift in Sources */,
 				D8EEC60820E727F200C1E623 /* AppDelegate.swift in Sources */,
 				D8234DB6210989120000A9A5 /* BottlefeedingDetailedViewController.swift in Sources */,
+				A47EE761211042D30029C037 /* ReminderDetailViewController.swift in Sources */,
 				1070B94B210DC7B900B2236E /* MindfulEatingViewController.swift in Sources */,
 				843B5002210D2E0C00F5D8AA /* RemindersViewController.swift in Sources */,
 				109C362F20FF82D300CA1BFC /* DailyFoodViewController.swift in Sources */,

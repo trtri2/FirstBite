@@ -12,6 +12,7 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var table: UITableView!
     var data:[String] = []
+    var selectedRow:Int = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,8 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
         data.insert(name, at: 0)
         let indexPath:IndexPath = IndexPath(row: 0, section: 0)
         table.insertRows(at: [indexPath], with: .automatic)
-        save()
+        table.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+        self.performSegue(withIdentifier: "reminderSegue", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,7 +62,13 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(data[indexPath.row])")
+        self.performSegue(withIdentifier: "reminderSegue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailView:ReminderDetailViewController = segue.destination as! ReminderDetailViewController
+        selectedRow = table.indexPathForSelectedRow!.row
+        detailView.setText(t: data[selectedRow])
     }
     
     func save() {
