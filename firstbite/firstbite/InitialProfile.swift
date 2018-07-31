@@ -10,8 +10,6 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-var userDocumentName = "test-user"
-
 class InitialProfile: UIViewController {
     
     var firestore: Firestore!
@@ -130,10 +128,8 @@ class InitialProfile: UIViewController {
             WeightMonthsArr.append(ChildBirthMonth)
         }
         
-        userDocumentName = UserName + "'s Profile"
-        
         firestore = Firestore.firestore()
-        firestore.collection(Auth.auth().currentUser!.uid).document(userDocumentName).setData(["Child_birthday": ChildBirthDate, "Child_birthmonth": ChildBirthMonth, "Child_birthyear": ChildBirthYear, "Child_gender": ChildGender, "Child_name": UserChildName, "User_name": UserName, "Child_heights": ChildHeightArr, "Child_weights": ChildWeightArr, "Heights_months" : HeightMonthsArr, "Weights_months" : WeightMonthsArr])
+        firestore.collection(Auth.auth().currentUser!.uid).document("Profile").setData(["Child_birthday": ChildBirthDate, "Child_birthmonth": ChildBirthMonth, "Child_birthyear": ChildBirthYear, "Child_gender": ChildGender, "Child_name": UserChildName, "User_name": UserName, "Child_heights": ChildHeightArr, "Child_weights": ChildWeightArr, "Heights_months" : HeightMonthsArr, "Weights_months" : WeightMonthsArr])
         
         // data is saved
         if Auth.auth().currentUser != nil {

@@ -102,6 +102,7 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
         else {
             // Error
         }
+        picker.dismiss(animated: true, completion: nil)
     }
     
     //Import from Library
@@ -231,7 +232,7 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     
     // Update Child_heights array witihn user's database
     func updateHeight(newHeight: Int, newMonth: Int){
-        let doc = firestore.collection(userID).document("hey2's Profile")
+        let doc = firestore.collection(userID).document("Profile")
         doc.getDocument(completion: {(snapshot, error) in
             if let d = snapshot?.data(){
                 var tempHeightsArr = d["Child_heights"] as! Array<Int>
@@ -253,7 +254,7 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     
     // Update Child_weights array witihn user's database
     func updateWeight(newWeight: Int, newMonth: Int){
-        let doc = firestore.collection(userID).document("hey2's Profile")
+        let doc = firestore.collection(userID).document("Profile")
         doc.getDocument(completion: {(snapshot, error) in
             if let d = snapshot?.data(){
                 var tempWeightsArr = d["Child_weights"] as! Array<Int>
@@ -328,7 +329,7 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
         // Do any additional setup after loading the view, typically from a nib.
         //Load and Display Data from Firestore
         firestore = Firestore.firestore()
-        let doc = firestore.collection(userID).document("hey2's Profile")
+        let doc = firestore.collection(userID).document("Profile")
         doc.getDocument(completion: {(snapshot, error) in
             if let d = snapshot?.data() {
                 self.UserName = d["User_name"] as! String
@@ -353,6 +354,11 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
         // graphics
         setGradientBackground()
         childPicture.layer.borderColor = UIColor.white.cgColor
+        
+        let data = UserDefaults.standard.object(forKey: "savedImage") as? NSData
+        if data != nil {
+            displayChildPicture.image = UIImage(data: data! as Data)
+        }
     }
     
     @IBAction func doBtnSignout(_ sender: Any) {
