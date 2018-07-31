@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "baby-22194_1920.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

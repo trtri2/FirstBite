@@ -13,6 +13,7 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var table: UITableView!
     var data:[String] = []
     var selectedRow:Int = -1
+    var newRowText:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,19 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
         self.navigationItem.rightBarButtonItem = addButton
         self.navigationItem.leftBarButtonItem = editButtonItem
         load()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if selectedRow == -1 {
+            return
+        }
+        data[selectedRow] = newRowText
+        if newRowText == "" {
+            data.remove(at: selectedRow)
+        }
+        table.reloadData()
+        save()
     }
 
     @objc func addReminder() {
@@ -68,6 +82,7 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let detailView:ReminderDetailViewController = segue.destination as! ReminderDetailViewController
         selectedRow = table.indexPathForSelectedRow!.row
+        detailView.masterView = self
         detailView.setText(t: data[selectedRow])
     }
     
