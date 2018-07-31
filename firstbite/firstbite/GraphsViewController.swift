@@ -72,24 +72,9 @@ class GraphsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
-        pieChart.chartDescription?.text = ""
-        
-        iosDataEntry.value = iosStepper.value
-        iosDataEntry.label = "herb"
-        
-        macDataEntry.value = macStepper.value
-        macDataEntry.label = "gerry"
-        
-        numberOfDownloadsDataEntries = [iosDataEntry, macDataEntry]
-        
-        updateChartData()
-        
-        updateGraph()
-=======
+
         fstore = Firestore.firestore()
         pieChart.chartDescription?.text = "Food Proportions in Servings"
->>>>>>> Leon_branch_jul29
 
         milkEntry.label = "Milk & Alternatives"
         meatEntry.label = "Meat & Alternatives"
