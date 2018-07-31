@@ -12,7 +12,7 @@ class ReminderDetailViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
     var text:String = ""
-    var masterView:ViewController!
+    var masterView:ReminderViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
