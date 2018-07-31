@@ -336,6 +336,8 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Profile"
         // Do any additional setup after loading the view, typically from a nib.
         //Load and Display Data from Firestore
         firestore = Firestore.firestore()
@@ -381,8 +383,8 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     
     // from stackoverflow, generic 2 point gradient
     func setGradientBackground() {
-        let colorTop =  UIColor(red: 90/255.0, green: 200/255.0, blue: 250/255.0, alpha: 1.0).cgColor
-        let colorBottom = UIColor(red: 255.0/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0).cgColor
+        let colorTop =  UIColor(red: 100/255.0, green: 165/255.0, blue: 255/255.0, alpha: 1.0).cgColor
+        let colorBottom = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0).cgColor
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [colorTop, colorBottom]
