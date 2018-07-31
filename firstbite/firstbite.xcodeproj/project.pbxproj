@@ -23,8 +23,8 @@
 		8446CE89210A7D9E00078728 /* GraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446CE88210A7D9E00078728 /* GraphsViewController.swift */; };
 		84E8DA7C2106D75400CD55CD /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E8DA7B2106D75400CD55CD /* OverviewViewController.swift */; };
 		84FA1D6920EC8523007A0E9E /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */; };
+		A448204D21102E0C00FC5F50 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A448204C21102E0C00FC5F50 /* ReminderViewController.swift */; };
 		A4B7770E20F4798E00CCBC13 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4B7770D20F4798E00CCBC13 /* GoogleService-Info.plist */; };
-		A4E64C9721083DDF004A43E7 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		B6316BB320FFEEB300239941 /* InitialProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6316BB220FFEEB300239941 /* InitialProfile.swift */; };
 		B6D7833C20FD8DDE00C87CF4 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7833B20FD8DDE00C87CF4 /* Profile.swift */; };
 		BA40BC8020ECA857005F079F /* SupplementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C3A7E820EC85AF005BABCC /* SupplementViewController.swift */; };
@@ -45,7 +45,7 @@
 /* Begin PBXFileReference section */
 		10199BDC210B32BE007DFF3F /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		10199BDE210B37D6007DFF3F /* BookmarkArticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkArticleView.swift; sourceTree = "<group>"; };
-        1070B946210DC7B900B2236E /* FoodAllergiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAllergiesViewController.swift; sourceTree = "<group>"; };
+		1070B946210DC7B900B2236E /* FoodAllergiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAllergiesViewController.swift; sourceTree = "<group>"; };
 		1070B948210DC7B900B2236E /* HealthyChoicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthyChoicesViewController.swift; sourceTree = "<group>"; };
 		1070B94A210DC7B900B2236E /* MindfulEatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfulEatingViewController.swift; sourceTree = "<group>"; };
 		1070B94C210DC7B900B2236E /* VitaminsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminsViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +62,7 @@
 		8446CE88210A7D9E00078728 /* GraphsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphsViewController.swift; sourceTree = "<group>"; };
 		84E8DA7B2106D75400CD55CD /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
+		A448204C21102E0C00FC5F50 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		A4B7770D20F4798E00CCBC13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B6316BB220FFEEB300239941 /* InitialProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialProfile.swift; sourceTree = "<group>"; };
 		B6D7833B20FD8DDE00C87CF4 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -159,6 +160,7 @@
 				1070B94A210DC7B900B2236E /* MindfulEatingViewController.swift */,
 				1070B94E210DC7B900B2236E /* LifestyleViewController.swift */,
 				1070B94C210DC7B900B2236E /* VitaminsViewController.swift */,
+				A448204C21102E0C00FC5F50 /* ReminderViewController.swift */,
 				D8EEC61020E727F200C1E623 /* Assets.xcassets */,
 				D8EEC61220E727F200C1E623 /* LaunchScreen.storyboard */,
 				D8EEC61520E727F200C1E623 /* Info.plist */,
@@ -316,6 +318,7 @@
 				8446CE89210A7D9E00078728 /* GraphsViewController.swift in Sources */,
 				B6316BB320FFEEB300239941 /* InitialProfile.swift in Sources */,
 				D8C3A7E720EC687C005BABCC /* LogViewController.swift in Sources */,
+				A448204D21102E0C00FC5F50 /* ReminderViewController.swift in Sources */,
 				1070B94D210DC7B900B2236E /* VitaminsViewController.swift in Sources */,
 				BA40BC8020ECA857005F079F /* SupplementViewController.swift in Sources */,
 				10199BDF210B37DF007DFF3F /* BookmarkArticleView.swift in Sources */,
