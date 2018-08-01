@@ -286,14 +286,19 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
             lineChartEntry.append(value) // here we add it to the data set
         }
         
-        let line1 = LineChartDataSet(values: lineChartEntry, label: "Number") //Here we convert lineChartEntry to a LineChartDataSet
+        let line1 = LineChartDataSet(values: lineChartEntry, label: "Height(cm)") //Here we convert lineChartEntry to a LineChartDataSet
         line1.colors = [NSUIColor.blue] //Sets the colour to blue
         
         let data = LineChartData() //This is the object that will be added to the chart
         data.addDataSet(line1) //Adds the line to the dataSet
         
+        heightChartView.xAxis.axisMaximum = 24
+        
+        heightChartView.xAxis.axisMinimum = 0
+        
         heightChartView.data = data //finally - it adds the chart data to the chart and causes an update
-        heightChartView.chartDescription?.text = "My awesome chart" // Here we set the description for the graph
+        
+        heightChartView.chartDescription?.text = "Height Line Chart" // Here we set the description for the graph
     }
     
     // Update Weight Chart
@@ -308,14 +313,19 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
             lineChartEntry.append(value) // here we add it to the data set
         }
         
-        let line1 = LineChartDataSet(values: lineChartEntry, label: "Number") //Here we convert lineChartEntry to a LineChartDataSet
+        let line1 = LineChartDataSet(values: lineChartEntry, label: "Weight(kg)") //Here we convert lineChartEntry to a LineChartDataSet
         line1.colors = [NSUIColor.blue] //Sets the colour to blue
         
         let data = LineChartData() //This is the object that will be added to the chart
         data.addDataSet(line1) //Adds the line to the dataSet
         
+        heightChartView.xAxis.axisMaximum = 24
+        
+        heightChartView.xAxis.axisMinimum = 0
+        
         weightChartView.data = data //finally - it adds the chart data to the chart and causes an update
-        weightChartView.chartDescription?.text = "My awesome chart" // Here we set the description for the graph
+        
+        weightChartView.chartDescription?.text = "Weight Line Chart" // Here we set the description for the graph
     }
         
 
@@ -326,6 +336,8 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Profile"
         // Do any additional setup after loading the view, typically from a nib.
         //Load and Display Data from Firestore
         firestore = Firestore.firestore()
@@ -371,8 +383,8 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     
     // from stackoverflow, generic 2 point gradient
     func setGradientBackground() {
-        let colorTop =  UIColor(red: 90/255.0, green: 200/255.0, blue: 250/255.0, alpha: 1.0).cgColor
-        let colorBottom = UIColor(red: 255.0/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0).cgColor
+        let colorTop =  UIColor(red: 100/255.0, green: 165/255.0, blue: 255/255.0, alpha: 1.0).cgColor
+        let colorBottom = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0).cgColor
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [colorTop, colorBottom]
