@@ -12,7 +12,7 @@ class OverviewViewController: UIPageViewController, UIPageViewControllerDelegate
     
     // overview page controller array
     lazy var orderedViewControllers: [UIViewController] = {
-        return [self.nextView(viewController: "GraphPageView"),
+        return [self.nextView(viewController: "PiePageView"),
                 self.nextView(viewController: "BarPageView")]
     }()
     

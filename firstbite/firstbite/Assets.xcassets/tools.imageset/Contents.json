@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "6to9MonthsIcon.PNG",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "tools-icon-spaced-border-60p.png",
       "scale" : "2x"
     },
     {

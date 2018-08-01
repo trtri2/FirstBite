@@ -82,6 +82,10 @@ class GraphsViewController: UIViewController {
         })
     }
     
+    @IBAction func pressInfo(_ sender: Any) {
+        showAlert()
+    }
+    
     func showAlert(){
         let alert:UIAlertController = UIAlertController(title:"", message: "View the 'Food Suggestions' topic in our guide for suggested servings and recommendations.", preferredStyle: .alert )
         let action1: UIAlertAction = UIAlertAction(title: "OK", style: .cancel)
