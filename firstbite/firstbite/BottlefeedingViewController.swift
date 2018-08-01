@@ -11,7 +11,7 @@ import FirebaseFirestore
 import FirebaseAuth
 
 // Functionality: used to log bottlefeeding into the Food Diary logs
-class BottlefeedingViewController: UIViewController {
+class BottlefeedingViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var dataTextField: UITextField!
     
@@ -35,10 +35,20 @@ class BottlefeedingViewController: UIViewController {
     var fstore: Firestore!
     // get user ID reference
     var userID = Auth.auth().currentUser!.uid
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //set navigation buttons
+        self.dataTextField.delegate = self
+        self.formulaTextFieldOutlet.delegate = self
+        self.amountTextFieldOutlet.delegate = self
+        
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveData))
         self.navigationItem.rightBarButtonItem = saveButton
     
@@ -94,8 +104,8 @@ class BottlefeedingViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: "Calculate", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            if (textField?.text != ""){
             let valueGiven = Int((textField?.text)!)
-            
             var valueCalculated = valueGiven! * 11
             
             if(valueCalculated >= 500){
@@ -103,7 +113,7 @@ class BottlefeedingViewController: UIViewController {
             }
             self.amountTextFieldOutlet.text = "\(valueCalculated)"
             self.amountSlider.value = Float(valueCalculated)
-            
+            }
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action : UIAlertAction!) -> Void in }))
@@ -157,10 +167,11 @@ class BottlefeedingViewController: UIViewController {
     
     @IBAction func pressedEditNotes(_ sender: Any) {
 
-        let alert: UIAlertController = UIAlertController(title: "Notes", message: "Edit and change notes.", preferredStyle: .alert)
+        let alert: UIAlertController = UIAlertController(title: "Notes", message: "Add notes.", preferredStyle: .alert)
         
         alert.addTextField { (textField) in
             textField.placeholder = "Notes" // default text field
+            self.noteOutlet.text = ""
             textField.text = self.noteOutlet.text
             textField.delegate = self as? UITextFieldDelegate
         }

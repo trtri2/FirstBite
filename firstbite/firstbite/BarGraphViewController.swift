@@ -57,9 +57,10 @@ func updateBarChart(dataPoints: [String], values: [Double]){
         self.navigationController?.navigationBar.prefersLargeTitles = false
         fstore = Firestore.firestore()
         //////bar chart collection code
-        fstore.collection(userID).whereField("isLog", isEqualTo: "true").getDocuments(completion:{(snapshot, error) in
+        fstore.collection(userID).whereField("hasReaction", isEqualTo: "true").getDocuments(completion:{(snapshot, error) in
             for doc in (snapshot?.documents)!{
-                switch (doc.data()["Reaction"] as! String){
+                let tempReaction = doc.data()["Reaction"] as! String
+                switch (tempReaction){
                 case "Neutral" :
                     self.neutralCounter+=1
                     break

@@ -119,12 +119,12 @@ class Profile: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     
     //Import from Camera
     @IBAction func importFromCamera(_ sender: Any) {
-        image.delegate = self
-        image.sourceType = UIImagePickerControllerSourceType.camera
-        image.allowsEditing = false
-        
-        self.present(image, animated: true) {
-            // After it is complete
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            let myPickerController = UIImagePickerController()
+            myPickerController.delegate = self;
+            myPickerController.sourceType = .camera
+            myPickerController.allowsEditing = true
+            self.present(myPickerController, animated: true, completion: nil)
         }
     }
     

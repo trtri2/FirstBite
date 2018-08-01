@@ -132,10 +132,11 @@ class BreastfeedingViewController: UIViewController {
     }
     
     @IBAction func pressedEditNotes(_ sender: Any) {
-        let alert: UIAlertController = UIAlertController(title: "Notes", message: "Edit and change notes.", preferredStyle: .alert)
+        let alert: UIAlertController = UIAlertController(title: "Notes", message: "Add notes.", preferredStyle: .alert)
         
         alert.addTextField { (textField) in
             textField.placeholder = "Notes" // default text field
+            self.noteOutlet.text = ""
             textField.text = self.noteOutlet.text
             textField.delegate = self as? UITextFieldDelegate
         }
@@ -170,7 +171,7 @@ class BreastfeedingViewController: UIViewController {
             tempNotes = " "
         }
         
-        fstore.collection(userID).addDocument(data: ["datetime":dataTextField.text!,"Activity":"Breastfeeding","Left Timer":leftTimer.text!,"Right Timer":rightTimer.text!,"Notes":tempNotes, "userID":userID,"isLog":"true"])
+        fstore.collection(userID).addDocument(data: ["datetime":dataTextField.text!,"Activity":"Breastfeeding","Left Timer":leftTimer.text!,"Right Timer":rightTimer.text!,"Notes":tempNotes, "userID":userID,"isLog":"true", "hasReaction":"true"])
         
         //ref.child("Log").childByAutoId().setValue(["datetime":dataTextField.text!,"Activity":"Breastfeed","Left Timer":leftTimer.text!,"Right Timer":rightTimer.text!])
         

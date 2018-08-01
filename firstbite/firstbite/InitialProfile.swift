@@ -10,7 +10,7 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-class InitialProfile: UIViewController {
+class InitialProfile: UIViewController, UITextFieldDelegate {
     
     var firestore: Firestore!
     
@@ -66,6 +66,28 @@ class InitialProfile: UIViewController {
     
     //Input User Child Weight
     @IBOutlet weak var userChildWeightInput: UITextField!
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.emailInput.delegate = self
+        self.passwordInput.delegate = self
+        self.userNameInput.delegate = self
+        self.userChildNameInput.delegate = self
+        self.userChildHeightInput.delegate = self
+        self.userChildWeightInput.delegate = self
+        
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
     
     //Submit
     @IBAction func submit(_ sender: Any) {
@@ -167,17 +189,7 @@ class InitialProfile: UIViewController {
         }
     }
     
-    
-    //Separation Line
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -11,7 +11,7 @@ import FirebaseFirestore
 import FirebaseAuth
 
 // Functionality: used to add solid/liquid foods to the history log
-class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
 
     // pickers
     @IBOutlet weak var quantityPickerOutlet: UIPickerView!
@@ -45,9 +45,18 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
     // get user ID reference
     var userID = Auth.auth().currentUser!.uid
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.dataTextField.delegate = self
+        self.foodTextFieldOutlet.delegate = self
+        self.quantityTextFieldOutlet.delegate = self
+        
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveData))
         self.navigationItem.rightBarButtonItem = saveButton
         
@@ -147,10 +156,11 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     
     @IBAction func pressedEditNotes(_ sender: Any) {
-        let alert: UIAlertController = UIAlertController(title: "Notes", message: "Edit and change notes.", preferredStyle: .alert)
+        let alert: UIAlertController = UIAlertController(title: "Notes", message: "Add notes.", preferredStyle: .alert)
         
         alert.addTextField { (textField) in
             textField.placeholder = "Notes" // default text field
+            self.noteOutlet.text = ""
             textField.text = self.noteOutlet.text
             textField.delegate = self as? UITextFieldDelegate
         }
@@ -183,7 +193,7 @@ class SupplementViewController: UIViewController, UIPickerViewDelegate, UIPicker
             tempNotes = " "
         }
         
-        fstore.collection(userID).addDocument(data: ["datetime":dataTextField.text!,"Activity":"Supplement","Food Name":foodTextFieldOutlet.text!,"Food Category":categoryTypeString,"Quantity":quantityTextFieldOutlet.text!,"Quantity Unit":quantityUnitString,"Notes":tempNotes,"Reaction":reaction, "userID":userID,"isLog":"true"])
+        fstore.collection(userID).addDocument(data: ["datetime":dataTextField.text!,"Activity":"Supplement","Food Name":foodTextFieldOutlet.text!,"Food Category":categoryTypeString,"Quantity":quantityTextFieldOutlet.text!,"Quantity Unit":quantityUnitString,"Notes":tempNotes,"Reaction":reaction, "userID":userID,"isLog":"true","hasReaction":"true"])
 
         showAlert()
     }

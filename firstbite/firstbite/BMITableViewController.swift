@@ -13,7 +13,7 @@ import FirebaseFirestore
 
     var fstore: Firestore!
 
-class BMITableViewController: UIViewController{
+class BMITableViewController: UIViewController, UITextFieldDelegate{
     
     var fstore = Firestore.firestore()
     var userID = Auth.auth().currentUser!.uid
@@ -28,6 +28,19 @@ class BMITableViewController: UIViewController{
     var height = Double()
     var weight = Double()
     var result = Double()
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        self.textHeight.delegate = self
+        self.textWeight.delegate = self
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        
+    }
+
      //when pressed, collects the user's height and weight from profile in database
     @IBAction func collectProfile(_ sender: Any) {
         var tempArr = Array<Int>()
@@ -73,9 +86,11 @@ class BMITableViewController: UIViewController{
         heightHolder = textHeight.text!
         var weightHolder = String()
         weightHolder = textWeight.text!
+        if (heightHolder != "" || weightHolder != ""){
         height = Double(heightHolder)!
         weight = Double(weightHolder)!
         calculate(finalHeight: (height/100), finalWeight: weight)
+        }
     }
     
     
@@ -96,13 +111,6 @@ class BMITableViewController: UIViewController{
     
     
     
-    
-
-override func viewDidLoad(){
-    super.viewDidLoad()
-    self.navigationController?.navigationBar.prefersLargeTitles = false
-   
-}
 
 override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
