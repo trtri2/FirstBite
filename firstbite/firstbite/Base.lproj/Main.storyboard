@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LUP-JK-eQc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LUP-JK-eQc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1442,7 +1442,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="Hek-Ys-kcJ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="Hek-Ys-kcJ">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="n89-Qo-c3o"/>
@@ -1480,7 +1480,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="1eP-fW-dsp">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="1eP-fW-dsp">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="y8h-pn-V8h"/>
@@ -1518,7 +1518,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="7dc-Hq-IX9">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="7dc-Hq-IX9">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="ijW-yx-oXZ"/>
@@ -1556,7 +1556,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="4Xy-rQ-COg">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="4Xy-rQ-COg">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="EzP-gb-tbZ"/>
@@ -1594,7 +1594,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="JAl-tJ-uGE">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="JAl-tJ-uGE">
                                                     <rect key="frame" x="8" y="1" width="102" height="110.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="wSz-JU-xrN"/>
@@ -1673,16 +1673,102 @@
             </objects>
             <point key="canvasLocation" x="6812" y="197.45127436281859"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="CTO-qt-x4r">
+            <objects>
+                <viewController id="oWD-q8-SLB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nCT-Er-Fly">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2E-Ec-dkt">
+                                <rect key="frame" x="98" y="379" width="204" height="50"/>
+                                <color key="backgroundColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YJC-Pt-aXc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Add/Edit Notes">
+                                    <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pressedEditNotes:" destination="bry-B2-AxR" eventType="touchDown" id="XPe-Di-EuY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRD-NQ-07G">
+                                <rect key="frame" x="98" y="275" width="204" height="50"/>
+                                <color key="backgroundColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="KVL-uQ-ygY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Graphs">
+                                    <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pressedEditNotes:" destination="bry-B2-AxR" eventType="touchDown" id="e8o-WJ-AgW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZ7-40-I6x">
+                                <rect key="frame" x="98" y="177" width="204" height="50"/>
+                                <color key="backgroundColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7BT-f2-b5j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="BMI Calculator">
+                                    <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pressedEditNotes:" destination="bry-B2-AxR" eventType="touchDown" id="jZc-Vd-BrW"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calculator" translatesAutoresizingMaskIntoConstraints="NO" id="9Rc-ya-f6l">
+                                <rect key="frame" x="13" y="157" width="77" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graph" translatesAutoresizingMaskIntoConstraints="NO" id="20T-hh-wBd">
+                                <rect key="frame" x="4" y="257" width="95" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="notes break" translatesAutoresizingMaskIntoConstraints="NO" id="C5g-kw-e0v">
+                                <rect key="frame" x="15" y="360" width="84" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hCN-l4-gdJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gf8-2x-bnR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RrP-hC-ay5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1392.8" y="2830.434782608696"/>
+        </scene>
         <!--Overview-->
         <scene sceneID="780-eu-d3E">
             <objects>
                 <pageViewController storyboardIdentifier="OverviewPageController" autoresizesArchivedViewToFullSize="NO" title="Overview" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="EZx-tQ-lFX" customClass="OverviewViewController" customModule="firstbite" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Overview" image="graph" id="XbX-A6-jlG"/>
                     <navigationItem key="navigationItem" id="2oX-ul-J35"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFb-kM-zFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="280.80000000000001" y="2489.5052473763121"/>
+            <point key="canvasLocation" x="3246" y="3869"/>
         </scene>
         <!--Graphs-->
         <scene sceneID="BV6-J1-1YZ">
@@ -1697,48 +1783,36 @@
                                 <color key="pageIndicatorTintColor" red="0.98039215686274506" green="0.90196078431372551" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.3529411764705882" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKH-Ec-GZT">
-                                <rect key="frame" x="8" y="75" width="77" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This That Pie Chart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pco-9J-jXk">
-                                <rect key="frame" x="8" y="336" width="189" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="seP-rX-YhR" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="8" y="104" width="375" height="224"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ha7-VX-uTc" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="369" width="375" height="253"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ha7-VX-uTc" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="64" width="375" height="558"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8M-Tm-rAF">
+                                <rect key="frame" x="316" y="632" width="22" height="22"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="sK3-xw-SZt" firstAttribute="centerX" secondItem="IRJ-aA-cj6" secondAttribute="centerX" id="BdG-Hg-5ER"/>
-                            <constraint firstItem="sK3-xw-SZt" firstAttribute="bottom" secondItem="pwS-pw-xgb" secondAttribute="bottom" id="vcz-Di-uMf"/>
+                            <constraint firstAttribute="trailing" secondItem="ha7-VX-uTc" secondAttribute="trailing" id="Ljn-Ge-YsN"/>
+                            <constraint firstItem="L8M-Tm-rAF" firstAttribute="top" secondItem="ha7-VX-uTc" secondAttribute="bottom" constant="10" id="NId-MQ-etk"/>
+                            <constraint firstItem="ha7-VX-uTc" firstAttribute="top" secondItem="pwS-pw-xgb" secondAttribute="top" id="Sib-Zg-weI"/>
+                            <constraint firstItem="sK3-xw-SZt" firstAttribute="top" secondItem="ha7-VX-uTc" secondAttribute="bottom" constant="8" symbolic="YES" id="XzE-sX-TMH"/>
+                            <constraint firstItem="ha7-VX-uTc" firstAttribute="leading" secondItem="IRJ-aA-cj6" secondAttribute="leading" id="nHx-uB-HUy"/>
+                            <constraint firstItem="ha7-VX-uTc" firstAttribute="centerX" secondItem="sK3-xw-SZt" secondAttribute="centerX" id="oZr-Z1-iQQ"/>
+                            <constraint firstItem="sK3-xw-SZt" firstAttribute="bottom" secondItem="pwS-pw-xgb" secondAttribute="bottom" id="pPt-AZ-AGi"/>
+                            <constraint firstItem="pwS-pw-xgb" firstAttribute="trailing" secondItem="L8M-Tm-rAF" secondAttribute="trailing" constant="37" id="vTs-as-6Au"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pwS-pw-xgb"/>
                     </view>
                     <navigationItem key="navigationItem" title="Graphs" id="nDj-h1-BYG"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="barChart" destination="seP-rX-YhR" id="cRl-AH-rI5"/>
                         <outlet property="pieChart" destination="ha7-VX-uTc" id="Q27-wn-6UF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xZA-WL-Edx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1634" y="2490"/>
+            <point key="canvasLocation" x="3984.8000000000002" y="3868.5157421289359"/>
         </scene>
         <!--BMI Calculator-->
         <scene sceneID="0au-TI-LzY">
@@ -1845,6 +1919,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i77-xu-840">
                                 <rect key="frame" x="188" y="94" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="cAw-O8-Ycb" kind="show" id="3Ro-rV-WRZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1864,7 +1941,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Jp-tp-Gng" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2290" y="2490"/>
+            <point key="canvasLocation" x="4924" y="2489.5052473763121"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FM3-NT-r4f">
@@ -2007,12 +2084,6 @@ Cg
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="3" translatesAutoresizingMaskIntoConstraints="NO" id="k31-jF-E93">
-                                <rect key="frame" x="156" y="630" width="55" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="pageIndicatorTintColor" red="0.98039215690000003" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Zma-6V-AgD"/>
@@ -2020,7 +2091,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5K-Sx-NdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2946" y="2490"/>
+            <point key="canvasLocation" x="5599.1999999999998" y="2489.5052473763121"/>
         </scene>
         <!--Create a New Account-->
         <scene sceneID="62Z-Dy-zNA">
@@ -2552,7 +2623,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cva-7M-oVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="984.79999999999995" y="2489.5052473763121"/>
+            <point key="canvasLocation" x="4924" y="3167.7661169415296"/>
         </scene>
         <!--New Reminder-->
         <scene sceneID="AWI-ST-uci">
@@ -2580,7 +2651,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E7b-0f-TdW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="985" y="3187"/>
+            <point key="canvasLocation" x="5599.1999999999998" y="3167.7661169415296"/>
         </scene>
         <!--Auth View Controller-->
         <scene sceneID="p0e-cB-eM9">
@@ -2694,14 +2765,14 @@ Cg
                     <connections>
                         <segue destination="uSs-wH-SlI" kind="relationship" relationship="viewControllers" id="9tV-08-19o"/>
                         <segue destination="e33-5U-GTC" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="EZx-tQ-lFX" kind="relationship" relationship="viewControllers" id="4ft-s2-SFC"/>
+                        <segue destination="oJI-o4-n00" kind="relationship" relationship="viewControllers" id="j71-58-UAr"/>
                         <segue destination="1k2-b3-lla" kind="relationship" relationship="viewControllers" id="cZk-8p-cNA"/>
                         <segue destination="Npl-qF-I16" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-716" y="-154.27286356821591"/>
+            <point key="canvasLocation" x="-671" y="-251"/>
         </scene>
         <!--New Entry-->
         <scene sceneID="j8K-7N-feF">
@@ -2781,7 +2852,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6to9MonthsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="M56-QQ-phm">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="months 6-9 break" translatesAutoresizingMaskIntoConstraints="NO" id="M56-QQ-phm">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="Xtm-eh-PzN"/>
@@ -2819,7 +2890,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="9to12MonthsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="zBp-ca-Zy0">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="months 9-12 break" translatesAutoresizingMaskIntoConstraints="NO" id="zBp-ca-Zy0">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="iHe-Q8-Vk1"/>
@@ -2857,7 +2928,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12to24MonthsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="gMl-C1-ist">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="months 12-24 break" translatesAutoresizingMaskIntoConstraints="NO" id="gMl-C1-ist">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="tXO-pV-AnY"/>
@@ -2895,7 +2966,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="24to36MonthsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XzS-NU-fib">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="months 24-36 break" translatesAutoresizingMaskIntoConstraints="NO" id="XzS-NU-fib">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="YnC-6D-tcB"/>
@@ -2991,7 +3062,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="Bhx-7v-5fr">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="Bhx-7v-5fr">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="QmA-1n-uPY"/>
@@ -3029,7 +3100,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="ByY-7Y-Ggs">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="ByY-7Y-Ggs">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="tKh-y8-bgH"/>
@@ -3067,7 +3138,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="c1K-g0-zCq">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="c1K-g0-zCq">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="x1I-NZ-0mp"/>
@@ -3124,7 +3195,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6to9MonthsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="lOk-ba-TVs">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="months 6-9 break" translatesAutoresizingMaskIntoConstraints="NO" id="lOk-ba-TVs">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="92a-AE-m02"/>
@@ -3162,7 +3233,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="9to12MonthsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="HGp-jY-mfJ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="months 9-12 break" translatesAutoresizingMaskIntoConstraints="NO" id="HGp-jY-mfJ">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="8Iy-Hc-uyz"/>
@@ -3200,7 +3271,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12to24MonthsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Pff-RL-qTm">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="months 12-24 break" translatesAutoresizingMaskIntoConstraints="NO" id="Pff-RL-qTm">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="2BW-D6-ALc"/>
@@ -3238,7 +3309,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="24to36MonthsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mnv-D3-khw">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="months 24-36 break" translatesAutoresizingMaskIntoConstraints="NO" id="mnv-D3-khw">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="0nA-sf-vrH"/>
@@ -3318,7 +3389,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zab-gM-G4c" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8504.7999999999993" y="2102.698650674663"/>
+            <point key="canvasLocation" x="10383.200000000001" y="2102.698650674663"/>
         </scene>
         <!--Bookmark Article View-->
         <scene sceneID="XaG-ll-b8c">
@@ -3346,7 +3417,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7F-kR-cNp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9180" y="2102.698650674663"/>
+            <point key="canvasLocation" x="11058.4" y="2102.698650674663"/>
         </scene>
         <!--Healthy Choices-->
         <scene sceneID="wAC-sQ-u7j">
@@ -3366,7 +3437,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="YMV-6p-rSr">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="YMV-6p-rSr">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="sDP-iz-hnR"/>
@@ -3404,7 +3475,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="wdY-uw-WEW">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="wdY-uw-WEW">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="d0N-ba-hXG"/>
@@ -3442,7 +3513,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="aRz-9C-NHr">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="aRz-9C-NHr">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="hwI-jP-K3p"/>
@@ -3499,7 +3570,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="LYs-ZU-3HV">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="LYs-ZU-3HV">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="PKs-jt-l23"/>
@@ -3537,7 +3608,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="vLF-Q3-58u">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="vLF-Q3-58u">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="bCe-vk-usJ"/>
@@ -3594,7 +3665,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="MOa-e3-4U1">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="MOa-e3-4U1">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="7zJ-k7-FAT"/>
@@ -3632,7 +3703,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="rCW-LG-ElE">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="rCW-LG-ElE">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="KkM-mN-5Mu"/>
@@ -3670,7 +3741,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="1RC-RP-elK">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="1RC-RP-elK">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="E8C-K1-8Ub"/>
@@ -3708,7 +3779,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="LiW-dO-GHr">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="LiW-dO-GHr">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="Lhz-ZG-Wkg"/>
@@ -3746,7 +3817,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="01Z-2i-Ck5">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="01Z-2i-Ck5">
                                                     <rect key="frame" x="8" y="1" width="102" height="110.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="unR-jS-E7N"/>
@@ -3803,7 +3874,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="Rtd-qr-hfA">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="Rtd-qr-hfA">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="K2h-a8-d53"/>
@@ -3860,7 +3931,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="OIS-IE-d4E">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="OIS-IE-d4E">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="p4C-Sw-8Lv"/>
@@ -3898,7 +3969,7 @@ Cg
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="brt-35-7de">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appiconnew" translatesAutoresizingMaskIntoConstraints="NO" id="brt-35-7de">
                                                     <rect key="frame" x="16" y="4" width="102" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="TS1-UN-hjk"/>
@@ -3937,35 +4008,80 @@ Cg
             </objects>
             <point key="canvasLocation" x="6812" y="-841"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="hJQ-Gc-ZUs">
+        <!--BarGraph-->
+        <scene sceneID="H8y-kq-et8">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mmt-mj-0gF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BarPageView" title="BarGraph" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Pwh-Hp-NiS" customClass="BarGraphViewController" customModule="firstbite" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="VcT-Ia-nkU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="cLT-se-xhc">
+                                <rect key="frame" x="160" y="630" width="55" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.98039215690000003" green="0.90196078430000004" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3WP-PK-E7Q" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="64" width="375" height="558"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ptm-wV-1ac">
+                                <rect key="frame" x="325" y="634" width="22" height="22"/>
+                                <connections>
+                                    <action selector="pressInfo:" destination="Pwh-Hp-NiS" eventType="touchDown" id="7te-bb-du0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cLT-se-xhc" firstAttribute="centerX" secondItem="VcT-Ia-nkU" secondAttribute="centerX" id="2CC-3i-dZw"/>
+                            <constraint firstItem="cLT-se-xhc" firstAttribute="centerX" secondItem="3WP-PK-E7Q" secondAttribute="centerX" id="37J-5p-4eJ"/>
+                            <constraint firstItem="Ptm-wV-1ac" firstAttribute="top" secondItem="3WP-PK-E7Q" secondAttribute="bottom" constant="12" id="8r0-qv-NFK"/>
+                            <constraint firstItem="3WP-PK-E7Q" firstAttribute="top" secondItem="cTl-hk-jaL" secondAttribute="top" id="BMy-0U-KHv"/>
+                            <constraint firstItem="cLT-se-xhc" firstAttribute="top" secondItem="3WP-PK-E7Q" secondAttribute="bottom" constant="8" symbolic="YES" id="Cug-fa-ujb"/>
+                            <constraint firstItem="cLT-se-xhc" firstAttribute="bottom" secondItem="cTl-hk-jaL" secondAttribute="bottom" id="Et6-lL-gjR"/>
+                            <constraint firstItem="cTl-hk-jaL" firstAttribute="trailing" secondItem="Ptm-wV-1ac" secondAttribute="trailing" constant="28" id="OwJ-qZ-zea"/>
+                            <constraint firstItem="3WP-PK-E7Q" firstAttribute="leading" secondItem="VcT-Ia-nkU" secondAttribute="leading" id="ZUC-G3-GzL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cTl-hk-jaL"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="v1L-Bd-OBG"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="barChart" destination="3WP-PK-E7Q" id="8Nh-OF-lOi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X3Q-XJ-D0u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4660" y="3868.5157421289359"/>
+        </scene>
+        <!--Utilities-->
+        <scene sceneID="Ifo-We-KTu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oJI-o4-n00" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Utilities" image="tools icon" id="wNh-wE-36s"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bia-dk-mVa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rAe-4j-bkw">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="DPE-CK-5Zz" kind="relationship" relationship="rootViewController" id="kor-VJ-ks2"/>
+                        <segue destination="oWD-q8-SLB" kind="relationship" relationship="rootViewController" id="J9h-ru-IWD"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wjb-Ir-wTY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4OT-Ha-5sQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="281" y="3187"/>
+            <point key="canvasLocation" x="453.60000000000002" y="2830.434782608696"/>
         </scene>
     </scenes>
     <resources>
-        <image name="12to24MonthsIcon" width="100" height="100"/>
-        <image name="24to36MonthsIcon" width="100" height="100"/>
-        <image name="6to9MonthsIcon" width="100" height="100"/>
-        <image name="9to12MonthsIcon" width="100" height="100"/>
         <image name="Breastfeeding" width="1000" height="1000"/>
         <image name="adorable-baby-child" width="2256" height="1496"/>
         <image name="agriculture-close-up-delicious" width="3782" height="2418"/>
         <image name="app icon black" width="1000" height="1000"/>
         <image name="appicon" width="60" height="60"/>
+        <image name="appiconnew" width="1000" height="1000"/>
         <image name="baby-baby-eating-chair" width="4288" height="2848"/>
         <image name="babyfeethands" width="2250" height="1500"/>
         <image name="babyhold" width="2256" height="1500"/>
@@ -3973,21 +4089,28 @@ Cg
         <image name="bottle" width="50" height="50"/>
         <image name="bottle-container-high-chair" width="3600" height="2400"/>
         <image name="brocoli" width="1000" height="1000"/>
+        <image name="calculator" width="632" height="812"/>
         <image name="camera icon 50p" width="55" height="55"/>
         <image name="drinking-milk" width="960" height="639"/>
         <image name="formula" width="1000" height="1000"/>
         <image name="gallery icon 50p" width="55" height="55"/>
         <image name="graph" width="50" height="50"/>
+        <image name="months 12-24 break" width="1344" height="1344"/>
+        <image name="months 24-36 break" width="1344" height="1344"/>
+        <image name="months 6-9 break" width="1344" height="1344"/>
+        <image name="months 9-12 break" width="1344" height="1344"/>
         <image name="newborn-hat" width="1920" height="1280"/>
+        <image name="notes break" width="770" height="855"/>
         <image name="person" width="50" height="50"/>
         <image name="plus" width="50" height="50"/>
         <image name="solidfood" width="2309" height="1500"/>
         <image name="strawberries" width="1920" height="1281"/>
+        <image name="tools icon" width="500" height="500"/>
         <image name="topicPlaceholder" width="4928" height="3264"/>
         <image name="topicPlaceholderV2-2" width="3000" height="1688"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="R3Y-g3-IUq"/>
-        <segue reference="3SK-10-vUz"/>
+        <segue reference="dq1-Ff-OFt"/>
     </inferredMetricsTieBreakers>
 </document>

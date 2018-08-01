@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		10199BDD210B32BF007DFF3F /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10199BDC210B32BE007DFF3F /* AuthViewController.swift */; };
 		10199BDF210B37DF007DFF3F /* BookmarkArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10199BDE210B37D6007DFF3F /* BookmarkArticleView.swift */; };
+		10208BB921115D3500BFDEE5 /* BarGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10208BB821115D3500BFDEE5 /* BarGraphViewController.swift */; };
 		1070B947210DC7B900B2236E /* FoodAllergiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070B946210DC7B900B2236E /* FoodAllergiesViewController.swift */; };
 		1070B949210DC7B900B2236E /* HealthyChoicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070B948210DC7B900B2236E /* HealthyChoicesViewController.swift */; };
 		1070B94B210DC7B900B2236E /* MindfulEatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070B94A210DC7B900B2236E /* MindfulEatingViewController.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		10199BDC210B32BE007DFF3F /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		10199BDE210B37D6007DFF3F /* BookmarkArticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkArticleView.swift; sourceTree = "<group>"; };
+		10208BB821115D3500BFDEE5 /* BarGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarGraphViewController.swift; sourceTree = "<group>"; };
 		1070B946210DC7B900B2236E /* FoodAllergiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAllergiesViewController.swift; sourceTree = "<group>"; };
 		1070B948210DC7B900B2236E /* HealthyChoicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthyChoicesViewController.swift; sourceTree = "<group>"; };
 		1070B94A210DC7B900B2236E /* MindfulEatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfulEatingViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				D8234DB72109892B0000A9A5 /* SupplementDetailedViewController.swift */,
 				D8EEC60720E727F200C1E623 /* AppDelegate.swift */,
 				D8EEC60D20E727F200C1E623 /* Main.storyboard */,
+				10208BB821115D3500BFDEE5 /* BarGraphViewController.swift */,
 				BA7BF2F921101ACE00935CB5 /* BMITableViewController.swift */,
 				8446CE88210A7D9E00078728 /* GraphsViewController.swift */,
 				84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */,
@@ -307,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10208BB921115D3500BFDEE5 /* BarGraphViewController.swift in Sources */,
 				1070B947210DC7B900B2236E /* FoodAllergiesViewController.swift in Sources */,
 				10199BDD210B32BF007DFF3F /* AuthViewController.swift in Sources */,
 				B6D7833C20FD8DDE00C87CF4 /* Profile.swift in Sources */,

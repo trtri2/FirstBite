@@ -12,10 +12,8 @@ class OverviewViewController: UIPageViewController, UIPageViewControllerDelegate
     
     // overview page controller array
     lazy var orderedViewControllers: [UIViewController] = {
-        return [self.nextView(viewController: "ReminderViewController"),
-                self.nextView(viewController: "GraphPageView"),
-                self.nextView(viewController: "SummaryViewController"),
-                self.nextView(viewController: "BMIViewController")]
+        return [self.nextView(viewController: "GraphPageView"),
+                self.nextView(viewController: "BarPageView")]
     }()
     
     // page control, which allows page dots
@@ -72,7 +70,7 @@ class OverviewViewController: UIPageViewController, UIPageViewControllerDelegate
         super.viewDidLoad()
 
         self.dataSource = self
-        
+        self.navigationController?.navigationBar.prefersLargeTitles = false
         // sets up the first view that will show up on our page control
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController],direction: .forward, animated: true, completion: nil)

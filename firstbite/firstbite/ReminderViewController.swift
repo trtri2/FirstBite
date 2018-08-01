@@ -22,10 +22,10 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
         table.dataSource = self
         table.delegate = self
         self.title = "Reminder"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.prefersLargeTitles = false
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addReminder))
         self.navigationItem.rightBarButtonItem = addButton
-        self.navigationItem.leftBarButtonItem = editButtonItem
+   //     self.navigationItem.leftBarButtonItem = editButtonItem
         load()
     }
     
