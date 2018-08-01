@@ -72,7 +72,11 @@ class GraphsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> Leon_branch_jul30
         fstore = Firestore.firestore()
         pieChart.chartDescription?.text = "Food Proportions in Servings"
 

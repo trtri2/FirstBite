@@ -29,6 +29,7 @@
 		B6316BB320FFEEB300239941 /* InitialProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6316BB220FFEEB300239941 /* InitialProfile.swift */; };
 		B6D7833C20FD8DDE00C87CF4 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7833B20FD8DDE00C87CF4 /* Profile.swift */; };
 		BA40BC8020ECA857005F079F /* SupplementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C3A7E820EC85AF005BABCC /* SupplementViewController.swift */; };
+		BA7BF2FA21101ACE00935CB5 /* BMITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7BF2F921101ACE00935CB5 /* BMITableViewController.swift */; };
 		BDB781BAFEFE45B682BAF77F /* Pods_firstbite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E900B36522A62D7A5CE0240 /* Pods_firstbite.framework */; };
 		D8234DB4210988F50000A9A5 /* BreastfeedingDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8234DB3210988F50000A9A5 /* BreastfeedingDetailedViewController.swift */; };
 		D8234DB6210989120000A9A5 /* BottlefeedingDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8234DB5210989120000A9A5 /* BottlefeedingDetailedViewController.swift */; };
@@ -68,6 +69,7 @@
 		A4B7770D20F4798E00CCBC13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B6316BB220FFEEB300239941 /* InitialProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialProfile.swift; sourceTree = "<group>"; };
 		B6D7833B20FD8DDE00C87CF4 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		BA7BF2F921101ACE00935CB5 /* BMITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMITableViewController.swift; sourceTree = "<group>"; };
 		D8234DB3210988F50000A9A5 /* BreastfeedingDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreastfeedingDetailedViewController.swift; sourceTree = "<group>"; };
 		D8234DB5210989120000A9A5 /* BottlefeedingDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottlefeedingDetailedViewController.swift; sourceTree = "<group>"; };
 		D8234DB72109892B0000A9A5 /* SupplementDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementDetailedViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				D8234DB72109892B0000A9A5 /* SupplementDetailedViewController.swift */,
 				D8EEC60720E727F200C1E623 /* AppDelegate.swift */,
 				D8EEC60D20E727F200C1E623 /* Main.storyboard */,
+				BA7BF2F921101ACE00935CB5 /* BMITableViewController.swift */,
 				843B5001210D2E0C00F5D8AA /* RemindersViewController.swift */,
 				8446CE88210A7D9E00078728 /* GraphsViewController.swift */,
 				84FA1D6820EC8523007A0E9E /* BookmarksViewController.swift */,
@@ -335,6 +338,7 @@
 				D8C3A7E620EC687C005BABCC /* BottlefeedingViewController.swift in Sources */,
 				D8234DB82109892B0000A9A5 /* SupplementDetailedViewController.swift in Sources */,
 				109C362B20FF66E400CA1BFC /* SolidFoodsViewController.swift in Sources */,
+				BA7BF2FA21101ACE00935CB5 /* BMITableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
