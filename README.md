@@ -24,9 +24,9 @@ FirstBite assists individuals who are seeking advice or guidance on baby nutriti
   <img src="https://raw.githubusercontent.com/trtri2/FirstBite/master/firstbite/firstbite/Assets.xcassets/book.imageset/book.png"/>
 </p>
 
-The intended audience for our application are new parents whose infants fall in the age group of (0 – 36 months). The application will aim to be easily accessible and accommodate for those unfamiliar with the iOS interface and systems, while still providing sufficient features to more experienced users. 
+The intended audience are new parents whose infants fall in the age group of (0 – 36 months). The application will aim to be accessible and accommodate individuals unfamiliar with the iOS interface and systems, while still providing sufficient features to experienced users. 
 
-Parents, including mothers, fathers, guardians, and so on who require more expertise or knowledge in their child’s nutrition will find our application helpful and accessible. It will be a tool to assist them in their lives and parenting journey. The application will give guidance, tools, and advice necessary to answer most of an individual’s concerns and questions on baby nutrition. 
+Guardians who require more information on their child’s nutrition will find our application helpful and accessible. FirstBite will be a tool to assist their parenting journey. The application will give guidance, tools, and advice necessary to answer concerns and questions on baby nutrition. 
 
 
 # Team Healthy 7
