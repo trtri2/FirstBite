@@ -3,10 +3,9 @@
   <img src="https://raw.githubusercontent.com/trtri2/FirstBite/master/firstbite/firstbite/Assets.xcassets/AppIcon.appiconset/appicon120.png"/>
 </p>
 
-FirstBite assists individuals who are seeking advice or guidance on baby nutrition. Working alongside with certified dieticians in British Columbia, the application will be a tool to track dietary intakes, give guidance or information based on professional advice, and provide dynamic feedback based on dietary habits, tracking, and analytical data
+FirstBite assists individuals who are seeking advice or guidance on baby nutrition. Working alongside with certified dieticians in British Columbia, the application will be a tool to track dietary intakes, provide guidance or information based on professional advice, and provide feedback based on dietary habits, and analytical data
  
-# Features
-
+# Features 
 <p align="center">
   <img src="https://raw.githubusercontent.com/trtri2/FirstBite/master/firstbite/firstbite/Assets.xcassets/tools.imageset/tools-icon-spaced-border-60p.png"/>
 </p>
